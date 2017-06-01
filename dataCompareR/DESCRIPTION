@@ -1,0 +1,47 @@
+Package: dataCompareR
+Title: Compare two data frames and summarise the difference
+Version: 0.0.0.9005
+Authors@R: c(person("Rob", "Noble-Eddy", email = "opensource@capitalone.com", role = c("aut", "cre")),
+           person("Sarah", "Johnston", role = c("aut")),
+           person("Sarah", "Pollicott", role = c("aut")),
+           person("Lukas", "Drapal", role = c("ctb")),
+           person("Nikolaos", "Perrakis", role = c("ctb")),
+           person("Nikhil", "Thomas Joy", role = c("ctb")),
+           person("Shahriar", "Asta", role = c("ctb")),
+           person("Karandeep", "Lidher", role = c("ctb")),
+           person("Dan", "Kellett", role = c("ctb")),
+           person("Kevin", "Chisholm", role = c("ctb")),
+           person("Laura", "Joy", role = c("ctb")),
+           person("Fergus", "Wadsley", role = c("ctb")),
+           person("Merlijn", "van Horssen", role = c("ctb")),
+           person("Heather", "Hackett", role = c("ctb")),
+           person("David", "Robinson", role = c("ctb")),
+           person("Cheryl", "Renton", role = c("ctb")),
+           person("Matt", "Triggs", role = c("ctb")),
+           person("Krishan", "Bhasin", role = c("ctb")),
+           person("Carola", "Deppe", role = c("ctb"))
+           )
+Description: dataCompareR aims to make it easy to compare two tabular data
+    objects in R. It's specifically designed to show differences between two sets of
+    data in a useful way that should make it easier to understand the differences,
+    and if necessary, help you work out how to remedy them. In this regard, it aims
+    to offer a more useful output than `all.equal` when your two datasets do not
+    match, but isn't intended to replace `all.equal` as a way to test for equality.
+Depends:
+    R (>= 3.2.3)
+Imports:
+    dplyr,
+    knitr,
+    stringi,
+    markdown
+License: file LICENSE
+LazyData: true
+RoxygenNote: 6.0.1
+Suggests:
+    testthat,
+    data.table,
+    tibble,
+    bit64,
+    rmarkdown,
+    titanic
+VignetteBuilder: knitr

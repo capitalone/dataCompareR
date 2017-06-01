@@ -1,0 +1,165 @@
+<!---
+# SPDX-Copyright: Copyright (c) Capital One Services, LLC 
+# SPDX-License-Identifier: Apache-2.0 
+# Copyright 2017 Capital One Services, LLC 
+#
+# Licensed under the Apache License, Version 2.0 (the "License"); 
+# you may not use this file except in compliance with the License. 
+#
+# You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 
+#
+# Unless required by applicable law or agreed to in writing, software distributed 
+# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS
+# OF ANY KIND, either express or implied.
+
+#
+# UNIT TEST: print.summary.dataCompareRobject
+#
+# * Assumes that the output of dataCompareR is accurate
+#
+# The print output of the summary object of the dataCompareR object 
+# should have a certain structure depending on the content of the object.
+-->
+
+---
+title: "dataCompareR vignette"
+author: "Rob Noble-Eddy"
+date: "`r Sys.Date()`"
+output: 
+  rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{dataCompareR vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+dataCompareR aims to make it easy to compare two tabular data objects in R. It's specifically designed to show differences between two sets of data in a useful way that should make it easier to understand the differences, and if necessary, help you work out how to remedy them. In this regard, it aims to offer a more useful output than `all.equal` when your two datasets do not match, but isn't intended to replace `all.equal` if you just want to test for equality.
+
+It's expected that dataCompareR will be used to compare data frames, but it can be used to compare any objects that can be coerced to data frames, such as data tables, tibbles or matrices. dataCompareR cannot compare data that is not tabular in format (nested JSON, irregular lists etc) but does handle tabular data that needs to be matched (or joined) on one or more keys (or ID columns).
+
+The hope is that dataCompareR is easy to understand, so please don't feel like you're obliged to read this! The aim of this vignette is twofold - to offer end-to-end examples of using dataCompareR and, for those who want to know, to provide details of how the package performs the comparison.
+
+## dataCompareR examples
+
+
+### Matching without a key
+
+For the purpose of this vignette we'll intentionally modify iris to use for our comparison. 
+
+```{r matchnokey}
+library(dataCompareR)
+
+# We'll use iris for our comparison
+head(iris)
+
+# Make a copy of iris
+iris2 <- iris
+# And change it, first by subsetting just the first 140 rows
+iris2 <- iris2[1:140,]
+# then removing the Petal.Width column
+iris2$Petal.Width <- NULL
+# And then changing some values
+iris2[1:10,1] <- iris2[1:10,1] + 1
+```
+
+And then run a comparison using the `rCompare` function
+
+```{r runcomp}
+# run the comparison
+compIris <- rCompare(iris, iris2)
+```
+
+`rCompare` returns an S3 object which you can use with summary and print. Summary is a good way to check the results
+
+```{r results}
+# Check the results
+summary(compIris)
+
+```
+
+Or you save a copy of the report using `saveReport`
+
+```{r saveReps, eval =F}
+# Write the summary to a file
+saveReport(compIris, reportName = 'compIris')
+```
+
+### Comparison with a key
+
+In the first example, we compared our data based on it's order. What if want to match our data of a key? We'll produce another test data set based on the pressure dataset
+
+```{r matchkey}
+# We'll use the pressure dataset for comparison
+head(pressure)
+
+# Make a copy of pressure
+pressure2 <- pressure
+# And change it, first by randomising the row order
+pressure2 <- pressure2[sample(nrow(pressure2)),]
+# then changing just one element, so for temperature of
+pressure2[5,1]
+# We modify pressure to be twice as large
+pressure2[5,2] <- pressure2[5,2] * 2
+```
+
+Run the comparison with `rCompare` specifying that we want to match on temperature
+
+```{r matchkeycomp}
+# run the comparison
+compPressure <- rCompare(pressure, pressure2, keys = 'temperature')
+```
+
+And this time, we'll choose to get a shorter summary using `print`
+
+```{r matchkeyprint}
+# Check the results - use print for a quick summary
+print(compPressure)
+```
+
+We can also extract the mismatching data to explore futher using `generateMismatchData` which generates a list containing two data frames, each having the missing rows from the comparison.
+
+```{r loaddplyr, echo = F, message=F}
+library(dplyr)
+```
+
+```{r extract}
+# use generateMismatchData to pull out the mismatching rows from each table
+mismatches <- generateMismatchData(compPressure, pressure, pressure2)
+
+mismatches
+```
+
+## dataCompareR workflow
+
+The aspects of the dataCompareR::rCompare function that matter to the end user are:-
+
+1. Coerce the two data objects provided to data frames (if required). 
+    + Coercion uses `as.data.frame`. If you need more advanced coercion, please do this before calling dataCompareR.
+2. Run data validation and cleaning
+    + Currently the validation step is fairly minimal, mainly confirming that any match key fields are present in both data sets.
+    + Cleaning consists of a few steps (these are run on a copy of the data passed to dataCompareR - the original data is unchanged)
+        1. Convert factors to strings, to make for a clearer comparison
+        2. Tidy up column names (trim white space, convert to upper case)
+        3. (Optional) Trim strings to remove leading and trailing white space
+        4. (Optional) Round numerics to a specified number of decimal places
+3. Match columns between tables
+    + Columns present in both tables will be compared
+    + Columns in only one of the two tables will not be compared, but will be recorded as missing in the output.
+4. Match rows. This step differs depending on whether a match key is specified.
+    + *No match key.* 
+        + Rows are matched based on order. If table A contains 100 rows and table B contains 150 rows, the last 50 rows from B will be dropped, and the comparison will proceed on the matching 100 rows. The fact that 50 rows were dropped will be recorded in the output.
+    + *With match key.* 
+        + Rows are matched based on the key(s) provided. Rows that exist in both tables will be compared. Rows that do not exist in both tables will be dropped, with details of rows dropped recorded in the output.
+5. Data comparison for matching columns/rows
+    + Find which elements match between the remaining columns and row in the two data frames. The == operator is used to assess equality, with the exception of `NA` and `NaN`, which are handled in the following way
+        + If both elements are `NA`, match is `TRUE`
+        + If both elements are `NaN`, match is `TRUE`
+        + If one element is `NA` and the other `NaN`, match is `FALSE`
+        + If one element is `NA`, and the other is a valid value, match is `FALSE`
+        + If one element is `NaN`, and the other is a valid value, match is `FALSE`
+    + For mismatching elements, store details of the mismatch, and for numeric fields, store the difference between them
+6. Write everything that was learned in to an dataCompareR object
+        
+        
+
+
