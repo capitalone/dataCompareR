@@ -75,7 +75,7 @@ if(require(titanic)) {
     expect_output(str(p0), "20 obs")
     expect_output(str(p0), "7 variables")
     
-    expect_is(p0$PASSENGERID,"integer")
+    expect_is(p0$PASSENGERID,"character")
     expect_is(p0$valueA, "character")
     expect_is(p0$valueA, "character")
     expect_is(p0$variable, "character")
@@ -83,7 +83,7 @@ if(require(titanic)) {
     expect_is(p0$typeB, "character")
     expect_is(p0$diffAB, "character")
     
-    expect_equal(p0$PASSENGERID, c(2,10,20,27,31,867,875,876,880,890,5,1,2,3,4,5,6,7,8,9))
+    expect_equal(p0$PASSENGERID, as.character(c(2,10,20,27,31,867,875,876,880,890,5,1,2,3,4,5,6,7,8,9)))
     expect_equal(p0$variable, c(rep("EMBARKED",10),"HASSURVIVED",rep("NAME",9)))
     expect_equal(p0$typeA, c(rep("character",20)))
     expect_equal(p0$typeB, c(rep("character",20)))
@@ -92,13 +92,13 @@ if(require(titanic)) {
     expect_output(str(p1),"5 obs")
     expect_output(str(p1), "7 variables")
     
-    expect_equal(p1$PASSENGERID, c(2,890,5,1,9))
+    expect_equal(p1$PASSENGERID, as.character(c(2,890,5,1,9)))
     expect_equal(p1$variable, c("EMBARKED", "EMBARKED","HASSURVIVED","NAME", "NAME"))
     
     expect_output(str(p2), "8 obs")
     expect_output(str(p2), "7 variables")
     
-    expect_equal(p2$PASSENGERID, c(2,10,880,890, 1, 2, 8, 9))
+    expect_equal(p2$PASSENGERID, as.character(c(2,10,880,890, 1, 2, 8, 9)))
     expect_equal(p2$variable, c(rep("EMBARKED",4),rep("NAME",4)))
     
     expect_output(str(p3),"180 obs")
