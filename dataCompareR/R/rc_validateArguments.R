@@ -65,7 +65,7 @@ validateArguments <- function(matchKey = NA, roundDigits = NA, coerceCols = TRUE
   
 }
 
-#' validateArguments
+#' makeValidNames
 #' Correct syntactically invalid names in a data frame
 #' @param df A data frame
 #' @return A data frame with syntactically valid names 

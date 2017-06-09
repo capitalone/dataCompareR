@@ -20,6 +20,7 @@
 #' @param DFB Second data set passed in to the dataCompareR function
 #' @param arguments Collection of arguments passed to compare object with labels that match the dataCompareR arg definitions
 #' @param timestamp Timestamp 
+#' @param roundDigits The number of digits to round to, using \link[base]{round}
 #' @return \code{dataCompareRobject}
 #' 
 createMeta <- function(dataCompareRobject, DFA, DFB, arguments, timestamp, roundDigits){
