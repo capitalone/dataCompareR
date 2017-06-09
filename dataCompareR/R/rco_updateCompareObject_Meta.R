@@ -35,6 +35,8 @@ updateCompareObject.meta <- function(x, compObj){
   # Object version for future compatibility handling
   compObj$meta$objVersion <- currentObjVersion()
   
+  compObj$meta$roundDigits <- x$roundDigits
+  
   return(compObj)
 }
 

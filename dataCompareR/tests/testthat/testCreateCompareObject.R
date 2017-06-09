@@ -35,7 +35,7 @@ test_that("compareObject", {
    # Test list 'meta'
   expect_type( compareObject[["meta"]], "list")
   expect_equal( names(compareObject[["meta"]]), c("args", "runTimestamp",
-                                                "A", "B", "objVersion"))
+                                                "A", "B", "objVersion", "roundDigits"))
   expect_s3_class( compareObject[["meta"]][["runTimestamp"]], "POSIXct")
 
   # Test list 'colMatching'

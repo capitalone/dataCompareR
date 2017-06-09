@@ -22,7 +22,7 @@
 #' @param timestamp Timestamp 
 #' @return \code{dataCompareRobject}
 #' 
-createMeta <- function(dataCompareRobject, DFA, DFB, arguments, timestamp){
+createMeta <- function(dataCompareRobject, DFA, DFB, arguments, timestamp, roundDigits){
   
   # Add meta info to a list
   metaObject <- list()
@@ -30,6 +30,7 @@ createMeta <- function(dataCompareRobject, DFA, DFB, arguments, timestamp){
   metaObject$DFB <- DFB
   metaObject$args <- arguments
   metaObject$runTimestamp <- timestamp
+  metaObject$roundDigits <- roundDigits
   
   # Change the class of the list to 'meta'
   class(metaObject) <- c("meta", "list")
