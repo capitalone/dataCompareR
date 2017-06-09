@@ -64,3 +64,23 @@ validateArguments <- function(matchKey = NA, roundDigits = NA, coerceCols = TRUE
   }
   
 }
+
+#' validateArguments
+#' Correct syntactically invalid names in a data frame
+#' @param df A data frame
+#' @return A data frame with syntactically valid names 
+#' @examples
+#' makeValidNames(iris)
+makeValidNames <- function(df) {
+  
+  # Get make names version of names
+  nm <- make.names(names(df), unique = TRUE, allow_ = TRUE)
+  
+  if(!all(nm == names(df))) {
+    message('Fixing syntactically invalid names')
+    names(df) <- nm
+  }
+  
+  return(df)
+
+}
