@@ -24,7 +24,9 @@ library(testthat)
 context('saveReport')
 
 test_that("checks save report works", {
- 
+  
+  skip_on_cran()
+  
   # There's very little we can do here - just check it runs with no errors
   iris2 <- iris
   iris2 <- iris2[1:130,]
@@ -46,6 +48,8 @@ test_that("checks save report works", {
 
 
 test_that("checks save report argument validation works", {
+  
+  skip_on_cran()
   
   # There's very little we can do here - just check it runs with no errors
   iris2 <- iris
