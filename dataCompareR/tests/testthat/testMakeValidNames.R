@@ -49,8 +49,14 @@ test_that("makeValidNames function in end to end context", {
   iris2 <- iris
   iris3 <- iris
   
-  names(iris2) <- c("`__a horrible name`", "`and   another`", "`___so so bad`", "and", "a_good_one")
+  
+  names(iris2) <- c("`__a horrible name`", "`and   another`", "`___so so bad`", "and111", "a_good_one")
   names(iris3) <- c("A", "A", "A", "A", "A")
+  
+  print(summary(iris))
+  print(summary(iris2))
+  
+  writeLines(capture.output(print(iris2)), 'C:/temp/a1.txt')
   
   expect_message(a <- rCompare(iris, iris2), "Fixing syntactically invalid names")
   expect_message(b <- rCompare(iris2, iris2), "Fixing syntactically invalid names")
@@ -60,9 +66,24 @@ test_that("makeValidNames function in end to end context", {
   
   expect_equal(aa[34], "No columns match, so no comparison could take place")
   expect_equal(aa[30], "Columns only in iris: Petal.Length, Petal.Width, Sepal.Length, Sepal.Width, Species  ")
-  expect_equal(aa[31], "Columns only in iris2: a_good_one, and, X.___so.so.bad., X.__a.horrible.name., X.and...another.  ")
   
-  expect_equal(bb[48], "Columns with all rows equal : A_GOOD_ONE, AND, X.___SO.SO.BAD., X.__A.HORRIBLE.NAME., X.AND...ANOTHER.")
+  # There appear to be reordering in this column in the devtools::check() run vs testing normally
+  # so we'll just look for the titles
+  expect_true(grepl(pattern =  "Columns only in iris2", x = aa[31], fixed = TRUE))
+  expect_true(grepl(pattern =  "a_good_one", x = aa[31], fixed = TRUE))
+  expect_true(grepl(pattern =  "and111", x = aa[31], fixed = TRUE))
+  expect_true(grepl(pattern =  "X.___so.so.bad.", x = aa[31], fixed = TRUE))
+  expect_true(grepl(pattern =  "X.__a.horrible.name.", x = aa[31], fixed = TRUE))
+  expect_true(grepl(pattern =  "X.and...another.", x = aa[31], fixed = TRUE))
+  
+  expect_true(grepl(pattern =  "Columns with all rows equal", x = bb[48], fixed = TRUE))
+  expect_true(grepl(pattern =  "A_GOOD_ONE", x = bb[48], fixed = TRUE))
+  expect_true(grepl(pattern =  "AND111", x = bb[48], fixed = TRUE))
+  expect_true(grepl(pattern =  "X.___SO.SO.BAD.", x = bb[48], fixed = TRUE))
+  expect_true(grepl(pattern =  "X.__A.HORRIBLE.NAME.", x = bb[48], fixed = TRUE))
+  expect_true(grepl(pattern =  "X.AND...ANOTHER.", x = bb[48], fixed = TRUE))
+
   
   
 })
+  
