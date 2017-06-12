@@ -1,5 +1,5 @@
 Package: dataCompareR
-Title: Compare two data frames and summarise the difference
+Title: Compare Two Data Frames and Summarise the Difference
 Version: 0.1.0
 Authors@R: c(person("Rob", "Noble-Eddy", email = "opensource@capitalone.com", role = c("aut", "cre")),
            person("Sarah", "Johnston", role = c("aut")),
