@@ -82,5 +82,12 @@ test_that("function handles possible duplicate column names", {
                       brand = character(),
                       stringsAsFactors = FALSE)
   
- expect_error(matchColumns(inDfa, inDfb), "duplicated column name", fixed=TRUE)
+  inDfb[1,] <- c("A",NA, "B")
+  inDfa[1,] <- c(NA, "A", "B", "C")
+  
+ 
+  
+ expect_error(matchColumns(inDfa, inDfb))
+ 
+ 
 })
