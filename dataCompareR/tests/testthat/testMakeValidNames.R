@@ -56,8 +56,6 @@ test_that("makeValidNames function in end to end context", {
   print(summary(iris))
   print(summary(iris2))
   
-  writeLines(capture.output(print(iris2)), 'C:/temp/a1.txt')
-  
   expect_message(a <- rCompare(iris, iris2), "Fixing syntactically invalid names")
   expect_message(b <- rCompare(iris2, iris2), "Fixing syntactically invalid names")
   
