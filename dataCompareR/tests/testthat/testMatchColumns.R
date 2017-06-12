@@ -81,7 +81,7 @@ test_that("function handles possible duplicate column names", {
                       daTe = as.Date(character()),
                       brand = character(),
                       stringsAsFactors = FALSE)
-  
+  # Add some data
   inDfb[1,] <- c("A",NA, "B")
   inDfa[1,] <- c(NA, "A", "B", "C")
   
