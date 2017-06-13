@@ -70,9 +70,10 @@ rCompare <- function(dfA,dfB,keys=NA, roundDigits = NA, mismatches = NA,trimChar
   # Validate arguments
   validateArguments(matchKey = keys, roundDigits = roundDigits, maxMismatch = mismatches, coerceCols =  trimChars)
   
-  # Make syntactically valid names
+  # Make syntactically valid names & keys
   dfA <- makeValidNames(dfA)
   dfB <- makeValidNames(dfB)
+  keys <- makeValidKeys(keys)
   
   # Coerce data
   coercedData <- coerceData(doa = dfA, dob = dfB)
@@ -98,4 +99,5 @@ rCompare <- function(dfA,dfB,keys=NA, roundDigits = NA, mismatches = NA,trimChar
   return(outObj)
 
 }
+
 
