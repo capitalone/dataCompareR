@@ -12,7 +12,7 @@
 # OF ANY KIND, either express or implied.
 
 #' Compare two data frames
-#' @description Compare two data frames (or objects coercable to data frames) and produce a dataCompareR object containing 
+#' @description Compare two data frames (or objects coercible to data frames) and produce a dataCompareR object containing 
 #' details of the matching and mismatching elements of the data. See \code{vignette("dataCompareR")} for more details.
 #' @family dataCompareR.functions
 #' @param dfA data frame. The first data object. dataCompareR will attempt to coerce all data objects to data frames.
@@ -21,8 +21,8 @@
 #'                    rounded to \code{roundDigits} decimal places using \link[base]{round}.
 #' @param keys String. Name of identifier column(s) used to compare dfA and dfB. NA if no identifier (row order will be used instead), 
 #'             a character for a single column name, or a vector of column names to match of multiple columns
-#' @param mismatches Integer. The max number of mismatches to assess, after which dataCompareR will stop (without produceing an dataCompareR 
-#'                   object). Designed to improve performance for large datasets.
+#' @param mismatches Integer. The max number of mismatches to assess, after which dataCompareR will stop (without producing an dataCompareR 
+#'                   object). Designed to improve performance for large data sets.
 #' @param trimChars Boolean. If true, strings and factors have whitespace trimmed before comparison.
 #' @return An dataCompareR object. 
 #'          An S3 object containing details of the comparison between the two data objects. Can be used with \link{summary}, 
