@@ -41,6 +41,50 @@ test_that("makeValidNames function", {
   expect_equal(names(c), c("A" ,  "A.1" ,"A.2" ,"A.3" ,"A.4"))
 })
 
+test_that("makeValidKeys function", {
+  
+  # Test the function in a few scenarios
+  
+  # normal keys
+  a <- "hello"
+  expect_equal(makeValidKeys(a), a)
+  
+  b <- c("hello", "world")
+  expect_equal(makeValidKeys(b), b)
+  
+  c <- c("hello", "world", "wide")
+  expect_equal(makeValidKeys(c), c)
+  
+  # An NA
+  d <- NA
+  expect_equal(makeValidKeys(d), d)
+  
+  # Some cleaning
+  e <- " hello "
+  expect_equal(makeValidKeys(e), "X.hello.")
+  
+  f <- c(" hello ", " hello ")
+  expect_equal(makeValidKeys(f), c("X.hello.", "X.hello..1"))
+  
+  g <- "_hello "
+  expect_equal(makeValidKeys(g), "X_hello.")
+  
+  h <- c("_hello ", "_hello ")
+  expect_equal(makeValidKeys(h), c("X_hello.", "X_hello..1"))
+  
+  # Should not need this test - keys are checked for validity
+  #i <- c("A" , NA)
+  #makeValidKeys(i)
+  
+  # Messages
+  # No  message if no cleaning
+  expect_silent(makeValidKeys(a))
+  # Message if cleaning
+  expect_message(makeValidKeys(e))
+  
+  
+})
+
 
 test_that("makeValidNames function in end to end context", {
 
@@ -85,3 +129,51 @@ test_that("makeValidNames function in end to end context", {
   
 })
   
+test_that("makeValidKeys function in end to end context", {
+
+  # set up data
+  
+  aa <- pressure
+  bb <- pressure
+
+  names(aa) <- c("  temp" ,"  pressure")
+  names(bb) <- c("  temp" ,"  pressure")
+
+  
+  # What do we expect..
+  
+  # Keyless compare should just work
+  expect_message(rCompare(aa, bb))
+  test1  <- capture.output(rCompare(aa, bb))
+  
+  expect_equal("All columns were compared, all rows were compared ", test1[1])
+  expect_equal("All compared variables match ", test1[2])                     
+  expect_equal(" Number of rows compared: 19 ", test1[3])
+  expect_equal(" Number of columns compared: 2" , test1[4])
+  
+  
+  # Compare with the original name should work
+  expect_message(rCompare(aa, bb, keys = "  temp"))
+  test2  <- capture.output(rCompare(aa, bb, keys = "  temp"))
+  expect_equal("All columns were compared, all rows were compared ", test2[1])
+  expect_equal("All compared variables match ", test2[2])                     
+  expect_equal(" Number of rows compared: 19 ", test2[3])
+  expect_equal(" Number of columns compared: 2" , test2[4])
+  
+  # And with the new name that will be set
+  expect_message(rCompare(aa, bb, keys = "X..temp"))
+  test3  <- capture.output(rCompare(aa, bb, keys = "X..temp"))
+  expect_equal("All columns were compared, all rows were compared ", test3[1])
+  expect_equal("All compared variables match ", test3[2])                     
+  expect_equal(" Number of rows compared: 19 ", test3[3])
+  expect_equal(" Number of columns compared: 2" , test3[4])
+  
+  # But not temp  
+  expect_error(rCompare(aa, bb, keys = "temp"))
+
+  # Or with lists inc NA
+  # THis error could be improved..
+  expect_error(rCompare(aa, bb, keys = c(NA,"temp")))
+  
+  
+})
