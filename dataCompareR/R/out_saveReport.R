@@ -11,14 +11,14 @@
 # under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS
 # OF ANY KIND, either express or implied.
 
-#' Save a report based on an dataCompareR object
+#' Save a report based on a dataCompareR object
 #' @description Saves R markdown and HTML reports in the area specified by the user. 
 #' 
 #' Uses knitr and markdown to create reports. Reports have the extensions .Rmd or .html. 
 #' By default the \code{table.css} style sheet is used for format the html output.
 #' 
 #' @family dataCompareR.functions
-#' @param compareObject a datCompareR object.
+#' @param compareObject a dataCompareR object.
 #' @param reportLocation String. Location to save reports specified by the user. The R markdown and (optionally) HTML reports will 
 #' be saved in this area
 #' @param reportName String. The name of the report. Reports will be saved as reportName.Rmd and (optionally) reportName.html in 

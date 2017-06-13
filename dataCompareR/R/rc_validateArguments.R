@@ -64,3 +64,60 @@ validateArguments <- function(matchKey = NA, roundDigits = NA, coerceCols = TRUE
   }
   
 }
+
+#' makeValidNames
+#' 
+#' Correct syntactically invalid names in a data frame
+#' @param df A data frame
+#' @return A data frame with syntactically valid names 
+#' @examples
+#' \dontrun{makeValidNames(iris)}
+makeValidNames <- function(df) {
+  
+  # Get make names version of names
+  nm <- make.names(names(df), unique = TRUE, allow_ = TRUE)
+  
+  if(!all(nm == names(df))) {
+    message('Fixing syntactically invalid names')
+     
+    message(paste('    Names changed from - ', paste(names(df)[!(nm == names(df))], collapse = ", ")))
+    message(paste('                    to - ', paste(nm[!(nm == names(df))], collapse = ", ")))
+    
+    names(df) <- nm
+  }
+  
+  return(df)
+
+}
+
+
+#' makeValidKeys
+#' 
+#' Correct syntactically invalid Keys
+#' @param keys A character vector
+#' @return A character vector with syntactically valid names 
+#' @examples
+#' \dontrun{makeValidKeys(c(" hello", "__BAD NAME___")}
+makeValidKeys <- function(keys) {
+  
+  # check for empty keys first
+  if(length(keys) ==1 && is.na(keys)) {
+    return(keys)
+  }
+  
+  # Get make names version of keys
+  keysClean <- make.names(keys, unique = TRUE, allow_ = TRUE)
+  
+  # Check if changes are needed
+  if(!all(keysClean == keys)) {
+    message('Fixing syntactically incorrect keys')
+    
+    message(paste('    Keys changed from - ', paste(keys[!(keys == keysClean)], collapse = ", ")))
+    message(paste('                   to - ', paste(keysClean[!(keys == keysClean)], collapse = ", ")))
+    
+    keys <- keysClean
+  }
+  
+  return(keys)
+  
+}

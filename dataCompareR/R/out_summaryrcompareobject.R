@@ -78,13 +78,13 @@ summary.dataCompareRobject <- function(object, mismatchCount = 5, ...){
   ans$rounding <- FALSE
   ans$roundDigits <- 0
   
-  if (as.character(object$meta$args["roundDigits"] ) == "NA" | as.character(object$meta$args["roundDigits"] ) == "NULL") {
+  if (is.na(object$meta$roundDigits)) {
     # No rounding was performed
     # Leave as FALSE
   } else {
     # Rounding was performed
     ans$rounding <- TRUE
-    ans$roundDigits <- as.numeric(as.character(object$meta$args["roundDigits"] ))
+    ans$roundDigits <- as.numeric(object$meta$roundDigits)
   }
   
   
