@@ -1,9 +1,10 @@
 Package: dataCompareR
-Title: Compare two data frames and summarise the difference
-Version: 0.0.0.9005
+Title: Compare Two Data Frames and Summarise the Difference
+Version: 0.1.0
 Authors@R: c(person("Rob", "Noble-Eddy", email = "opensource@capitalone.com", role = c("aut", "cre")),
            person("Sarah", "Johnston", role = c("aut")),
            person("Sarah", "Pollicott", role = c("aut")),
+           person("Merlijn", "van Horssen", role = c("aut")),
            person("Lukas", "Drapal", role = c("ctb")),
            person("Nikolaos", "Perrakis", role = c("ctb")),
            person("Nikhil", "Thomas Joy", role = c("ctb")),
@@ -13,7 +14,6 @@ Authors@R: c(person("Rob", "Noble-Eddy", email = "opensource@capitalone.com", ro
            person("Kevin", "Chisholm", role = c("ctb")),
            person("Laura", "Joy", role = c("ctb")),
            person("Fergus", "Wadsley", role = c("ctb")),
-           person("Merlijn", "van Horssen", role = c("ctb")),
            person("Heather", "Hackett", role = c("ctb")),
            person("David", "Robinson", role = c("ctb")),
            person("Cheryl", "Renton", role = c("ctb")),
@@ -25,7 +25,7 @@ Description: dataCompareR aims to make it easy to compare two tabular data
     objects in R. It's specifically designed to show differences between two sets of
     data in a useful way that should make it easier to understand the differences,
     and if necessary, help you work out how to remedy them. In this regard, it aims
-    to offer a more useful output than `all.equal` when your two datasets do not
+    to offer a more useful output than `all.equal` when your two data sets do not
     match, but isn't intended to replace `all.equal` as a way to test for equality.
 Depends:
     R (>= 3.2.3)

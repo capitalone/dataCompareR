@@ -34,7 +34,7 @@ processFlow <- function(dfa, dfb, roundDigits, keys,mismatches, trimChars,argsIn
   validateData(dfa,dfb,keys)
   
   # 3. Create meta and update
-  rCompObj <- createMeta(rCompObj,dfa,dfb,argsIn ,timestamp = Sys.time() )
+  rCompObj <- createMeta(rCompObj,dfa,dfb,argsIn ,timestamp = Sys.time(),roundDigits )
   
   # 4. Prepare data
   preparedData <- prepareData(dfa, dfb, keys, trimChars)

@@ -28,10 +28,17 @@ listObsNotVerbose <- function(i, x, uniquevarlist, nObs) {
   mismatchesTail$rowNo <- as.numeric(rownames(mismatchesTail))
   
   obslist <- unique(rbind(mismatchesHead, mismatchesTail))
+  
+  # Value column must be a character to avoid missing factor level badness
+  obslist[,1] <- as.character(obslist[,1])
+  obslist[,2] <- as.character(obslist[,2])
+  
   rownames(obslist) <- NULL
   
   obslist <- unique(obslist[c(length(obslist), 1:length(obslist) - 1)])
   obslist <- obslist[order(obslist[, 1]) ,]
+  
+  
 }
 
 #' listObsVerbose 
