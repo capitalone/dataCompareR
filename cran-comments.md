@@ -5,7 +5,15 @@
 * win-builder (devel and release)
 
 ## R CMD check results
-There were no ERRORs or WARNINGs. 
+There were no ERRORs or WARNINGs. There is 1 note.
+
+* checking CRAN incoming feasibility ... NOTE
+Maintainer: 'Rob Noble-Eddy <opensource@capitalone.com>'
+
+New submission
+
+Non-FOSS package license (file LICENSE)
+
 
 ## Downstream dependencies
 No downstream dependencies
