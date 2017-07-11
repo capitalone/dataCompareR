@@ -34,7 +34,7 @@ Imports:
     knitr,
     stringi,
     markdown
-License: Apache License 2.0 | file LICENSE
+License: Apache License 2.0
 LazyData: true
 RoxygenNote: 6.0.1
 Suggests:
