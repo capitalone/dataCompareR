@@ -25,8 +25,8 @@ Description:  Easy comparison of two tabular data
     objects in R. Specifically designed to show differences between two sets of
     data in a useful way that should make it easier to understand the differences,
     and if necessary, help you work out how to remedy them. Aims
-    to offer a more useful output than `all.equal` when your two data sets do not
-    match, but isn't intended to replace `all.equal` as a way to test for equality.
+    to offer a more useful output than all.equal() when your two data sets do not
+    match, but isn't intended to replace all.equal() as a way to test for equality.
 Depends:
     R (>= 3.2.3)
 Imports:
@@ -34,7 +34,7 @@ Imports:
     knitr,
     stringi,
     markdown
-License: Apache License 2.0
+License: Apache License 2.0 | file LICENSE
 LazyData: true
 RoxygenNote: 6.0.1
 Suggests:
