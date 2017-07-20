@@ -97,7 +97,9 @@ This folder contains useful repeatable performance tests, but there are not run 
 
 ## CRAN Release Version History
 
-No CRAN releases yet!
+https://cran.r-project.org/package=dataCompareR
+
+Version 0.1.0 released on 2017-07-17
 
 ## External Contributors
 
