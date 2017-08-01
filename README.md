@@ -10,7 +10,13 @@ dataCompareR aims to make it easy to compare two tabular data objects in R. Itâ€
 
 ### Installing the package
 
-We intend to submit dataCompareR to the CRAN in the near future. In the meantime, you can install directly from GitHub via
+You can install from the CRAN via 
+
+```{r}
+install.packages("dataCompareR")
+```
+
+You can also install the latest version directly from GitHub via
 
 
 ```{r}
@@ -18,16 +24,6 @@ library(devtools)
 install_git('https://github.com/capitalone/dataCompareR.git', branch = 'master',
             subdir = 'dataCompareR', type = 'source', repos = NULL)
 ```
-    
-Alternatively, if this fails, download and extract the package on the same machine you're running R and then run
-
-
-```{r}
-library(devtools)
-install_local('/pathtodataCompareR/dataCompareR', type = 'source', repos=NULL)
-```
-
-Replacing /pathtodataCompareR with the path you downloaded the package to.
 
 ### Using dataCompareR
 
