@@ -45,7 +45,7 @@ mismatchHighStop <- function(trueFalseMatrix, maxMismatches) {
 #' @param DFA input data frame
 #' @param DFB input data frame  
 #' @param maxMismatches Integer. The max number of mismatches to assess, after which dataCompareR will stop 
-#' (without produceing an dataCompareR object). Designed to improve performance for large datasets.
+#' (without producing a dataCompareR object). Designed to improve performance for large datasets.
 #' @param keys character vector of index variables
 #' @return data frame containing keys and boolean logic of match/no match for each element
 #'         If data types are not equal returns FALSE. Treats NA and NaN as unequal.
