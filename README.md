@@ -22,7 +22,8 @@ You can also install the latest version directly from GitHub via
 ```{r}
 library(devtools)
 install_git('https://github.com/capitalone/dataCompareR.git', branch = 'master',
-            subdir = 'dataCompareR', type = 'source', repos = NULL)
+            subdir = 'dataCompareR', type = 'source', repos = NULL,
+            build_vignettes = TRUE)
 ```
 
 ### Using dataCompareR
