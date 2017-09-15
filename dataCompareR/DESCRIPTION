@@ -34,6 +34,8 @@ Imports:
     knitr,
     stringi,
     markdown
+URL: https://github.com/capitalone/dataCompareR
+BugReports: https://github.com/capitalone/dataCompareR/issues
 License: Apache License 2.0 | file LICENSE
 LazyData: true
 RoxygenNote: 6.0.1

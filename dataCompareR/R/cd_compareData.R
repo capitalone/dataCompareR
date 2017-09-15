@@ -20,7 +20,7 @@
 #' @param DFB dataframe as returend from prepareData
 #' @param keys vector of chars - names of index variables
 #' @param maxMismatches Integer. The max number of mismatches to assess, after which dataCompareR will stop 
-#' (without produceing an dataCompareR object). Designed to improve performance for large datasets.
+#' (without producing a dataCompareR object). Designed to improve performance for large datasets.
 #' @return mismatchObject containing mismatch data for each of the variables in
 #'         the dataframes
 #'
