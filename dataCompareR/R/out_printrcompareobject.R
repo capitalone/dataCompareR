@@ -73,7 +73,7 @@ print.dataCompareRobject <- function(x, nVars=5, nObs=5, verbose=F, ...) {
   }
   
 
-  if (verbose != T) {
+  if (verbose != TRUE) {
     varlist <- names(x$mismatches)
     
     uniquevarlist <- unique(append(head(varlist, nVars), tail(varlist, nVars)))
@@ -123,7 +123,7 @@ print.dataCompareRobject <- function(x, nVars=5, nObs=5, verbose=F, ...) {
     }
   }
   
-  if (verbose == T) {
+  if (verbose == TRUE) {
     uniquevarlist <- names(x$mismatches)
     
     if (length(uniquevarlist) == 0) {

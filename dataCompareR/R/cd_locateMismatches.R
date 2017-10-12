@@ -32,7 +32,7 @@ collapseClasses <- function(x) {
 mismatchHighStop <- function(trueFalseMatrix, maxMismatches) {
   # If we already have too many mismatches, stop
   if(!is.na(maxMismatches)) {
-    mismatchCount <- (ncol(trueFalseMatrix)*nrow(trueFalseMatrix)) - sum(trueFalseMatrix, na.rm = T)
+    mismatchCount <- (ncol(trueFalseMatrix)*nrow(trueFalseMatrix)) - sum(trueFalseMatrix, na.rm = TRUE)
     if(mismatchCount > maxMismatches) {
       stop(paste0("Detected at least ", mismatchCount, " mismatches. This exceeds the maximum mismatches",
                                                   " value of ", maxMismatches, " so dataCompareR has stopped." ))

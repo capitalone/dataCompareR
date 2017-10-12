@@ -24,12 +24,12 @@ test_that("trimCharVars correctly trims whitespace", {
   a <- as.character(c("The fat", "cat sat ", "   on a very   comfy", " mat"))
   b <- as.character(c("   gabba   ", "  boo ", "   gabba ", " boo "))
   c <- c(1,2,3,4)
-  df1 <- data.frame(a, b, c, stringsAsFactors = F)
+  df1 <- data.frame(a, b, c, stringsAsFactors = FALSE)
   
   a <- as.character(c("The fat", "cat sat", "on a very   comfy", "mat"))
   b <- as.character(c("gabba", "boo", "gabba", "boo"))
   c <- c(1,2,3,4)
-  df2 <- data.frame(a, b, c, stringsAsFactors = F)
+  df2 <- data.frame(a, b, c, stringsAsFactors = FALSE)
   
   
   expect_equal( trimCharVars(df1), df2 )

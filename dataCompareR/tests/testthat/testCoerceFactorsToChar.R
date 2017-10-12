@@ -30,7 +30,7 @@ context('coerceFactorsToChar')
 test_that("coerceFactorsToChar: DF with numeric factors", {
   df <- data.frame(test_col = c(1,3,3,4,3,1))
   df$test_col <- as.factor(df$test_col)
-  shouldbe <- data.frame(test_col = c("1","3","3","4","3","1"), stringsAsFactors = F)
+  shouldbe <- data.frame(test_col = c("1","3","3","4","3","1"), stringsAsFactors = FALSE)
   
   expect_equal(coerceFactorsToChar(df), shouldbe)
 })
@@ -44,7 +44,7 @@ test_that("coerceFactorsToChar: DF with characters as factors", {
 
 test_that("coerceFactorsToChar: DF with mix of num/char as factors",{
   base <- data.frame(test_col = as.factor(c(1, "cat", 4, 5, "dog", "Clarkson")))
-  check <- data.frame(test_col = c(1, "cat", 4, 5, "dog", "Clarkson"), stringsAsFactors = F)
+  check <- data.frame(test_col = c(1, "cat", 4, 5, "dog", "Clarkson"), stringsAsFactors = FALSE)
   
   expect_equal(coerceFactorsToChar(base), check)
 })
@@ -55,7 +55,7 @@ test_that("coerceFactorsToChar: DF with multiple columns to be coerced", {
                      col3 = c("0", "1", "0", "1"))
   check <- data.frame(col1 = c("a", "b", "brexit", "golf"), 
                      col2 = c("1", "2", ".", "999"), 
-                     col3 = c("0", "1", "0", "1"), stringsAsFactors = F)
+                     col3 = c("0", "1", "0", "1"), stringsAsFactors = FALSE)
   
   expect_equal(coerceFactorsToChar(base), check)
 })

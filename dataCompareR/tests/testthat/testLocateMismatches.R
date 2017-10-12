@@ -29,16 +29,16 @@ context("LocateMismatches")
 test_that("locateMismatches with a single key", {
   
   # Test DFs (random using pets)
-  DFA <- data.frame(k = c(1, 2, 3), pet = c("dog", "cat", "axolotl"), colour = c("brown", "white", "white"), count = c(1, 2, 1), stringsAsFactors = F)
-  DFB <- data.frame(k = c(1, 2, 3), pet = c("dog", "cat", "axolotl"), colour = c("brown", "brown", "white"), count = c(1, 2, 1), stringsAsFactors = F)
-  DFC <- data.frame(k = c(1, 2, 3), pet = c("dog", "cat", "wolf"), colour = c("brown", "white", "white"), count = c(1, 1, 2), stringsAsFactors = F)
-  DFD <- data.frame(k = c(1, 2, 3), pet = c("dog", "cat", "axolotl"), colour = c("brown", "white", "white"), count = c("1", "2", "1"), stringsAsFactors = F)
+  DFA <- data.frame(k = c(1, 2, 3), pet = c("dog", "cat", "axolotl"), colour = c("brown", "white", "white"), count = c(1, 2, 1), stringsAsFactors = FALSE)
+  DFB <- data.frame(k = c(1, 2, 3), pet = c("dog", "cat", "axolotl"), colour = c("brown", "brown", "white"), count = c(1, 2, 1), stringsAsFactors = FALSE)
+  DFC <- data.frame(k = c(1, 2, 3), pet = c("dog", "cat", "wolf"), colour = c("brown", "white", "white"), count = c(1, 1, 2), stringsAsFactors = FALSE)
+  DFD <- data.frame(k = c(1, 2, 3), pet = c("dog", "cat", "axolotl"), colour = c("brown", "white", "white"), count = c("1", "2", "1"), stringsAsFactors = FALSE)
   
   # Expected Results
-  ResAA <- data.frame(k = c(1, 2, 3), pet = c(T, T, T), colour = c(T, T, T), count = c(T, T, T), stringsAsFactors = F)
-  ResAB <- data.frame(k = c(1, 2, 3), pet = c(T, T, T), colour = c(T, F, T), count = c(T, T, T), stringsAsFactors = F)
-  ResAC <- data.frame(k = c(1, 2, 3), pet = c(T, T, F), colour = c(T, T, T), count = c(T, F, F), stringsAsFactors = F)
-  ResAD <- data.frame(k = c(1, 2, 3), pet = c(T, T, T), colour = c(T, T, T), count = c(F, F, F), stringsAsFactors = F)
+  ResAA <- data.frame(k = c(1, 2, 3), pet = c(T, T, T), colour = c(T, T, T), count = c(T, T, T), stringsAsFactors = FALSE)
+  ResAB <- data.frame(k = c(1, 2, 3), pet = c(T, T, T), colour = c(T, F, T), count = c(T, T, T), stringsAsFactors = FALSE)
+  ResAC <- data.frame(k = c(1, 2, 3), pet = c(T, T, F), colour = c(T, T, T), count = c(T, F, F), stringsAsFactors = FALSE)
+  ResAD <- data.frame(k = c(1, 2, 3), pet = c(T, T, T), colour = c(T, T, T), count = c(F, F, F), stringsAsFactors = FALSE)
   
   # Test
   expect_equal(locateMismatches(DFA, DFA, keys = "k"), ResAA)
@@ -51,17 +51,17 @@ test_that("locateMismatches with a single key", {
 test_that("locateMismatches with multiple keys", {
   
   # Test DFs
-  DFA <- data.frame(k1 = c(1, 1, 2), k2 = c(1, 2, 1), char = c("dog", "cat", "monkey"), num = c(10, 8, 6), stringsAsFactors = F)
-  DFB <- data.frame(k1 = c(1, 1, 2), k2 = c(1, 2, 1), char = c("dog", "dog", "monkey"), num = c(10, 8, 6), stringsAsFactors = F)
-  DFC <- data.frame(k1 = c(1, 1, 2), k2 = c(1, 2, 1), char = c("dog", "cat", "monkey"), num = c(10, 8, 0.1), stringsAsFactors = F)
-  DFD <- data.frame(k1 = c(1, 1, 2), k2 = c(1, 2, 1), char = c("dog", "dog", "dog"), num = c(1, 4, 7), stringsAsFactors = F)
+  DFA <- data.frame(k1 = c(1, 1, 2), k2 = c(1, 2, 1), char = c("dog", "cat", "monkey"), num = c(10, 8, 6), stringsAsFactors = FALSE)
+  DFB <- data.frame(k1 = c(1, 1, 2), k2 = c(1, 2, 1), char = c("dog", "dog", "monkey"), num = c(10, 8, 6), stringsAsFactors = FALSE)
+  DFC <- data.frame(k1 = c(1, 1, 2), k2 = c(1, 2, 1), char = c("dog", "cat", "monkey"), num = c(10, 8, 0.1), stringsAsFactors = FALSE)
+  DFD <- data.frame(k1 = c(1, 1, 2), k2 = c(1, 2, 1), char = c("dog", "dog", "dog"), num = c(1, 4, 7), stringsAsFactors = FALSE)
   
   # Expected Results
-  ResAA <- data.frame(k1 = c(1, 1, 2), k2 = c(1, 2, 1), char = c(T, T, T), num = c(T, T, T), stringsAsFactors = F)
-  ResAB <- data.frame(k1 = c(1, 1, 2), k2 = c(1, 2, 1), char = c(T, F, T), num = c(T, T, T), stringsAsFactors = F)
-  ResAC <- data.frame(k1 = c(1, 1, 2), k2 = c(1, 2, 1), char = c(T, T, T), num = c(T, T, F), stringsAsFactors = F)
-  ResAD <- data.frame(k1 = c(1, 1, 2), k2 = c(1, 2, 1), char = c(T, F, F), num = c(F, F, F), stringsAsFactors = F)
-  ResBD <- data.frame(k1 = c(1, 1, 2), k2 = c(1, 2, 1), char = c(T, T, F), num = c(F, F, F), stringsAsFactors = F)
+  ResAA <- data.frame(k1 = c(1, 1, 2), k2 = c(1, 2, 1), char = c(T, T, T), num = c(T, T, T), stringsAsFactors = FALSE)
+  ResAB <- data.frame(k1 = c(1, 1, 2), k2 = c(1, 2, 1), char = c(T, F, T), num = c(T, T, T), stringsAsFactors = FALSE)
+  ResAC <- data.frame(k1 = c(1, 1, 2), k2 = c(1, 2, 1), char = c(T, T, T), num = c(T, T, F), stringsAsFactors = FALSE)
+  ResAD <- data.frame(k1 = c(1, 1, 2), k2 = c(1, 2, 1), char = c(T, F, F), num = c(F, F, F), stringsAsFactors = FALSE)
+  ResBD <- data.frame(k1 = c(1, 1, 2), k2 = c(1, 2, 1), char = c(T, T, F), num = c(F, F, F), stringsAsFactors = FALSE)
   
   # Test
   expect_equal(locateMismatches(DFA, DFA, keys = c("k1", "k2")), ResAA)
@@ -80,10 +80,10 @@ test_that("locateMismatches handling NAs", {
   DFC <- data.frame(k = c(1, 2, 3), pet = c("dog", "cat", "axolotl"), colour = c("brown", "white", "red"), count = c(NaN, NaN, NaN), stringsAsFactors = FALSE)
   
   # Expected Results
-  ResAB <- data.frame(k = c(1, 2, 3), pet = c(T, T, T), colour = c(T, F, T), count = c(F, F, F), stringsAsFactors = F)
-  ResBB <- data.frame(k = c(1, 2, 3), pet = c(T, T, T), colour = c(T, T, T), count = c(T, T, T), stringsAsFactors = F)
-  ResBC <- data.frame(k = c(1, 2, 3), pet = c(T, T, T), colour = c(T, F, F), count = c(F, F, F), stringsAsFactors = F)
-  ResAC <- data.frame(k = c(1, 2, 3), pet = c(T, T, T), colour = c(T, T, F), count = c(F, F, F), stringsAsFactors = F)
+  ResAB <- data.frame(k = c(1, 2, 3), pet = c(T, T, T), colour = c(T, F, T), count = c(F, F, F), stringsAsFactors = FALSE)
+  ResBB <- data.frame(k = c(1, 2, 3), pet = c(T, T, T), colour = c(T, T, T), count = c(T, T, T), stringsAsFactors = FALSE)
+  ResBC <- data.frame(k = c(1, 2, 3), pet = c(T, T, T), colour = c(T, F, F), count = c(F, F, F), stringsAsFactors = FALSE)
+  ResAC <- data.frame(k = c(1, 2, 3), pet = c(T, T, T), colour = c(T, T, F), count = c(F, F, F), stringsAsFactors = FALSE)
   
   # Impossible to create DF with NULL entry
   

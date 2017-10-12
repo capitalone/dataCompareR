@@ -4,7 +4,7 @@
 \alias{executeCoercions}
 \title{executeCoercions:}
 \usage{
-executeCoercions(DFA, DFB, WhitespaceTrim = T)
+executeCoercions(DFA, DFB, WhitespaceTrim = TRUE)
 }
 \arguments{
 \item{DFA}{Input dataframe A}
