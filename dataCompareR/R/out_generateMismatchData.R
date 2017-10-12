@@ -71,7 +71,7 @@ generateMismatchData <- function(x, dfA, dfB, ...){
     # If there are no keys, we can use the following approach based on rowname
     if(is.null(x$meta$args$keys)) {
       #Extract list of unique row numbers where mismatches occur:
-      rowNoMismatches <- sort(unique(as.numeric(unlist(lapply(x$mismatches,row.names),use.names=F))))
+      rowNoMismatches <- sort(unique(as.numeric(unlist(lapply(x$mismatches,row.names),use.names= FALSE))))
 
       mismatchData <- list(DFA_mm = DFA[rowNoMismatches,],
                            DFB_mm = DFB[rowNoMismatches,])

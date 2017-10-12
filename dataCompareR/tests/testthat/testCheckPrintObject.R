@@ -42,8 +42,8 @@ if(require(titanic)) {
     p0 <- print(compareObject)
     p1 <- print(compareObject,nObs = 1)
     p2 <- print(compareObject,nObs = 2, nVars = 1)
-    p3 <- print(compareObject,verbose = T)
-    p4 <- print(compareObject,nObs = 2, nVars = 1,verbose = T)
+    p3 <- print(compareObject,verbose = TRUE)
+    p4 <- print(compareObject,nObs = 2, nVars = 1,verbose = TRUE)
     
     
     expect_null(p0, info = "Expect a NULL object to be created and a message sent to the console 'All variables match'")
@@ -59,15 +59,15 @@ if(require(titanic)) {
     
     # The object has already pre-determined structure
     
-    b1 <- rCompare(titanic,titanic2, trimChars = F, keys = 'PassengerId')
+    b1 <- rCompare(titanic,titanic2, trimChars = FALSE, keys = 'PassengerId')
    
     #Generate print output objects
     
     p0 <- print(b1)
     p1 <- print(b1,nObs = 1)
     p2 <- print(b1,nObs = 2, nVars = 1)
-    p3 <- print(b1,verbose = T)
-    p4 <- print(b1,nObs = 2, nVars = 1,verbose = T)
+    p3 <- print(b1,verbose = TRUE)
+    p4 <- print(b1,nObs = 2, nVars = 1,verbose = TRUE)
     
     #Test output is as expected:
     
@@ -175,10 +175,10 @@ test_that("test print rcompobj rows columns dropped messages", {
   text4 <- capture.output(print(comp4))
   
   # Check we see what we  expect
-  expect_that(any(grepl("All columns were compared, all rows were compared", text1, fixed = T)), is_true())
-  expect_that(any(grepl("All columns were compared, 4 row(s) were dropped from comparison", text2, fixed = T)), is_true())
-  expect_that(any(grepl("1 column(s) were dropped, all rows were compared", text3, fixed = T)), is_true())
-  expect_that(any(grepl("2 column(s) were dropped, 4 row(s) were dropped from comparison", text4, fixed = T)), is_true())
+  expect_that(any(grepl("All columns were compared, all rows were compared", text1, fixed = TRUE)), is_true())
+  expect_that(any(grepl("All columns were compared, 4 row(s) were dropped from comparison", text2, fixed = TRUE)), is_true())
+  expect_that(any(grepl("1 column(s) were dropped, all rows were compared", text3, fixed = TRUE)), is_true())
+  expect_that(any(grepl("2 column(s) were dropped, 4 row(s) were dropped from comparison", text4, fixed = TRUE)), is_true())
   
 })
 

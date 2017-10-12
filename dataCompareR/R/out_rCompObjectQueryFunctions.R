@@ -48,7 +48,7 @@ colsWithUnequalValues <- function(x, mismatches){
     maxDif <- as.character(suppressWarnings(unlist(
       apply(mismatches[[x]]['diffAB'], 2, function(x) { 
         if (is.numeric(x) & length(x) > 0) { 
-          max(abs(x), na.rm = T) 
+          max(abs(x), na.rm = TRUE) 
           } else {
             NA
             }
