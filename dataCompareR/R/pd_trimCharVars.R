@@ -20,7 +20,7 @@
 
 trimCharVars<-function(DF){
   
-  DF<-data.frame(sapply(DF, function(x) if (collapseClasses(x)=="character") {trimws(x, which = "both")} else {x}, simplify=F), stringsAsFactors=FALSE)
+  DF<-data.frame(sapply(DF, function(x) if (collapseClasses(x)=="character") {trimws(x, which = "both")} else {x}, simplify= FALSE), stringsAsFactors=FALSE)
   
   return(DF)
 }

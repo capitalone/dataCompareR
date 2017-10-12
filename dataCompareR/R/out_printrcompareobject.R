@@ -27,7 +27,7 @@
 #' rc1 <- rCompare(iris,iris)
 #' print(rc1)  
 
-print.dataCompareRobject <- function(x, nVars=5, nObs=5, verbose=F, ...) {
+print.dataCompareRobject <- function(x, nVars=5, nObs=5, verbose= FALSE, ...) {
   # Arg validation
   if(!is.numeric(nVars) | nVars < 1) {
     stop("nVars must be a positive number")

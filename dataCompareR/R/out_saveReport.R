@@ -32,7 +32,7 @@
 #' @examples  
 #' \dontrun{saveReport(rcObj, reportName = 'testReport')}
 
-saveReport <- function(compareObject, reportName, reportLocation = '.', HTMLReport=T, showInViewer = TRUE, stylesheet = NA) {
+saveReport <- function(compareObject, reportName, reportLocation = '.', HTMLReport= TRUE, showInViewer = TRUE, stylesheet = NA) {
   
   # Argument checkin
   if(!is.dataCompareRobject(compareObject)) {

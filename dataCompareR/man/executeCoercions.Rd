@@ -26,6 +26,6 @@ executeCoercions(DFA, DFB, WhitespaceTrim = TRUE)
 executeCoercions:
 }
 \examples{
-\dontrun{executeCoercions(DFA=iris,DFB=iris,WhitespaceTrim=T)}
+\dontrun{executeCoercions(DFA=iris,DFB=iris,WhitespaceTrim= TRUE)}
 }
 
