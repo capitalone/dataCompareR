@@ -1,0 +1,5 @@
+Package: dataCompareR
+Version: 0.1.0
+Depends: R (≥ 3.2.3)
+Imports: dplyr, knitr, stringi, markdown
+Suggests: testthat, data.table, tibble, bit64, rmarkdown, titanic
