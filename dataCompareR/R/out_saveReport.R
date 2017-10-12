@@ -90,7 +90,7 @@ saveReport <- function(compareObject, reportName, reportLocation = '.', HTMLRepo
     markdown::markdownToHTML(file = MdLocn, output = HTMLLocn, stylesheet= stylesheetToUse )
   }
   
-  if (HTMLReport == F & showInViewer == TRUE) {
+  if (HTMLReport == FALSE & showInViewer == TRUE) {
     message('Cannot display in viewer if HTML report is not enabled')
   }
   else {

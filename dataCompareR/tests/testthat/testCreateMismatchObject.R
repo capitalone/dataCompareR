@@ -49,7 +49,7 @@ test_that("Mismatches work", {
     x = rep(F, 10), 
     y = c(F, rep(T, 9)),
     z = c(rep(T, 9), F),
-    stringsAsFactors = F 
+    stringsAsFactors = FALSE 
   )
   
   str_index = c("id")
