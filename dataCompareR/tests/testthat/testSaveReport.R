@@ -36,12 +36,12 @@ test_that("checks save report works", {
   aaa <- rCompare(iris,iris2)
   
   # Check no errors
-  expect_error(saveReport(aaa, 'testing',reportLocation = '.', HTMLReport = T), NA)
-  expect_error(saveReport(aaa, 'testing', reportLocation = '.',HTMLReport = F), NA)
-  expect_error(saveReport(aaa,  'testing',reportLocation = '.', HTMLReport = T, showInViewer = F), NA)
-  expect_error(saveReport(aaa,  'testing',reportLocation = '.', HTMLReport = F, showInViewer = F), NA)
-  expect_error(saveReport(aaa, 'testing',reportLocation = '.', HTMLReport = T, showInViewer = T), NA)
-  expect_error(saveReport(aaa, 'testing',reportLocation = '.', HTMLReport = F, showInViewer = T), NA)
+  expect_error(saveReport(aaa, 'testing',reportLocation = '.', HTMLReport = TRUE), NA)
+  expect_error(saveReport(aaa, 'testing', reportLocation = '.',HTMLReport = FALSE), NA)
+  expect_error(saveReport(aaa,  'testing',reportLocation = '.', HTMLReport = TRUE, showInViewer = FALSE), NA)
+  expect_error(saveReport(aaa,  'testing',reportLocation = '.', HTMLReport = FALSE, showInViewer = FALSE), NA)
+  expect_error(saveReport(aaa, 'testing',reportLocation = '.', HTMLReport = TRUE, showInViewer = TRUE), NA)
+  expect_error(saveReport(aaa, 'testing',reportLocation = '.', HTMLReport = FALSE, showInViewer = TRUE), NA)
    
 })
 

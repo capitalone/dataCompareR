@@ -22,9 +22,9 @@
 #' \dontrun{dfA <- iris}
 #' \dontrun{dfB <- iris}
 #' \dontrun{keys <- NA}
-#' \dontrun{prepareData(dfA,dfB,keys, trimChars = T)}
+#' \dontrun{prepareData(dfA,dfB,keys, trimChars = TRUE)}
 
-prepareData <- function(dfA, dfB, keys = NA, trimChars = T) {
+prepareData <- function(dfA, dfB, keys = NA, trimChars = TRUE) {
   
   # ----- 1. Match columns ----- 
   colMatching <- matchColumns(dfA, dfB)

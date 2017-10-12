@@ -4,7 +4,7 @@
 \alias{print.dataCompareRobject}
 \title{Printing RCompare Output}
 \usage{
-\method{print}{dataCompareRobject}(x, nVars = 5, nObs = 5, verbose = F,
+\method{print}{dataCompareRobject}(x, nVars = 5, nObs = 5, verbose = FALSE,
   ...)
 }
 \arguments{
