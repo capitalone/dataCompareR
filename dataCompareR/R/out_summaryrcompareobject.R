@@ -99,7 +99,7 @@ summary.dataCompareRobject <- function(object, mismatchCount = 5, ...){
   
   ans$datasetSummary <- as.data.frame(matrix(c(object$meta$A$name, object$meta$A$rows, 
                         object$meta$A$cols, object$meta$B$name, object$meta$B$rows, object$meta$B$cols), 
-                        ncol=3, nrow=2, byrow=T))
+                        ncol=3, nrow=2, byrow= TRUE))
   names(ans$datasetSummary) <- c("Dataset Name", "Number of Rows",
                                  "Number of Columns")
   

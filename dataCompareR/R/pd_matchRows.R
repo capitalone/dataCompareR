@@ -109,7 +109,7 @@ matchSingleIndex <- function(df_a, df_b, index_key, original_keys)
   
   
   if(is.character(df_a[,index_key]) & is.character(df_b[,index_key])) {
-    index_subset_df <- data.frame(index_subset, stringsAsFactors = F)
+    index_subset_df <- data.frame(index_subset, stringsAsFactors = FALSE)
     names(index_subset_df) <- index_key
   
     df_a2 <- suppressMessages(inner_join(df_a, index_subset_df))

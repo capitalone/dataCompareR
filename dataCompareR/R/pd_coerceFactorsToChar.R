@@ -20,7 +20,7 @@
 
 coerceFactorsToChar<-function(DF){
   
-DF<-data.frame(sapply(DF, function(x) if (collapseClasses(x)=="factor") {as.character(x)} else {x}, simplify=F), stringsAsFactors=FALSE)
+DF<-data.frame(sapply(DF, function(x) if (collapseClasses(x)=="factor") {as.character(x)} else {x}, simplify= FALSE), stringsAsFactors=FALSE)
 
 return(DF)
 }
