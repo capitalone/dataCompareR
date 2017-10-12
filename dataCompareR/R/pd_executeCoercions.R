@@ -22,9 +22,9 @@
 #' @return \code{DFB} Dataframe with factor fields converted to character type and white space trimming (if option is selected by the user)
 #' @return \code{DataTypes} Dataframe with field types before and after cleaning for both DFA and DFB
 #' @examples 
-#' \dontrun{executeCoercions(DFA=iris,DFB=iris,WhitespaceTrim=T)}
+#' \dontrun{executeCoercions(DFA=iris,DFB=iris,WhitespaceTrim= TRUE)}
 
-executeCoercions<-function(DFA,DFB,WhitespaceTrim=T){
+executeCoercions<-function(DFA,DFB,WhitespaceTrim= TRUE){
 
 # Store original data types 
   DFATypesOrig <-sapply(DFA, function(x) class(x))
@@ -35,7 +35,7 @@ executeCoercions<-function(DFA,DFB,WhitespaceTrim=T){
   DFB<-coerceFactorsToChar(DF=DFB)
 
 # If WhitespaceTrim parameter is TRUE, execute white space trimming
-if (WhitespaceTrim==T){
+if (WhitespaceTrim== TRUE){
   DFA<-trimCharVars(DF=DFA)
   DFB<-trimCharVars(DF=DFB)
 }

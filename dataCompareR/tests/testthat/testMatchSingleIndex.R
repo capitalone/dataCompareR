@@ -28,16 +28,16 @@ test_that("matchSingleIndex correctly finds matching rows", {
   
   ky <- seq(1,10)
   dta <- as.character(paste("data", ky))
-  df1 <- data.frame(ky, dta, stringsAsFactors = F)
+  df1 <- data.frame(ky, dta, stringsAsFactors = FALSE)
   
   ky <- seq(7,15)
   dta <- as.character(paste("data", ky))
-  df2 <- data.frame(ky, dta, stringsAsFactors = F)
+  df2 <- data.frame(ky, dta, stringsAsFactors = FALSE)
   
   # Matching elements
   ky <- seq(7,10)
   dta <- as.character(paste("data", ky))
-  dfMtch <- data.frame(ky, dta, stringsAsFactors = F)
+  dfMtch <- data.frame(ky, dta, stringsAsFactors = FALSE)
 
   mtch <- matchSingleIndex(df1, df2, "ky") # Expected matched subset
   msgA <- seq(1,6)   # Expected missing indices from A

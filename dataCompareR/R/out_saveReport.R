@@ -32,7 +32,7 @@
 #' @examples  
 #' \dontrun{saveReport(rcObj, reportName = 'testReport')}
 
-saveReport <- function(compareObject, reportName, reportLocation = '.', HTMLReport=T, showInViewer = T, stylesheet = NA) {
+saveReport <- function(compareObject, reportName, reportLocation = '.', HTMLReport= TRUE, showInViewer = TRUE, stylesheet = NA) {
   
   # Argument checkin
   if(!is.dataCompareRobject(compareObject)) {
@@ -90,7 +90,7 @@ saveReport <- function(compareObject, reportName, reportLocation = '.', HTMLRepo
     markdown::markdownToHTML(file = MdLocn, output = HTMLLocn, stylesheet= stylesheetToUse )
   }
   
-  if (HTMLReport == F & showInViewer == T) {
+  if (HTMLReport == FALSE & showInViewer == TRUE) {
     message('Cannot display in viewer if HTML report is not enabled')
   }
   else {

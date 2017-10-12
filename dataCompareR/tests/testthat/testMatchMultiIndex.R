@@ -30,20 +30,20 @@ test_that("matchMultiIndex correctly finds matching rows", {
   dta <- as.character(paste("data", ky))
   ky1 <- ky %% 10
   ky2 <- ky - ky1
-  df1 <- data.frame(ky1, ky2, ky, dta, stringsAsFactors = F)
+  df1 <- data.frame(ky1, ky2, ky, dta, stringsAsFactors = FALSE)
   
   ky <- seq(7,25)
   ky1 <- ky %% 10
   ky2 <- ky - ky1
   dta <- as.character(paste("data", ky))
-  df2 <- data.frame(ky1, ky2, ky, dta, stringsAsFactors = F)
+  df2 <- data.frame(ky1, ky2, ky, dta, stringsAsFactors = FALSE)
   
   # Matching elements
   ky <- seq(7,20)
   ky1 <- ky %% 10
   ky2 <- ky - ky1
   dta <- as.character(paste("data", ky))
-  dfMtch <- data.frame(ky1, ky2, ky, dta, stringsAsFactors = F)
+  dfMtch <- data.frame(ky1, ky2, ky, dta, stringsAsFactors = FALSE)
 
   mtch <- matchMultiIndex(df1, df2, c("ky1", "ky2")) # Expected matched subset
   msgA <- seq(1,6)   # Expected missing indices from A

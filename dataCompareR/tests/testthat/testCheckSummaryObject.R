@@ -68,7 +68,7 @@ if(require(titanic)) {
     
     # The object has already pre-determined structure
     
-    b1 <- rCompare(titanic,titanic2, trimChars = F, keys = 'PassengerId')
+    b1 <- rCompare(titanic,titanic2, trimChars = FALSE, keys = 'PassengerId')
     
     #Generate print output objects
     
@@ -154,7 +154,7 @@ if(require(titanic)) {
   test_that("summary errors if incorrect args passed", {
     
     # The object has already pre-determined structure
-    b1 <- rCompare(titanic,titanic2, trimChars = F, keys = 'PassengerId')
+    b1 <- rCompare(titanic,titanic2, trimChars = FALSE, keys = 'PassengerId')
     
     #Generate print output objects
     
