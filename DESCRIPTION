@@ -7,4 +7,4 @@ License: Apache License 2.0
 Description: Compare two data frames or tables
 Title: dataCompareR
 Author: Capital One
-Maintainer: Capital One
+Maintainer: Capital One <opensource@capitalone.com>
