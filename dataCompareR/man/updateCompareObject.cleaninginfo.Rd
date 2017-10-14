@@ -17,4 +17,3 @@
 \description{
 Updates cleaning info in the compare object
 }
-

@@ -34,4 +34,3 @@ prepareData Prepares data for comparison in 3 stages.
 \dontrun{keys <- NA}
 \dontrun{prepareData(dfA,dfB,keys, trimChars = T)}
 }
-

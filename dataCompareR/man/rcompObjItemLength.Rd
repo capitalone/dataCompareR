@@ -2,7 +2,8 @@
 % Please edit documentation in R/out_rCompObjectQueryFunctions.R
 \name{rcompObjItemLength}
 \alias{rcompObjItemLength}
-\title{rcompObjItemLength: return length of an item, returning 0 if null}
+\title{rcompObjItemLength: return length of an item, returning 0 if null, and handling the fact that
+we might have a data frames or a vector}
 \usage{
 rcompObjItemLength(x)
 }
@@ -13,6 +14,6 @@ rcompObjItemLength(x)
 length, numeric
 }
 \description{
-rcompObjItemLength: return length of an item, returning 0 if null
+rcompObjItemLength: return length of an item, returning 0 if null, and handling the fact that
+we might have a data frames or a vector
 }
-

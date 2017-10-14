@@ -21,4 +21,3 @@ Vector of column names that do not match
 Extracts the column names only in one data frame from a table of 
 match information
 }
-

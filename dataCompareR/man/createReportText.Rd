@@ -23,4 +23,3 @@ Uses knitr package to create tables in the markdown (createReportText function) 
  
 \dontrun{createReportText(x=MysummaryCompareObject)}
 }
-

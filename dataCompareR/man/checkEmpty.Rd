@@ -18,4 +18,3 @@ checkEmpty
 \examples{
 \dontrun{checkEmpty(iris)}
 }
-

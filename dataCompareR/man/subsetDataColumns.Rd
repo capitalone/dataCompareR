@@ -19,4 +19,3 @@ matchColOut named list of data frames. subsetA,subsetB contain only columns comm
 \description{
 subsetDataColumns : create subset of DFA and DFB to contain matching column names for both data frames
 }
-

@@ -17,4 +17,3 @@
 \description{
 Takes raw info for meta and adds it to the compare object
 }
-
