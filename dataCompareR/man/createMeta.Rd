@@ -18,6 +18,8 @@ createMeta(dataCompareRobject, DFA, DFB, arguments, timestamp)
 \item{arguments}{Collection of arguments passed to compare object with labels that match the dataCompareR arg definitions}
 
 \item{timestamp}{Timestamp}
+
+\item{roundDigits}{The number of digits to round to}
 }
 \value{
 \code{dataCompareRobject}
