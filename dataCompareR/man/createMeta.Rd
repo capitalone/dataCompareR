@@ -6,7 +6,7 @@
 and puts it in a format usable by the updateCompareObject
 function}
 \usage{
-createMeta(dataCompareRobject, DFA, DFB, arguments, timestamp)
+createMeta(dataCompareRobject, DFA, DFB, arguments, timestamp, roundDigits)
 }
 \arguments{
 \item{dataCompareRobject}{Object of class dataCompareRobject}
