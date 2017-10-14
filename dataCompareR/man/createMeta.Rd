@@ -19,7 +19,7 @@ createMeta(dataCompareRobject, DFA, DFB, arguments, timestamp, roundDigits)
 
 \item{timestamp}{Timestamp}
 
-\item{roundDigits}{The number of digits to round to}
+\item{roundDigits}{The number of digits to round to, using \link[base]{round}}
 }
 \value{
 \code{dataCompareRobject}
@@ -29,4 +29,3 @@ Takes the raw info for the meta block of the output
 and puts it in a format usable by the updateCompareObject
 function
 }
-

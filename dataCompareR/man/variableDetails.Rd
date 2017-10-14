@@ -15,4 +15,3 @@ mismatch details
 \description{
 Create variable mismatch details
 }
-

@@ -19,4 +19,3 @@ isNotNull: is object not null
 \dontrun{isNotNull(NULL)}
 \dontrun{isNotNull(5)}
 }
-

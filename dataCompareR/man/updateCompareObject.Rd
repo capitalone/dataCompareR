@@ -21,4 +21,3 @@ Generic function for updating a compare object with
 information passed to it, that has methods based on the class
 of the info argument.
 }
-

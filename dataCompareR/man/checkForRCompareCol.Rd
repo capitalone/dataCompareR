@@ -18,4 +18,3 @@ checkForRcompareCol
 \examples{
 \dontrun{checkForRcompareCol(iris)}
 }
-

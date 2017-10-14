@@ -15,4 +15,3 @@ A string containing the required message
 \description{
 Returns data about matching
 }
-

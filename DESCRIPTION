@@ -8,3 +8,4 @@ Description: Compare two data frames or tables
 Title: dataCompareR
 Author: Capital One
 Maintainer: Capital One <opensource@capitalone.com>
+RoxygenNote: 6.0.1

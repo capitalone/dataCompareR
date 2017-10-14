@@ -33,4 +33,3 @@ Compare data. Wrapper for comparison functionality.
 
 \dontrun{compareData(pressure, pressure, keys = 'temperature')}
 }
-

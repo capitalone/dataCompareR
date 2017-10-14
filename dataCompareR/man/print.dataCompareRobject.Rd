@@ -30,4 +30,3 @@ Other dataCompareR.functions: \code{\link{generateMismatchData}},
   \code{\link{rCompare}}, \code{\link{saveReport}},
   \code{\link{summary.dataCompareRobject}}
 }
-

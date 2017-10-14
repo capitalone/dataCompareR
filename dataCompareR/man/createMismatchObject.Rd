@@ -24,4 +24,3 @@ Create mismatch object
 \examples{
 \dontrun{createMismatchObject(dataA, dataB, mism, idx)}
 }
-

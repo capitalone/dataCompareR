@@ -18,4 +18,3 @@ coerceFactorsToChar: convert all factor type fields to characters
 \examples{
 \dontrun{coerceFactorsToChar(iris)}
 }
-

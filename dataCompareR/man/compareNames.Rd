@@ -14,4 +14,3 @@ compareNames(colInfoA, colInfoB)
 \description{
 compareNames : compare the intersect of colInfoA and colInfoB and return boolean of matched columns for each data frame
 }
-

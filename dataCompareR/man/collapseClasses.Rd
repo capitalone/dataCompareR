@@ -19,4 +19,3 @@ collapseClasses. Collapse the classes of an object to a single string
 \dontrun{collapseClasses(iris)}
 \dontrun{collapseClasses("hello")}
 }
-

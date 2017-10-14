@@ -21,4 +21,3 @@ Mismatch table
 \description{
 Create variable mismatch table
 }
-

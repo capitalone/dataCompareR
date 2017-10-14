@@ -18,4 +18,3 @@ trimCharVars: trim white spaces in character variables from an input dataframe
 \examples{
 \dontrun{trimCharVars(iris)}
 }
-
