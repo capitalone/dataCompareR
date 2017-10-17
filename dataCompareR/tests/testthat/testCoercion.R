@@ -34,15 +34,15 @@ context("Coercion wrapper function")
 
 test_that("Coercion wrapper function", {
   
-  DF <- data.frame(numeric = c(1, 2, 3, 4), character = c("a", "b", "c", "d"), stringsAsFactors = F)
+  DF <- data.frame(numeric = c(1, 2, 3, 4), character = c("a", "b", "c", "d"), stringsAsFactors = FALSE)
   Fac <- data.frame(numeric = c("1", "2", "3", "4"), character = c("a", "b", "c", "d"))
   WSF <- data.frame(numeric = c(1.0, 2, 3.0, 4), character = c(" a ", "  b", "c ", "d"))
-  WS <- data.frame(numeric = c(1.0, 2, 3.0, 4), character = c(" a ", "  b", "c ", "d"), stringsAsFactors = F)
+  WS <- data.frame(numeric = c(1.0, 2, 3.0, 4), character = c(" a ", "  b", "c ", "d"), stringsAsFactors = FALSE)
   
-  FacAfter <- data.frame(numeric = c("1", "2", "3", "4"), character = c("a", "b", "c", "d"), stringsAsFactors = F)
-  WSFAfter <- data.frame(numeric = c(1.0, 2, 3.0, 4), character = c("a", "b", "c", "d"), stringsAsFactors = F)
-  WSFAfterWS <- data.frame(numeric = c(1.0, 2, 3.0, 4), character = c(" a ", "  b", "c ", "d"), stringsAsFactors = F)
-  WSAfter <- data.frame(numeric = c(1.0, 2, 3.0, 4), character = c("a", "b", "c", "d"), stringsAsFactors = F)
+  FacAfter <- data.frame(numeric = c("1", "2", "3", "4"), character = c("a", "b", "c", "d"), stringsAsFactors = FALSE)
+  WSFAfter <- data.frame(numeric = c(1.0, 2, 3.0, 4), character = c("a", "b", "c", "d"), stringsAsFactors = FALSE)
+  WSFAfterWS <- data.frame(numeric = c(1.0, 2, 3.0, 4), character = c(" a ", "  b", "c ", "d"), stringsAsFactors = FALSE)
+  WSAfter <- data.frame(numeric = c(1.0, 2, 3.0, 4), character = c("a", "b", "c", "d"), stringsAsFactors = FALSE)
   
   T1 <- data.frame(numeric = c("numeric", "numeric", "numeric", "numeric"), 
                    character = c("character", "character", "character", "character"), 

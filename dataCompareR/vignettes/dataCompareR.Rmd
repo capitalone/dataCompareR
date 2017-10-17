@@ -79,7 +79,7 @@ summary(compIris)
 
 Or you save a copy of the report using `saveReport`
 
-```{r saveReps, eval =F}
+```{r saveReps, eval = FALSE}
 # Write the summary to a file
 saveReport(compIris, reportName = 'compIris')
 ```
@@ -118,7 +118,7 @@ print(compPressure)
 
 We can also extract the mismatching data to explore futher using `generateMismatchData` which generates a list containing two data frames, each having the missing rows from the comparison.
 
-```{r loaddplyr, echo = F, message=F}
+```{r loaddplyr, echo = FALSE, message= FALSE}
 library(dplyr)
 ```
 

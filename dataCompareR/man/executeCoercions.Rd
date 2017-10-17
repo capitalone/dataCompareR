@@ -4,7 +4,7 @@
 \alias{executeCoercions}
 \title{executeCoercions:}
 \usage{
-executeCoercions(DFA, DFB, WhitespaceTrim = T)
+executeCoercions(DFA, DFB, WhitespaceTrim = TRUE)
 }
 \arguments{
 \item{DFA}{Input dataframe A}
@@ -26,5 +26,5 @@ executeCoercions(DFA, DFB, WhitespaceTrim = T)
 executeCoercions:
 }
 \examples{
-\dontrun{executeCoercions(DFA=iris,DFB=iris,WhitespaceTrim=T)}
+\dontrun{executeCoercions(DFA=iris,DFB=iris,WhitespaceTrim= TRUE)}
 }

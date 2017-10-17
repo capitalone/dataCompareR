@@ -104,7 +104,7 @@ test_that("check a key based match with 1 matching keys", {
   
   # Expect that the match keys are present in the output
   expect_that(any(grepl("No match key used, comparison is by row",textNoKeys)),is_true())
-  expect_that(any(grepl("Match keys : 1   - TEMPERATURE",textKeys, fixed = T)),is_true())
+  expect_that(any(grepl("Match keys : 1   - TEMPERATURE",textKeys, fixed = TRUE)),is_true())
   
 })
 

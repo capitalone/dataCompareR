@@ -7,7 +7,7 @@
             2. Match rows - filter dataframes to those rows that match and summarise differences
             3. Coerce data}
 \usage{
-prepareData(dfA, dfB, keys = NA, trimChars = T)
+prepareData(dfA, dfB, keys = NA, trimChars = TRUE)
 }
 \arguments{
 \item{dfA}{data frame. The first data object. dataCompareR will attempt to coerce all data objects to data frames.}
@@ -32,5 +32,5 @@ prepareData Prepares data for comparison in 3 stages.
 \dontrun{dfA <- iris}
 \dontrun{dfB <- iris}
 \dontrun{keys <- NA}
-\dontrun{prepareData(dfA,dfB,keys, trimChars = T)}
+\dontrun{prepareData(dfA,dfB,keys, trimChars = TRUE)}
 }

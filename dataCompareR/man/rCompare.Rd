@@ -5,7 +5,7 @@
 \title{Compare two data frames}
 \usage{
 rCompare(dfA, dfB, keys = NA, roundDigits = NA, mismatches = NA,
-  trimChars = F)
+  trimChars = FALSE)
 }
 \arguments{
 \item{dfA}{data frame. The first data object. dataCompareR will attempt to coerce all data objects to data frames.}

@@ -25,16 +25,16 @@ test_that("matchNoIndex correctly finds matching rows", {
   
   ky <- seq(1,20)
   dta <- as.character(paste("data", ky))
-  df1 <- data.frame(ky, dta, stringsAsFactors = F)
+  df1 <- data.frame(ky, dta, stringsAsFactors = FALSE)
   
   ky <- seq(1,15)
   dta <- as.character(paste("data", ky))
-  df2 <- data.frame(ky, dta, stringsAsFactors = F)
+  df2 <- data.frame(ky, dta, stringsAsFactors = FALSE)
   
   # Matching elements
   ky <- seq(1,15)
   dta <- as.character(paste("data", ky))
-  dfMtch <- data.frame(ky, dta, stringsAsFactors = F)
+  dfMtch <- data.frame(ky, dta, stringsAsFactors = FALSE)
 
   mtch <- matchNoIndex(df1, df2) # Expected matched subset
   msgA <- seq(16,20)   # Expected missing indices from A
@@ -51,16 +51,16 @@ test_that("matchNoIndex correctly finds matching rows", {
   
   ky <- seq(1,15)
   dta <- as.character(paste("data", ky))
-  df1 <- data.frame(ky, dta, stringsAsFactors = F)
+  df1 <- data.frame(ky, dta, stringsAsFactors = FALSE)
   
   ky <- seq(1,20)
   dta <- as.character(paste("data", ky))
-  df2 <- data.frame(ky, dta, stringsAsFactors = F)
+  df2 <- data.frame(ky, dta, stringsAsFactors = FALSE)
   
   # Matching elements
   ky <- seq(1,15)
   dta <- as.character(paste("data", ky))
-  dfMtch <- data.frame(ky, dta, stringsAsFactors = F)
+  dfMtch <- data.frame(ky, dta, stringsAsFactors = FALSE)
   
   mtch <- matchNoIndex(df1, df2) # Expected matched subset
   msgA <- integer()              # Expected missing indices from A

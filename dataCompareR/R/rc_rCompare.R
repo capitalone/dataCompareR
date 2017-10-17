@@ -60,7 +60,7 @@
 #' rCompare(pressure2,pressure2,key='temperature')
 #' rCompare(pressure2,pressure2,key='temperature', mismatches = 10)
 
-rCompare <- function(dfA,dfB,keys=NA, roundDigits = NA, mismatches = NA,trimChars = F) {
+rCompare <- function(dfA,dfB,keys=NA, roundDigits = NA, mismatches = NA,trimChars = FALSE) {
   
   message('Running rCompare...')
 
