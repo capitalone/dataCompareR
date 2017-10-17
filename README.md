@@ -1,6 +1,6 @@
 # dataCompareR
 [![](http://cranlogs.r-pkg.org/badges/dataCompareR)](http://cran.rstudio.com/web/packages/dataCompareR/index.html)
-[![Build Status](https://travis-ci.org/KrishanBhasin/dataCompareR.svg?branch=feature%2Ftravis-ci)](https://travis-ci.org/KrishanBhasin/dataCompareR)
+[![Build Status](https://travis-ci.org/KrishanBhasin/dataCompareR.svg?branch=master)](https://travis-ci.org/KrishanBhasin/dataCompareR)
 
 dataCompareR is an R package that allows users to compare two datasets and view a report on the similarities and differences. 
 
