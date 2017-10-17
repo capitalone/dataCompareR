@@ -12,4 +12,3 @@ A list of class dataCompareRObject
 \description{
 Generates an empty list of the correct class to store results
 }
-

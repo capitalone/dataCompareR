@@ -28,4 +28,3 @@ executeCoercions:
 \examples{
 \dontrun{executeCoercions(DFA=iris,DFB=iris,WhitespaceTrim= TRUE)}
 }
-

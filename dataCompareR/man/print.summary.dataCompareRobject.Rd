@@ -19,4 +19,3 @@ Printing summaryRCompare Output
 rc1 <- rCompare(iris,iris)
 summary(rc1)  
 }
-

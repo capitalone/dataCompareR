@@ -15,4 +15,3 @@ outputSectionHeader(headerName)
 \description{
 outputSectionHeader: creates an outputSectionHeader
 }
-

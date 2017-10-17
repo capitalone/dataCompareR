@@ -21,4 +21,3 @@ coerceData
 \dontrun{irisMatrix <- as.matrix(iris)}
 \dontrun{coerceData(irisMatrix,iris)}
 }
-

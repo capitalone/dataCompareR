@@ -17,4 +17,3 @@ metaDataInfo(name, df)
 \description{
 Creates a list of info about the dataframe.
 }
-

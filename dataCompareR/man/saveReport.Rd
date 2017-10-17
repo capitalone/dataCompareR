@@ -2,13 +2,13 @@
 % Please edit documentation in R/out_saveReport.R
 \name{saveReport}
 \alias{saveReport}
-\title{Save a report based on an dataCompareR object}
+\title{Save a report based on a dataCompareR object}
 \usage{
 saveReport(compareObject, reportName, reportLocation = ".", HTMLReport = TRUE,
   showInViewer = TRUE, stylesheet = NA)
 }
 \arguments{
-\item{compareObject}{a datCompareR object.}
+\item{compareObject}{a dataCompareR object.}
 
 \item{reportName}{String. The name of the report. Reports will be saved as reportName.Rmd and (optionally) reportName.html in 
 \code{reportLocation}}
@@ -38,4 +38,3 @@ Other dataCompareR.functions: \code{\link{generateMismatchData}},
   \code{\link{rCompare}},
   \code{\link{summary.dataCompareRobject}}
 }
-

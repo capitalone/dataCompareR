@@ -21,4 +21,3 @@ compObj Updated dataCompareRobject
 function for updating a compare object with  
 information passed to it from the match rows function
 }
-

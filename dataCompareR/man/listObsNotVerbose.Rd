@@ -21,4 +21,3 @@ A list of mismatching observations from start/end of mismatches
 \description{
 Return a summary of mismatching data
 }
-

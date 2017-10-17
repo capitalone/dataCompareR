@@ -20,4 +20,3 @@ A list containing the two dataframes, subsetted by shared indices, and a list wh
 \description{
 Generate two dataframes that contain the same rows based on a two-column index
 }
-
