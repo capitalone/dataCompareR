@@ -1,7 +1,6 @@
 language: r
 cache: packages
 before_install:
-  - sudo rm -vf /etc/apt/sources.list.d/*riak*
   - cd dataCompareR
 before_script:
   - "export DISPLAY=:99.0"
