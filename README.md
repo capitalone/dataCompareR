@@ -1,11 +1,10 @@
 # dataCompareR
-[![](http://cranlogs.r-pkg.org/badges/dataCompareR)](http://cran.rstudio.com/web/packages/dataCompareR/index.html)
-[![Build Status](https://travis-ci.org/CapitalOne/dataCompareR.svg?branch=dev)](https://travis-ci.org/CapitalOne/dataCompareR)
-
 
 dataCompareR is an R package that allows users to compare two datasets and view a report on the similarities and differences. 
 
 dataCompareR aims to make it easy to compare two tabular data objects in R. It’s specifically designed to show differences between two sets of data in a useful way that should make it easier to understand the differences, and if necessary, help you work out how to remedy them. In this regard, it aims to offer a more useful output than *all.equal* when your two datasets do not match, but isn’t intended to replace *all.equal* if you just want to test for equality.
+
+[![](http://cranlogs.r-pkg.org/badges/dataCompareR)](http://cran.rstudio.com/web/packages/dataCompareR/index.html)
 
 ## Getting started
 
