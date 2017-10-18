@@ -112,11 +112,11 @@ test_that("ComparisonOfUnequals", {
     b1a <- rCompare(titanic,titanic2,trimChars = TRUE, keys = 'PassengerId')
     b1b <- rCompare(titanic,titanic2,trimChars = TRUE)
     
-    b2 <- rCompare(titanic,titanic2, keys = 'PassengerId',,trimChars = FALSE,
-    b3 <- rCompare(titanic, titanic2shuffle, , keys = 'PassengerId',trimChars = FALSE,
-    b4 <- rCompare(titanic,titanic2DataTable, keys = 'PassengerId',trimChars = FALSE,
-    b5 <- rCompare(titanic,titanic2Matrix, keys = 'PassengerId',trimChars = FALSE,
-    b6 <- rCompare(titanic,titanic2Tibble, keys = 'PassengerId',trimChars = FALSE,
+    b2 <- rCompare(titanic,titanic2, keys = 'PassengerId',,trimChars = FALSE)
+    b3 <- rCompare(titanic, titanic2shuffle, , keys = 'PassengerId',trimChars = FALSE)
+    b4 <- rCompare(titanic,titanic2DataTable, keys = 'PassengerId',trimChars = FALSE)
+    b5 <- rCompare(titanic,titanic2Matrix, keys = 'PassengerId',trimChars = FALSE)
+    b6 <- rCompare(titanic,titanic2Tibble, keys = 'PassengerId',trimChars = FALSE)
   
     # Part 1 - determine that b1 looks correct
     # Based on
