@@ -112,11 +112,11 @@ test_that("ComparisonOfUnequals", {
     b1a <- rCompare(titanic,titanic2,trimChars = TRUE, keys = 'PassengerId')
     b1b <- rCompare(titanic,titanic2,trimChars = TRUE)
     
-    b2 <- rCompare(titanic,titanic2, keys = 'PassengerId',,trimChars = FALSE,
-    b3 <- rCompare(titanic, titanic2shuffle, , keys = 'PassengerId',trimChars = FALSE,
-    b4 <- rCompare(titanic,titanic2DataTable, keys = 'PassengerId',trimChars = FALSE,
-    b5 <- rCompare(titanic,titanic2Matrix, keys = 'PassengerId',trimChars = FALSE,
-    b6 <- rCompare(titanic,titanic2Tibble, keys = 'PassengerId',trimChars = FALSE,
+    b2 <- rCompare(titanic,titanic2, keys = 'PassengerId',,trimChars = FALSE)
+    b3 <- rCompare(titanic, titanic2shuffle, , keys = 'PassengerId',trimChars = FALSE)
+    b4 <- rCompare(titanic,titanic2DataTable, keys = 'PassengerId',trimChars = FALSE)
+    b5 <- rCompare(titanic,titanic2Matrix, keys = 'PassengerId',trimChars = FALSE)
+    b6 <- rCompare(titanic,titanic2Tibble, keys = 'PassengerId',trimChars = FALSE)
   
     # Part 1 - determine that b1 looks correct
     # Based on
@@ -284,11 +284,11 @@ test_that("ComparisonWithMissingRows", {
     
     # Can't do much about if the mismatches work, but, we can check equality where we can
     # Col matching should be the same
-    expect_that(all.equal(c1$colMatching,c2$colMatching),equals(T))
-    expect_that(all.equal(c3$colMatching,c2$colMatching),equals(T))
+    expect_that(all.equal(c1$colMatching,c2$colMatching),equals(TRUE))
+    expect_that(all.equal(c3$colMatching,c2$colMatching),equals(TRUE))
   
     # Same # mismatches in 2/3 (which is to say, 0)
-    expect_that(length(c3$mismatches) == length(c2$mismatches),equals(T))
+    expect_that(length(c3$mismatches) == length(c2$mismatches),equals(TRUE))
     
     # Could do more here, but won't
   }
