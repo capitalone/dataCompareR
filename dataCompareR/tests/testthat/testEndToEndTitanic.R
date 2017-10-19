@@ -284,11 +284,11 @@ test_that("ComparisonWithMissingRows", {
     
     # Can't do much about if the mismatches work, but, we can check equality where we can
     # Col matching should be the same
-    expect_that(all.equal(c1$colMatching,c2$colMatching),equals(T))
-    expect_that(all.equal(c3$colMatching,c2$colMatching),equals(T))
+    expect_that(all.equal(c1$colMatching,c2$colMatching),equals(TRUE))
+    expect_that(all.equal(c3$colMatching,c2$colMatching),equals(TRUE))
   
     # Same # mismatches in 2/3 (which is to say, 0)
-    expect_that(length(c3$mismatches) == length(c2$mismatches),equals(T))
+    expect_that(length(c3$mismatches) == length(c2$mismatches),equals(TRUE))
     
     # Could do more here, but won't
   }
