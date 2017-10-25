@@ -2,7 +2,7 @@
 
 |CRAN downloads|`dev` build|`master` build|
 |------|-----|-----|
-|[![](http://cranlogs.r-pkg.org/badges/dataCompareR)](http://cran.rstudio.com/web/packages/dataCompareR/index.html) |[![Build Status](https://travis-ci.org/CapitalOne/dataCompareR.svg?branch=dev)](https://travis-ci.org/CapitalOne/dataCompareR) | [![Build Status](https://travis-ci.org/CapitalOne/dataCompareR.svg?branch=master)](https://travis-ci.org/CapitalOne/dataCompareR)|
+|[![](http://cranlogs.r-pkg.org/badges/dataCompareR)](http://cran.rstudio.com/web/packages/dataCompareR/index.html) |[![Build Status](https://travis-ci.org/capitalone/dataCompareR.svg?branch=dev)](https://travis-ci.org/capitalone/dataCompareR) | [![Build Status](https://travis-ci.org/capitalone/dataCompareR.svg?branch=master)](https://travis-ci.org/capitalone/dataCompareR)|
 
 
 dataCompareR is an R package that allows users to compare two datasets and view a report on the similarities and differences. 
