@@ -83,7 +83,7 @@ Code is commented using ROxygen2 headers, which is used to automatically create 
 
 #### dataCompareR/tests/testthat
 
-Automated tests that are run via
+Automated tests that are run via 
 
 ``devtools::test()``
 
