@@ -13,7 +13,7 @@ dataCompareR aims to make it easy to compare two tabular data objects in R. Itâ€
 
 ### Installing the package
 
-You can install from the CRAN via 
+You can install from the CRAN via: 
 
 ```{r}
 install.packages("dataCompareR")
