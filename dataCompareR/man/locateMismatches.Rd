@@ -23,4 +23,3 @@ data frame containing keys and boolean logic of match/no match for each element
 \description{
 Checks whether elements in two input data frames are equal.
 }
-

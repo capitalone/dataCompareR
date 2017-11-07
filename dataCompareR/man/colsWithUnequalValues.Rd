@@ -17,4 +17,3 @@ data frame with a summary of the mismatching column
 \description{
 colsWithUnequalValues: a dataframe summarising a column with unequal values
 }
-

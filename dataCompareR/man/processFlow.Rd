@@ -29,4 +29,3 @@ rounded to /code{roundDigits} decimal places using \link[base]{round}.}
 \description{
 processFlow Handles the process flow for the whole package
 }
-

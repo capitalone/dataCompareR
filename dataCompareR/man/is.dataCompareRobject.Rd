@@ -15,4 +15,3 @@ A boolean: TRUE if object is class dataCompareRobject and FALSE if not
 \description{
 Check object is of class dataCompareRobject
 }
-

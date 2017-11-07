@@ -17,4 +17,3 @@ createColMatching(compObj, colMatchInfo)
 \description{
 Converts the output of the column matching logic to something consumable by updateCompareObject.
 }
-

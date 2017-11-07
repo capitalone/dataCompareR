@@ -32,7 +32,7 @@ collapseClasses <- function(x) {
 mismatchHighStop <- function(trueFalseMatrix, maxMismatches) {
   # If we already have too many mismatches, stop
   if(!is.na(maxMismatches)) {
-    mismatchCount <- (ncol(trueFalseMatrix)*nrow(trueFalseMatrix)) - sum(trueFalseMatrix, na.rm = T)
+    mismatchCount <- (ncol(trueFalseMatrix)*nrow(trueFalseMatrix)) - sum(trueFalseMatrix, na.rm = TRUE)
     if(mismatchCount > maxMismatches) {
       stop(paste0("Detected at least ", mismatchCount, " mismatches. This exceeds the maximum mismatches",
                                                   " value of ", maxMismatches, " so dataCompareR has stopped." ))
@@ -45,7 +45,7 @@ mismatchHighStop <- function(trueFalseMatrix, maxMismatches) {
 #' @param DFA input data frame
 #' @param DFB input data frame  
 #' @param maxMismatches Integer. The max number of mismatches to assess, after which dataCompareR will stop 
-#' (without produceing an dataCompareR object). Designed to improve performance for large datasets.
+#' (without producing a dataCompareR object). Designed to improve performance for large datasets.
 #' @param keys character vector of index variables
 #' @return data frame containing keys and boolean logic of match/no match for each element
 #'         If data types are not equal returns FALSE. Treats NA and NaN as unequal.
@@ -93,15 +93,15 @@ locateMismatches <- function(DFA, DFB, keys=NULL, maxMismatches=NA){
       subsetB <- select_(DFB,.dots = cols2Diff)
       
       # Look for NA's
-      isNA_A <- mutate_each(subsetA, funs(is.na))
-      isNA_B <- mutate_each(subsetB, funs(is.na))
+      isNA_A <- mutate_all(subsetA, funs(is.na))
+      isNA_B <- mutate_all(subsetB, funs(is.na))
       
       # Find any cells impacted by NA's
       anyNA <- isNA_A | isNA_B
       
       # and repeat the above for NAN's
-      isNaN_A <- mutate_each(subsetA, funs(is.nan))
-      isNaN_B <- mutate_each(subsetB, funs(is.nan))
+      isNaN_A <- mutate_all(subsetA, funs(is.nan))
+      isNaN_B <- mutate_all(subsetB, funs(is.nan))
       anyNaN <- isNaN_A | isNaN_B
       
       # find matching NA or NaNs

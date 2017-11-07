@@ -6,7 +6,7 @@
 and puts it in a format usable by the updateCompareObject
 function}
 \usage{
-createMeta(dataCompareRobject, DFA, DFB, arguments, timestamp)
+createMeta(dataCompareRobject, DFA, DFB, arguments, timestamp, roundDigits)
 }
 \arguments{
 \item{dataCompareRobject}{Object of class dataCompareRobject}
@@ -18,6 +18,8 @@ createMeta(dataCompareRobject, DFA, DFB, arguments, timestamp)
 \item{arguments}{Collection of arguments passed to compare object with labels that match the dataCompareR arg definitions}
 
 \item{timestamp}{Timestamp}
+
+\item{roundDigits}{The number of digits to round to, using \link[base]{round}}
 }
 \value{
 \code{dataCompareRobject}
@@ -27,4 +29,3 @@ Takes the raw info for the meta block of the output
 and puts it in a format usable by the updateCompareObject
 function
 }
-

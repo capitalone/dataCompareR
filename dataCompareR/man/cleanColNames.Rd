@@ -15,4 +15,3 @@ colInfo dataframe containing original and treated column names of DF
 \description{
 cleanColNames : get colnames, remove leading and trailing whitespace and push to upper case
 }
-

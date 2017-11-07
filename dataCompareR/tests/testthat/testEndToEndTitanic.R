@@ -32,14 +32,14 @@ test_that("ComparisonOfEquals", {
     #           and it shouldn't matter what the formats are 
     
     # compare to itself , with or without keys should be the same
-    a1 <- rCompare(titanic2, titanic2, trimChars = T) 
-    a2 <- rCompare(titanic2, titanic2, keys = 'PassengerId', trimChars = T)
+    a1 <- rCompare(titanic2, titanic2, trimChars = TRUE) 
+    a2 <- rCompare(titanic2, titanic2, keys = 'PassengerId', trimChars = TRUE)
     # or with a different order, and keys
-    a3 <- rCompare(titanic2, titanic2shuffle, keys = 'PassengerId', trimChars = T)
+    a3 <- rCompare(titanic2, titanic2shuffle, keys = 'PassengerId', trimChars = TRUE)
     # And the source data format should not matter
-    a4 <- rCompare(titanic2, titanic2DataTable, keys = 'PassengerId', trimChars = T)
-    a5 <- rCompare(titanic2, titanic2Matrix, keys = 'PassengerId', trimChars = T)
-    a6 <- rCompare(titanic2, titanic2Tibble, keys = 'PassengerId', trimChars = T)
+    a4 <- rCompare(titanic2, titanic2DataTable, keys = 'PassengerId', trimChars = TRUE)
+    a5 <- rCompare(titanic2, titanic2Matrix, keys = 'PassengerId', trimChars = TRUE)
+    a6 <- rCompare(titanic2, titanic2Tibble, keys = 'PassengerId', trimChars = TRUE)
   
     #  a1 is direct A:A comparison, so check that the results are expected
     
@@ -55,15 +55,15 @@ test_that("ComparisonOfEquals", {
     expect_that(length(a1$mismatches), equals(0) )
     expect_that(length(a1$matches), equals(ncol(titanic2) ))
     
-    expect_that(all.equal(a1$meta$A,a1$meta$B), equals(T))
+    expect_that(all.equal(a1$meta$A,a1$meta$B), equals(TRUE))
     
     # a2 should match on matching details, but the object will differ a little due
     # to a2 using a match key
     
-    expect_that(all.equal(a1$colMatching,a2$colMatching),equals(T))
+    expect_that(all.equal(a1$colMatching,a2$colMatching),equals(TRUE))
     # Cannot compare row matching, details are different
-    expect_that(all.equal(a1$cleaninginfo,a2$cleaninginfo), equals(T))
-    expect_that(all.equal(a1$mismatches,a2$mismatches), equals(T))
+    expect_that(all.equal(a1$cleaninginfo,a2$cleaninginfo), equals(TRUE))
+    expect_that(all.equal(a1$mismatches,a2$mismatches), equals(TRUE))
     # Matches will exclude the key column, so should be out by 1
     expect_that(length(a1$matches) - length(a2$matches), equals(1))
     
@@ -108,15 +108,15 @@ test_that("ComparisonOfUnequals", {
     # Create a series of data we can use for testing with a single index
     source('createTitanicDatasets.R')
     
-    b1 <- rCompare(titanic,titanic2, trimChars = F, keys = 'PassengerId')
-    b1a <- rCompare(titanic,titanic2,trimChars = T, keys = 'PassengerId')
-    b1b <- rCompare(titanic,titanic2,trimChars = T)
+    b1 <- rCompare(titanic,titanic2, trimChars = FALSE, keys = 'PassengerId')
+    b1a <- rCompare(titanic,titanic2,trimChars = TRUE, keys = 'PassengerId')
+    b1b <- rCompare(titanic,titanic2,trimChars = TRUE)
     
-    b2 <- rCompare(titanic,titanic2, keys = 'PassengerId',,trimChars = F)
-    b3 <- rCompare(titanic, titanic2shuffle, , keys = 'PassengerId',trimChars = F)
-    b4 <- rCompare(titanic,titanic2DataTable, keys = 'PassengerId',trimChars = F)
-    b5 <- rCompare(titanic,titanic2Matrix, keys = 'PassengerId',trimChars = F)
-    b6 <- rCompare(titanic,titanic2Tibble, keys = 'PassengerId',trimChars = F)
+    b2 <- rCompare(titanic,titanic2, keys = 'PassengerId',,trimChars = FALSE)
+    b3 <- rCompare(titanic, titanic2shuffle, , keys = 'PassengerId',trimChars = FALSE)
+    b4 <- rCompare(titanic,titanic2DataTable, keys = 'PassengerId',trimChars = FALSE)
+    b5 <- rCompare(titanic,titanic2Matrix, keys = 'PassengerId',trimChars = FALSE)
+    b6 <- rCompare(titanic,titanic2Tibble, keys = 'PassengerId',trimChars = FALSE)
   
     # Part 1 - determine that b1 looks correct
     # Based on
@@ -250,9 +250,9 @@ test_that("ComparisonWithMissingRows", {
     # Create a subset of the dataset to test for missing rows
     titanic3 <- titanic2[1:800,]
     
-    c1 <- rCompare(titanic,titanic3, trimChars = T, keys = 'PassengerId')
-    c2 <- rCompare(titanic2,titanic3, trimChars = T, keys = 'PassengerId')
-    c3 <- rCompare(titanic3,titanic2, trimChars = T, keys = 'PassengerId')
+    c1 <- rCompare(titanic,titanic3, trimChars = TRUE, keys = 'PassengerId')
+    c2 <- rCompare(titanic2,titanic3, trimChars = TRUE, keys = 'PassengerId')
+    c3 <- rCompare(titanic3,titanic2, trimChars = TRUE, keys = 'PassengerId')
     
     
     # Both should match on all columns
@@ -284,11 +284,11 @@ test_that("ComparisonWithMissingRows", {
     
     # Can't do much about if the mismatches work, but, we can check equality where we can
     # Col matching should be the same
-    expect_that(all.equal(c1$colMatching,c2$colMatching),equals(T))
-    expect_that(all.equal(c3$colMatching,c2$colMatching),equals(T))
+    expect_that(all.equal(c1$colMatching,c2$colMatching),equals(TRUE))
+    expect_that(all.equal(c3$colMatching,c2$colMatching),equals(TRUE))
   
     # Same # mismatches in 2/3 (which is to say, 0)
-    expect_that(length(c3$mismatches) == length(c2$mismatches),equals(T))
+    expect_that(length(c3$mismatches) == length(c2$mismatches),equals(TRUE))
     
     # Could do more here, but won't
   }
@@ -304,8 +304,8 @@ test_that("ComparisonWithMissingCols", {
     # Create a subset of the dataset to test for missing rows
     titanic3 <- titanic2[,1:10]
     
-    d1 <- rCompare(titanic3,titanic2, trimChars = T, keys = 'PassengerId')
-    d2 <- rCompare(titanic2,titanic3, trimChars = T, keys = 'PassengerId')
+    d1 <- rCompare(titanic3,titanic2, trimChars = TRUE, keys = 'PassengerId')
+    d2 <- rCompare(titanic2,titanic3, trimChars = TRUE, keys = 'PassengerId')
     
     # Again, we'll only check a few of the easier aspects
     

@@ -20,4 +20,3 @@ checkKeysExist
 \examples{
 \dontrun{checkKeysExist(iris, 'columnName')}
 }
-

@@ -15,4 +15,3 @@ ordered colInfo dataframe containing original and treated column names of DF
 \description{
 orderColumns: order columns by treated column names
 }
-

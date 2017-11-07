@@ -12,4 +12,3 @@ currentObjVersion()
 \description{
 Place to store and access the current object version.
 }
-

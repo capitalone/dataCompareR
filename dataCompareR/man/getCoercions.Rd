@@ -15,4 +15,3 @@ getCoercions(typesDf)
 \description{
 Subsets on the variables that have a coercion.
 }
-

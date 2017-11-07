@@ -17,4 +17,3 @@ Nothing. Stops if threshold exceeded
 \description{
 mismatchHighStop Checks if we've exceeded threshold of mismatches
 }
-

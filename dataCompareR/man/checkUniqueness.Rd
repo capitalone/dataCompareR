@@ -19,4 +19,3 @@ Checks that a list of indexes areunique
 \dontrun{checkUniqueness(c('car','van','van'))}
 \dontrun{checkUniqueness(c('car','van','bus'))}
 }
-

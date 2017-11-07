@@ -2,16 +2,16 @@
 % Please edit documentation in R/out_generateMismatchData.R
 \name{generateMismatchData}
 \alias{generateMismatchData}
-\title{Extract data from an dataCompareR comparison}
+\title{Extract data from a dataCompareR comparison}
 \usage{
 generateMismatchData(x, dfA, dfB, ...)
 }
 \arguments{
-\item{x}{An dataCompareRobject.}
+\item{x}{A dataCompareRobject.}
 
-\item{dfA}{Data frame (or object coercable to a data frame). One of the two data frames used in the initial dataCompareR.}
+\item{dfA}{Data frame (or object coercable to a data frame). One of the two data frames used in the initial rCompare call.}
 
-\item{dfB}{Data frame (or object coercable to a data frame). One of the two data frames used in the initial dataCompareR.}
+\item{dfB}{Data frame (or object coercable to a data frame). One of the two data frames used in the initial rCompare call.}
 
 \item{...}{Unused currently, may be used in future}
 }
@@ -30,4 +30,3 @@ Other dataCompareR.functions: \code{\link{print.dataCompareRobject}},
   \code{\link{rCompare}}, \code{\link{saveReport}},
   \code{\link{summary.dataCompareRobject}}
 }
-

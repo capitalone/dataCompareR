@@ -17,4 +17,3 @@ createCleaningInfo(compObj, cleaningInfo)
 \description{
 Converts cleaning info into a format consumable by updateCompareObject.
 }
-

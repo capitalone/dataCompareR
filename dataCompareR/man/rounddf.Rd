@@ -17,4 +17,3 @@ A rounded data frame
 \description{
 Round all numeric fields in a data frame
 }
-

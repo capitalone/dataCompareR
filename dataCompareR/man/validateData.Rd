@@ -22,4 +22,3 @@ validateData : routine to validate the input data
 \examples{
 \dontrun{validateData(iris,iris)}
 }
-

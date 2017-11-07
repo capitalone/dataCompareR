@@ -18,4 +18,3 @@ cat's lines to the screen (or to be captured)
 \description{
 createTextSummary: create a text based summary of an dataCompareR object
 }
-

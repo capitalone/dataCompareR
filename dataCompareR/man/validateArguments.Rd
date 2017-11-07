@@ -10,8 +10,8 @@ validateArguments(matchKey = NA, roundDigits = NA, coerceCols = TRUE,
 \arguments{
 \item{matchKey}{A character or character vector of column names to match on}
 
-\item{roundDigits}{Integer. If NA, numerics are not rounded before comparison. If /code{roundDigits} is specified, numerics are 
-rounded to /code{roundDigits} decimal places using \link[base]{round}.}
+\item{roundDigits}{Integer. If NA, numerics are not rounded before comparison. If \code{roundDigits} is specified, numerics are 
+rounded to \code{roundDigits} decimal places using \link[base]{round}.}
 
 \item{coerceCols}{Boolean - do we coerce columns names?}
 
@@ -27,4 +27,3 @@ validateArguments
 \dontrun{validateArguments('plantName',1E-8,T,1000)}
 \dontrun{validateArguments('colorName',1E-9,F,10)}
 }
-
