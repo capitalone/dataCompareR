@@ -4,8 +4,8 @@
 \alias{saveReport}
 \title{Save a report based on a dataCompareR object}
 \usage{
-saveReport(compareObject, reportName, reportLocation = ".", HTMLReport = TRUE,
-  showInViewer = TRUE, stylesheet = NA)
+saveReport(compareObject, reportName, reportLocation = ".",
+  HTMLReport = TRUE, showInViewer = TRUE, stylesheet = NA)
 }
 \arguments{
 \item{compareObject}{a dataCompareR object.}

@@ -47,6 +47,9 @@ mismatchHighStop <- function(trueFalseMatrix, maxMismatches) {
 #' @param maxMismatches Integer. The max number of mismatches to assess, after which dataCompareR will stop 
 #' (without producing a dataCompareR object). Designed to improve performance for large datasets.
 #' @param keys character vector of index variables
+#' 
+#' @importFrom dplyr mutate_all
+#' 
 #' @return data frame containing keys and boolean logic of match/no match for each element
 #'         If data types are not equal returns FALSE. Treats NA and NaN as unequal.
 locateMismatches <- function(DFA, DFB, keys=NULL, maxMismatches=NA){
