@@ -1,8 +1,7 @@
 ## Test environments
-* local Windows 10 install, R 3.3.3
 * local Windows 10 install, R 3.4.0
 * RHEL 6 server, R 3.2.3
-* win-builder (devel and release)
+* win-builder (devel, release, oldrelease)
 
 ## R CMD check results
 Status: OK
