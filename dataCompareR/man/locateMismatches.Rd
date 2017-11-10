@@ -14,7 +14,7 @@ locateMismatches(DFA, DFB, keys = NULL, maxMismatches = NA)
 \item{keys}{character vector of index variables}
 
 \item{maxMismatches}{Integer. The max number of mismatches to assess, after which dataCompareR will stop 
-(without produceing an dataCompareR object). Designed to improve performance for large datasets.}
+(without producing a dataCompareR object). Designed to improve performance for large datasets.}
 }
 \value{
 data frame containing keys and boolean logic of match/no match for each element

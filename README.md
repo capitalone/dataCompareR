@@ -7,7 +7,7 @@
 
 dataCompareR is an R package that allows users to compare two datasets and view a report on the similarities and differences. 
 
-dataCompareR aims to make it easy to compare two tabular data objects in R. It’s specifically designed to show differences between two sets of data in a useful way that should make it easier to understand the differences, and if necessary, help you work out how to remedy them. In this regard, it aims to offer a more useful output than *all.equal* when your two datasets do not match, but isn’t intended to replace *all.equal* if you just want to test for equality.
+dataCompareR aims to make it easy to compare two tabular data objects in R. It’s specifically designed to show differences between two sets of data in a useful way that should make it easier to understand the differences, and if necessary, help you work out how to remedy them. In this regard, it aims to offer a more useful output than *all.equal* when your two datasets do not match, but isn’t intended to replace *all.equal* if you just want a binary test for equality.
 
 ## Getting started
 
@@ -87,9 +87,9 @@ Automated tests that are run via
 
 ``devtools::test()``
 
-This consists of both unit tests and some end-to-end tests that **MUST** pass before any code is merged to dev or main. There is no exception to this - if your code change breaks an existing test, then it is your responsibility to fix it! 
+This consists of both unit tests and some end-to-end tests that **MUST** pass before any code is merged to dev or main. We've added Travis integration, so this is now mandated. If your development code change breaks an existing test, then it is your responsibility to fix it! 
 
-The current unit test coverage can be founbd in `testing.md` -  please feel free to add more tests!
+The current unit test coverage can be found in `testing.md` -  please feel free to add more tests, and regenerate this file using `covR`.
 
 #### dataCompareR/tests/performancetesting
 

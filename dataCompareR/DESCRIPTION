@@ -1,6 +1,6 @@
 Package: dataCompareR
 Title: Compare Two Data Frames and Summarise the Difference
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(person("Rob", "Noble-Eddy", email = "opensource@capitalone.com", role = c("aut", "cre")),
            person("Sarah", "Johnston", role = c("aut")),
            person("Sarah", "Pollicott", role = c("aut")),
@@ -30,7 +30,7 @@ Description:  Easy comparison of two tabular data
 Depends:
     R (>= 3.2.3)
 Imports:
-    dplyr,
+    dplyr (>= 0.5.0),
     knitr,
     stringi,
     markdown
