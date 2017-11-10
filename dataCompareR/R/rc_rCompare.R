@@ -36,7 +36,6 @@
 #' @importFrom dplyr arrange
 #' @importFrom dplyr arrange_
 #' @importFrom dplyr funs
-#' @importFrom dplyr mutate_each
 #' @importFrom dplyr sample_n
 #' @importFrom dplyr inner_join
 #' @importFrom dplyr distinct

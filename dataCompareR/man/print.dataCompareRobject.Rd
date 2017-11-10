@@ -4,8 +4,8 @@
 \alias{print.dataCompareRobject}
 \title{Printing RCompare Output}
 \usage{
-\method{print}{dataCompareRobject}(x, nVars = 5, nObs = 5, verbose = FALSE,
-  ...)
+\method{print}{dataCompareRobject}(x, nVars = 5, nObs = 5,
+  verbose = FALSE, ...)
 }
 \arguments{
 \item{x}{an object of class "dataCompareR", usually a result of a call to \code{\link{rCompare}}.}
