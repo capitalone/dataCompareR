@@ -99,7 +99,8 @@ This folder contains useful repeatable performance tests, but there are not run 
 
 https://cran.r-project.org/package=dataCompareR
 
-Version 0.1.0 released on 2017-07-17
+- Version 0.1.0 released on 2017-07-17
+- Version 0.1.1 released on 2017-11-14
 
 ## External Contributors
 
