@@ -1,4 +1,4 @@
-# dataComparepR 0.1.0
+# dataCompareR 0.1.0
 
 Intial release
 
