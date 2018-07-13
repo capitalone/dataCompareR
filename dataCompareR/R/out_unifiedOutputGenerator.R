@@ -75,17 +75,17 @@ createTextSummary <- function(x,...) {
   cat(newLine)
   if(x$ncolInAOnly >0) {
     cat(newLine)
-    cat(paste0("Columns only in ", x$datanameA, colon, paste(x$colsInAOnly,collapse = ', '), space))
+    cat(paste0("Columns only in ", x$datanameA, colon, toupper(paste(x$colsInAOnly,collapse = ', ')), space))
   }
   
   if(x$ncolInBOnly >0) {
     cat(newLine)
-    cat(paste0("Columns only in ", x$datanameB, colon, paste(x$colsInBOnly,collapse = ', '), space))
+    cat(paste0("Columns only in ", x$datanameB, colon, toupper(paste(x$colsInBOnly,collapse = ', ')), space))
   }
   
   if(x$ncolInAOnly >0 | x$ncolInBOnly >0) {
     cat(newLine)
-    cat(paste0("Columns in both ", colon, paste(x$colsInBoth,collapse = ', '), space))
+    cat(paste0("Columns in both ", colon, toupper(paste(x$colsInBoth,collapse = ', ')), space))
   }
   
   # A massive if/else here - if there are no matching columns, there's not much point in continuing...
