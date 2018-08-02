@@ -104,7 +104,7 @@ rCompare <- function(dfA,dfB,keys=NA, roundDigits = NA, mismatches = NA,trimChar
 warnLargeData <- function(dfa, dfb) {
   
   # Check for total number of cells
-  totalSize <- as.double(nrow(dfa)*ncol(dfa)) +  as.double(nrow(dfb))*as.double(ncol(dfb))
+  totalSize <- as.double(nrow(dfa))*as.double(ncol(dfa)) +  as.double(nrow(dfb))*as.double(ncol(dfb))
   
   # If this is too large, warn the user...
   if(totalSize > 20E6) {
