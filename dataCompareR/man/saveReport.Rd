@@ -5,7 +5,8 @@
 \title{Save a report based on a dataCompareR object}
 \usage{
 saveReport(compareObject, reportName, reportLocation = ".",
-  HTMLReport = TRUE, showInViewer = TRUE, stylesheet = NA)
+  HTMLReport = TRUE, showInViewer = TRUE, stylesheet = NA,
+  printAll = FALSE, ...)
 }
 \arguments{
 \item{compareObject}{a dataCompareR object.}
@@ -21,6 +22,12 @@ be saved in this area}
 \item{showInViewer}{Boolean. Does the html report open automatically in the viewer?}
 
 \item{stylesheet}{String. Optional link to customised css stylesheet}
+
+\item{printAll}{Boolean. If TRUE, all mis-matches in the data are printed to the file. This acts as a shortcut
+to get all mismatches in the report, compared to passing the number in \code{mismatchCount}. When TRUE, overrides the 
+\code{mismatchCount} field passed via ellipses}
+
+\item{...}{Optional arguments which will be passed to \code{summary}, for example \code{mismatchCount}}
 }
 \description{
 Saves R markdown and HTML reports in the area specified by the user. 
@@ -38,3 +45,4 @@ Other dataCompareR.functions: \code{\link{generateMismatchData}},
   \code{\link{rCompare}},
   \code{\link{summary.dataCompareRobject}}
 }
+\concept{dataCompareR.functions}
