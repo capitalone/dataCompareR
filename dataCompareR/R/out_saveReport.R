@@ -27,7 +27,8 @@
 #' @param showInViewer Boolean. Does the html report open automatically in the viewer?
 #' @param stylesheet String. Optional link to customised css stylesheet
 #' @param printAll Boolean. If TRUE, all mis-matches in the data are printed to the file. This acts as a shortcut
-#' to get all mismatches in the report, compared to passing \code{mismatchCount} 
+#' to get all mismatches in the report, compared to passing the number in \code{mismatchCount}. When TRUE, overrides the 
+#' \code{mismatchCount} field passed via ellipses 
 #' @param ... Optional arguments which will be passed to \code{summary}, for example \code{mismatchCount}
 #' @import knitr
 #' @import markdown
