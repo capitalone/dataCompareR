@@ -171,10 +171,21 @@ summary.dataCompareRobject <- function(object, mismatchCount = 5, ...){
   noMatchKeys <- length(object$rowMatching$matchKey) + 1
   
   #Number of Rows in Common:
-  if (isNotNull(object$rowMatching$inboth) & is.integer(object$rowMatching$inboth)){
+  
+  # in the case where we have no match key, object$rowMatching$inboth is an integer
+  # need to handle the case where it's 0 differently to where it's populated
+
+  if (isNotNull(object$rowMatching$inboth) && is.numeric(object$rowMatching$inboth) && 
+      length(object$rowMatching$inboth) == 1 && object$rowMatching$inboth == 0 )
+    {
+    ans$nrowCommon  <- 0
+    } 
+  else if (isNotNull(object$rowMatching$inboth) & is.integer(object$rowMatching$inboth))
+    {
     ans$nrowCommon  <- length(object$rowMatching$inboth)
-  }
-  if (isNotNull(object$rowMatching$inboth) & is.data.frame(object$rowMatching$inboth)){
+    } 
+  else if(isNotNull(object$rowMatching$inboth) & is.data.frame(object$rowMatching$inboth))
+    {
     ans$nrowCommon  <- nrow(object$rowMatching$inboth)
   }
   
