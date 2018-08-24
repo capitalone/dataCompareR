@@ -107,16 +107,18 @@ test_that("makeValidNames function in end to end context", {
   bb <- capture.output(summary(b))
   
   expect_equal(aa[34], "No columns match, so no comparison could take place")
-  expect_equal(aa[30], "Columns only in iris: Petal.Length, Petal.Width, Sepal.Length, Sepal.Width, Species  ")
+  # Issue #40: change to consistent capitalization
+  expect_equal(aa[30], paste0("Columns only in iris: ", toupper("Petal.Length, Petal.Width, Sepal.Length, Sepal.Width, Species  ")))
   
   # There appear to be reordering in this column in the devtools::check() run vs testing normally
   # so we'll just look for the titles
   expect_true(grepl(pattern =  "Columns only in iris2", x = aa[31], fixed = TRUE))
-  expect_true(grepl(pattern =  "a_good_one", x = aa[31], fixed = TRUE))
-  expect_true(grepl(pattern =  "and111", x = aa[31], fixed = TRUE))
-  expect_true(grepl(pattern =  "X.___so.so.bad.", x = aa[31], fixed = TRUE))
-  expect_true(grepl(pattern =  "X.__a.horrible.name.", x = aa[31], fixed = TRUE))
-  expect_true(grepl(pattern =  "X.and...another.", x = aa[31], fixed = TRUE))
+  # change these tests to uppercase for consistent capitalization. Issue #40
+  expect_true(grepl(pattern =  toupper("a_good_one"), x = aa[31], fixed = TRUE))
+  expect_true(grepl(pattern =  toupper("and111"), x = aa[31], fixed = TRUE))
+  expect_true(grepl(pattern =  toupper("X.___so.so.bad."), x = aa[31], fixed = TRUE))
+  expect_true(grepl(pattern =  toupper("X.__a.horrible.name."), x = aa[31], fixed = TRUE))
+  expect_true(grepl(pattern =  toupper("X.and...another."), x = aa[31], fixed = TRUE))
   
   expect_true(grepl(pattern =  "Columns with all rows equal", x = bb[48], fixed = TRUE))
   expect_true(grepl(pattern =  "A_GOOD_ONE", x = bb[48], fixed = TRUE))
