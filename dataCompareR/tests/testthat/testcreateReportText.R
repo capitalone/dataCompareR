@@ -33,8 +33,8 @@ test_that("check a non comprehensive set of properties about createReportText", 
   testDiff <- rCompare(iris,iris2)
   
   # Capture the outpts of createReportText as text
-  textSame <- capture.output(createReportText(dataCompareR:::summary.dataCompareRobject(testSame)))
-  textDiff <- capture.output(createReportText(dataCompareR:::summary.dataCompareRobject(testDiff)))
+  textSame <- capture.output(createReportText(summary.dataCompareRobject(testSame)))
+  textDiff <- capture.output(createReportText(summary.dataCompareRobject(testDiff)))
   
   # For now we won't hard code each - instead, we will just check a few points...
   
