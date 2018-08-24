@@ -9,7 +9,26 @@ dataCompareR is an R package that allows users to compare two datasets and view 
 
 dataCompareR aims to make it easy to compare two tabular data objects in R. It’s specifically designed to show differences between two sets of data in a useful way that should make it easier to understand the differences, and if necessary, help you work out how to remedy them. In this regard, it aims to offer a more useful output than *all.equal* when your two datasets do not match, but isn’t intended to replace *all.equal* if you just want a binary test for equality.
 
+- `rCompare()` does the comparison and creates a dataCompareR object containing all the differences between the two inputted datasets.
+- `generateMismatchData()` generates a list of two data frames, each having the missing rows from the comparison.
+- `saveReport()` creates a summary of the comparison that is saved onto a file.
+
+It’s expected that dataCompareR will be used to compare data frames, but it can be used to compare any objects that can be coerced to data frames, such as data tables, tibbles or matrices. dataCompareR cannot compare data that is not tabular in format (nested JSON, irregular lists etc) but does handle tabular data that needs to be matched (or joined) on one or more keys (or ID columns).
+
+
 ## Getting started
+
+### Requirements
+
+Confirmed as working on R v3.2.3 and later on Linux/Windows, both via RStudio and through the command line.
+Package was built with the following dependencies, but we anticipate it will work with later versions of these packages.
+
+| Package|Version|Source code URL|
+| ---|---|--- |
+|dplyr|	0.5.0|	https://github.com/hadley/dplyr |
+|knitr|	1.12.3|	https://github.com/yihui/knitr |
+|stringi|	1.0-1|	https://github.com/gagolews/stringi |
+|markdown|0.7.7|	https://github.com/rstudio/markdown |
 
 ### Installing the package
 
@@ -29,22 +48,11 @@ install_git('https://github.com/capitalone/dataCompareR.git', branch = 'master',
             build_vignettes = TRUE)
 ```
 
+Note: For OS X users: installing through install_git is broken. More information can be found [here](https://github.com/ropensci/git2r/issues/331). 
+
 ### Using dataCompareR
 
 Please run `vignette('dataCompareR')` after installation to see an example of the dataCompareR workflow.
-
-### Requirements
-
-Confirmed as working on R v3.2.3 and later on Linux/Windows, both via RStudio and through the command line.
-Package was built with the following dependencies, but we anticipate it will work with later versions of these packages.
-
-| Package|Version|Source code URL|
-| ---|---|--- |
-|dplyr|	0.5.0|	https://github.com/hadley/dplyr |
-|knitr|	1.12.3|	https://github.com/yihui/knitr |
-|stringi|	1.0-1|	https://github.com/gagolews/stringi |
-|markdown|0.7.7|	https://github.com/rstudio/markdown |
-
 
 ### Repo Contents 
 
