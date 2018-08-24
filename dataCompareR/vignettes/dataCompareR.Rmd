@@ -1,3 +1,8 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
 <!---
 # SPDX-Copyright: Copyright (c) Capital One Services, LLC 
 # SPDX-License-Identifier: Apache-2.0 
@@ -25,11 +30,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-dataCompareR aims to make it easy to compare two tabular data objects in R. It's specifically designed to show differences between two sets of data in a useful way that should make it easier to understand the differences, and if necessary, help you work out how to remedy them. In this regard, it aims to offer a more useful output than `all.equal` when your two datasets do not match, but isn't intended to replace `all.equal` if you just want to test for equality.
-
-It's expected that dataCompareR will be used to compare data frames, but it can be used to compare any objects that can be coerced to data frames, such as data tables, tibbles or matrices. dataCompareR cannot compare data that is not tabular in format (nested JSON, irregular lists etc) but does handle tabular data that needs to be matched (or joined) on one or more keys (or ID columns).
-
-The hope is that dataCompareR is easy to understand, so please don't feel like you're obliged to read this! The aim of this vignette is twofold - to offer end-to-end examples of using dataCompareR and, for those who want to know, to provide details of how the package performs the comparison.
+Here we offer end-to-end examples of using dataCompareR and, for those who want to know, to provide details of how the package performs the comparison.
 
 ## dataCompareR examples
 
@@ -120,6 +121,11 @@ mismatches <- generateMismatchData(compPressure, pressure, pressure2)
 
 mismatches
 ```
+
+
+## Internal functions
+
+It is possible to use the other functions not exposed to the end user through the 3 colons format like `dataCompareR:::functionName`. Please take care when using them, as some of the checks are done up front, so they may make assumptions on the input.  
 
 ## dataCompareR workflow
 
