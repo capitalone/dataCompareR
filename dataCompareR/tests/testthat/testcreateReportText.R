@@ -95,8 +95,8 @@ test_that("check a key based match with 1 matching keys", {
   testKeys <- rCompare(pressure,pressure2, keys = 'temperature')
   
   # Capture the outpts of createReportText as text
-  textNoKeys <- capture.output(createReportText(dataCompareR:::summary.dataCompareRobject(testNoKeys)))
-  textKeys<- capture.output(createReportText(dataCompareR:::summary.dataCompareRobject(testKeys)))
+  textNoKeys <- capture.output(createReportText(summary.dataCompareRobject(testNoKeys)))
+  textKeys<- capture.output(createReportText(summary.dataCompareRobject(testKeys)))
   
   
   expect_that(length(textKeys) != length(textNoKeys), is_true())
