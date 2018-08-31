@@ -99,13 +99,14 @@ rCompare <- function(dfA,dfB,keys=NA, roundDigits = NA, mismatches = NA,trimChar
 }
 
 #' Warn users if the calculation is likely to be slow
+#' 
 #' @description Checks if there are more than 20E6 elements for comparison. If there are, spits out a warning 
 #' message that the calculation may run slowly
 #' 
 #' @param nrow_dfa number of rows in first data frame
 #' @param ncol_dfa number of columns in first data frame
 #' @param nrow_dfb number of rows in second data frame
-#' @param ncol_db number of columns in second data frame
+#' @param ncol_dfb number of columns in second data frame
 #' 
 #' @return Nothing
 warnLargeData <- function(nrow_dfa, ncol_dfa, nrow_dfb, ncol_dfb) {

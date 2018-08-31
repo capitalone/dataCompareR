@@ -13,7 +13,7 @@ checkEmpty(df)
 None. Stops if empty.
 }
 \description{
-checkEmpty
+Checks if a df is actually a single NA, or has no columns
 }
 \examples{
 \dontrun{checkEmpty(iris)}
