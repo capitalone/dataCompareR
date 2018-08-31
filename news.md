@@ -12,4 +12,4 @@ Mainly bug fixes, as follows:
 
 - Allow data frames with zero rows to be compared successfully, rather than erroring
 - Fix bug that prevented very large data frame comparisons because of an integer overflow calculating the number of cells
-- Allow use to pass number of comparisons to show when creating a report
+- Allow user to set number of comparisons to show when creating a report
