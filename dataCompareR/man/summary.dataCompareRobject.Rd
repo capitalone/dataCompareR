@@ -53,3 +53,4 @@ Other dataCompareR.functions: \code{\link{generateMismatchData}},
   \code{\link{print.dataCompareRobject}},
   \code{\link{rCompare}}, \code{\link{saveReport}}
 }
+\concept{dataCompareR.functions}

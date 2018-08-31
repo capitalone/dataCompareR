@@ -30,3 +30,4 @@ Other dataCompareR.functions: \code{\link{print.dataCompareRobject}},
   \code{\link{rCompare}}, \code{\link{saveReport}},
   \code{\link{summary.dataCompareRobject}}
 }
+\concept{dataCompareR.functions}
