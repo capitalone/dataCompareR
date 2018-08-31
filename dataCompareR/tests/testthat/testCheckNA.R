@@ -17,8 +17,8 @@ context('checkNA and isSingleNA')
 
 test_that("checks checkNA works as intended", {
  
-  # This function should return TRUE If, and only If, a single NA is passed 
-  # It appears to catch NaN and a list of 1 Na. I can live with this!
+  # This function should error when a single NA, NaN, or a list with one NA is passed 
+  # Everything else should return silently
 
   expect_error(checkNA(NA))
   expect_error(checkNA(NaN))
@@ -36,10 +36,10 @@ test_that("checks checkNA works as intended", {
 
 })
 
-test_that("checks checkNA works as intended", {
+test_that("checks isSingleNA works as intended", {
   
-  # This function should return TRUE If, and only If, a single NA is passed 
-  # It appears to catch NaN too- I can live with this!
+  # This function should return TRUE when a single NA, NaN, or a list with one NA is passed 
+  # Everything else should return FALSE
   
   expect_true(isSingleNA(NA))
   expect_true(isSingleNA(NaN))

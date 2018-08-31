@@ -241,11 +241,10 @@ test_that("test print with two empty data frames", {
 
 
 
-test_that("test print with one  empty data frames", {
+test_that("test print with one empty data frames", {
   
-  # We'll use the pressure dataset for comparison
+  # We'll make two test data frames - one with empty rows, one populated
   
-  # Make a copy of pressure with missing rows
   df_empty <-  data.frame(ColA = character(),
                           ColB = as.Date(character()),
                           ColC = character(),
@@ -258,6 +257,7 @@ test_that("test print with one  empty data frames", {
                          stringsAsFactors = FALSE)
   
   
+  # Run a set of comparisons on them
   comp1 <- rCompare(df_empty, df_not_empty)
   comp2 <- rCompare(df_empty, df_not_empty,  keys = "ColA")
   comp3 <- rCompare(df_empty, df_not_empty, keys = c("ColA","ColB"))

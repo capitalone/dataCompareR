@@ -182,9 +182,9 @@ test_that("the number of rows and columns returned are correct", {
 }) 
 
 
-test_that("the output is correct when both dataframes have no columns", {
+test_that("the output is correct when both dataframes have no rows", {
   
-
+  # create an empty data frame
   df_empty <-  data.frame(ColA = character(),
                           ColB = as.Date(character()),
                           ColC = character(),
