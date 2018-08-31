@@ -196,3 +196,119 @@ test_that("test print argument validation", {
   expect_error(print(aaa,nObs=-1))
   
 })
+
+
+test_that("test print with two empty data frames", {
+  
+  # We'll use the pressure dataset for comparison
+  
+  # Make a copy of pressure with missing rows
+  df_empty <-  data.frame(ColA = character(),
+                                    ColB = as.Date(character()),
+                                    ColC = character(),
+                                    stringsAsFactors = FALSE)
+  
+  
+  comp1 <- rCompare(df_empty, df_empty)
+  comp2 <- rCompare(df_empty, df_empty,  keys = "ColA")
+  comp3 <- rCompare(df_empty, df_empty, keys = c("ColA","ColB"))
+  comp4 <- rCompare(df_empty, df_empty, keys = c("ColA","ColB","ColC"))
+  
+  
+  text1 <- capture.output(print(comp1))
+  text2 <- capture.output(print(comp2))
+  text3 <- capture.output(print(comp3))
+  text4 <- capture.output(print(comp4))
+  
+  expect_true(length(text1)==2)
+  expect_that(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text1, fixed = TRUE)), is_true())
+  expect_that(any(grepl("No variables match", text1, fixed = TRUE)), is_true())
+  
+  expect_true(length(text2)==2)
+  expect_that(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text2, fixed = TRUE)), is_true())
+  expect_that(any(grepl("No variables match", text2, fixed = TRUE)), is_true())
+  
+  expect_true(length(text3)==2)
+  expect_that(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text3, fixed = TRUE)), is_true())
+  expect_that(any(grepl("No variables match", text3, fixed = TRUE)), is_true())
+  
+  expect_true(length(text4)==2)
+  expect_that(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text4, fixed = TRUE)), is_true())
+  expect_that(any(grepl("No variables match", text4, fixed = TRUE)), is_true())
+  
+})
+
+
+
+
+test_that("test print with one empty data frames", {
+  
+  # We'll make two test data frames - one with empty rows, one populated
+  
+  df_empty <-  data.frame(ColA = character(),
+                          ColB = as.Date(character()),
+                          ColC = character(),
+                          stringsAsFactors = FALSE)
+  
+  
+  df_not_empty <- data.frame(ColA = c("A","B"),
+                             ColB = c(Sys.Date(), Sys.Date()),
+                             ColC = c(1,1),
+                         stringsAsFactors = FALSE)
+  
+  
+  # Run a set of comparisons on them
+  comp1 <- rCompare(df_empty, df_not_empty)
+  comp2 <- rCompare(df_empty, df_not_empty,  keys = "ColA")
+  comp3 <- rCompare(df_empty, df_not_empty, keys = c("ColA","ColB"))
+  comp4 <- rCompare(df_empty, df_not_empty, keys = c("ColA","ColB","ColC"))
+  
+  
+  comp5 <- rCompare(df_not_empty, df_empty)
+  comp6 <- rCompare(df_not_empty, df_empty,  keys = "ColA")
+  comp7 <- rCompare(df_not_empty, df_empty, keys = c("ColA","ColB"))
+  comp8 <- rCompare(df_not_empty, df_empty, keys = c("ColA","ColB","ColC"))
+  
+  text1 <- capture.output(print(comp1))
+  text2 <- capture.output(print(comp2))
+  text3 <- capture.output(print(comp3))
+  text4 <- capture.output(print(comp4))
+  
+  text5 <- capture.output(print(comp5))
+  text6 <- capture.output(print(comp6))
+  text7 <- capture.output(print(comp7))
+  text8 <- capture.output(print(comp8))
+  
+  expect_true(length(text1)==2)
+  expect_that(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text1, fixed = TRUE)), is_true())
+  expect_that(any(grepl("No variables match", text1, fixed = TRUE)), is_true())
+  
+  expect_true(length(text2)==2)
+  expect_that(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text2, fixed = TRUE)), is_true())
+  expect_that(any(grepl("No variables match", text2, fixed = TRUE)), is_true())
+  
+  expect_true(length(text3)==2)
+  expect_that(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text3, fixed = TRUE)), is_true())
+  expect_that(any(grepl("No variables match", text3, fixed = TRUE)), is_true())
+  
+  expect_true(length(text4)==2)
+  expect_that(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text4, fixed = TRUE)), is_true())
+  expect_that(any(grepl("No variables match", text4, fixed = TRUE)), is_true())
+  
+  expect_true(length(text5)==2)
+  expect_that(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text5, fixed = TRUE)), is_true())
+  expect_that(any(grepl("No variables match", text5, fixed = TRUE)), is_true())
+  
+  expect_true(length(text6)==2)
+  expect_that(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text6, fixed = TRUE)), is_true())
+  expect_that(any(grepl("No variables match", text6, fixed = TRUE)), is_true())
+  
+  expect_true(length(text7)==2)
+  expect_that(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text7, fixed = TRUE)), is_true())
+  expect_that(any(grepl("No variables match", text7, fixed = TRUE)), is_true())
+  
+  expect_true(length(text8)==2)
+  expect_that(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text8, fixed = TRUE)), is_true())
+  expect_that(any(grepl("No variables match", text8, fixed = TRUE)), is_true())
+  
+  })

@@ -26,13 +26,18 @@
 #' @param HTMLReport Boolean. Option to output html report.
 #' @param showInViewer Boolean. Does the html report open automatically in the viewer?
 #' @param stylesheet String. Optional link to customised css stylesheet
+#' @param printAll Boolean. If TRUE, all mis-matches in the data are printed to the file. This acts as a shortcut
+#' to get all mismatches in the report, compared to passing the number in \code{mismatchCount}. When TRUE, overrides the 
+#' \code{mismatchCount} field passed via ellipses 
+#' @param ... Optional arguments which will be passed to \code{summary}, for example \code{mismatchCount}
 #' @import knitr
 #' @import markdown
 #' @export
 #' @examples  
 #' \dontrun{saveReport(rcObj, reportName = 'testReport')}
 
-saveReport <- function(compareObject, reportName, reportLocation = '.', HTMLReport= TRUE, showInViewer = TRUE, stylesheet = NA) {
+saveReport <- function(compareObject, reportName, reportLocation = '.', HTMLReport= TRUE, 
+                       showInViewer = TRUE, stylesheet = NA, printAll = FALSE, ...) {
   
   # Argument checkin
   if(!is.dataCompareRobject(compareObject)) {
@@ -59,6 +64,10 @@ saveReport <- function(compareObject, reportName, reportLocation = '.', HTMLRepo
     stop("Report name must be a single character")
   }
   
+  if(!is.logical(printAll)) {
+    stop("printAll must be T/F")
+  }
+  
   # Determine where the stylesheet is coming from
   # and if custom stylesheet exists
   if(is.na(stylesheet)) {
@@ -78,8 +87,16 @@ saveReport <- function(compareObject, reportName, reportLocation = '.', HTMLRepo
   HTMLLocn <- file.path(reportLocation, paste0(reportName, '.html'))
   MdLocn <- file.path(reportLocation, paste0(reportName, '.md'))
   
+  # If printAll is TRUE, set the number of rows to pass to compareObject
+  if(printAll) {
+    noRowsToPrint <- nrow(compareObject$mismatches[[1]])
+    summaryCompareObject <- summary(compareObject, mismatchCount = noRowsToPrint)
+  } else {
+    summaryCompareObject <- summary(compareObject, ...)
+  }
+  
   # Create R markdown file from summary.dataCompareRobject function
-  summaryCompareObject <- summary(compareObject)
+  
   capture.output(createReportText(x=summaryCompareObject), file=RmdLocn)
   
   # Compile a report based on the R markdown file

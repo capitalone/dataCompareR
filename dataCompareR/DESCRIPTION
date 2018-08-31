@@ -1,6 +1,6 @@
 Package: dataCompareR
 Title: Compare Two Data Frames and Summarise the Difference
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: c(person("Rob", "Noble-Eddy", email = "opensource@capitalone.com", role = c("aut", "cre")),
            person("Sarah", "Johnston", role = c("aut")),
            person("Sarah", "Pollicott", role = c("aut")),
@@ -19,9 +19,11 @@ Authors@R: c(person("Rob", "Noble-Eddy", email = "opensource@capitalone.com", ro
            person("Cheryl", "Renton", role = c("ctb")),
            person("Matt", "Triggs", role = c("ctb")),
            person("Krishan", "Bhasin", role = c("ctb")),
-           person("Carola", "Deppe", role = c("ctb"))
+           person("Carola", "Deppe", role = c("ctb")),
+           person("Ruijing", "Li", role = c("ctb")),
+           person("John", "Swift", role = c("ctb"))
            )
-Description:  Easy comparison of two tabular data
+Description: Easy comparison of two tabular data
     objects in R. Specifically designed to show differences between two sets of
     data in a useful way that should make it easier to understand the differences,
     and if necessary, help you work out how to remedy them. Aims
@@ -38,7 +40,7 @@ URL: https://github.com/capitalone/dataCompareR
 BugReports: https://github.com/capitalone/dataCompareR/issues
 License: Apache License 2.0 | file LICENSE
 LazyData: true
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0
 Suggests:
     testthat,
     data.table,

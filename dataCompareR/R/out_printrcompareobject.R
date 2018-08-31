@@ -63,8 +63,18 @@ print.dataCompareRobject <- function(x, nVars=5, nObs=5, verbose= FALSE, ...) {
     
   }
   
-  
-  if(length(x$rowMatching$inA[[1]]) == 0 && length(x$rowMatching$inB[[1]]) == 0) {
+  # Catch the case where one or both tables were empty
+  # For the case where we use a match key
+  if (!matchKeyUsed && 
+      ((length(x$rowMatching$inboth) ==1 && x$rowMatching$inboth == 0 && length(x$rowMatching$inA[[1]])== 0)  ||
+    (length(x$rowMatching$inboth) ==1 && x$rowMatching$inboth == 0 && length(x$rowMatching$inB[[1]]) == 0))) {
+    cat(" no rows compared because at least one table has no rows \n")
+  # And for the case where we do use a match key
+  } else if (matchKeyUsed && ((nrow(x$rowMatching$inboth) == 0 && length(x$rowMatching$inA[[1]]) == 0) ||
+                                 (nrow(x$rowMatching$inboth) == 0 && length(x$rowMatching$inB[[1]]) == 0))) {
+    cat(" no rows compared because at least one table has no rows \n")
+  }
+  else if(length(x$rowMatching$inA[[1]]) == 0 && length(x$rowMatching$inB[[1]]) == 0) {
     # All rows
     cat("all rows were compared \n")
   } else {
