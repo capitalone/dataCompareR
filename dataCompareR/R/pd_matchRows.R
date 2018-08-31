@@ -162,14 +162,26 @@ matchMultiIndex <- function(df_a, df_b, indices)
 matchNoIndex <- function(df_a, df_b)
 {
   if(nrow(df_a)>nrow(df_b)) {
-    df_a_subset <-df_a[1:nrow(df_b),]
+    
+    if(nrow(df_b)==0) {
+      df_a_subset <- df_a[0,]
+    } else {
+      df_a_subset <- df_a[1:nrow(df_b),]
+    }
+    
     df_b_subset <- df_b
     rows_dropped_from_a <- data.frame(indices_removed=(nrow(df_a_subset)+1):nrow(df_a))
     rows_dropped_from_b <- data.frame(indices_removed=integer())
   }
   else if (nrow(df_b)>nrow(df_a)) {
     df_a_subset <- df_a
-    df_b_subset <-df_b[1:nrow(df_a),]
+    
+    if(nrow(df_a)==0) {
+      df_b_subset <-df_b[0,]
+    } else {
+      df_b_subset <-df_b[1:nrow(df_a),]
+    }
+    
     rows_dropped_from_a <- data.frame(indices_removed=integer())
     rows_dropped_from_b <- data.frame(indices_removed=(nrow(df_b_subset)+1):nrow(df_b))
   }

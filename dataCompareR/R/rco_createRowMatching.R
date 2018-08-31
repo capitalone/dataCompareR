@@ -42,6 +42,11 @@ createRowMatching <- function(compObj, x, matchKey)
     
     rowMatching$inboth <- seq(1:nrow(x[[1]]))
     
+    # Above is fine for nrow of 1+ but fails when nrow = 0 because
+    # seq(1:0) returns 1,2 (?)
+    # Correct this
+    if(nrow(x[[1]]) == 0) {rowMatching$inboth <- 0}
+    
   } else {
     rowMatching$inboth <- x[[1]][matchKey]
   }

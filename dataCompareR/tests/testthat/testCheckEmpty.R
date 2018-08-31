@@ -16,7 +16,8 @@
 #
 # checkEmpty checks whether or not the input data frame is empty 
 # and stops with an error if it is
-#
+# Note that by empty, we mean no columns. Data frames with no columns
+# fail, but data frames with columns but no rows pass
 
 # loading testing library
 library(testthat)
@@ -32,12 +33,18 @@ test_that("Empty DFs give errors", {
                         Model = character(),
                         stringsAsFactors = FALSE)
   
+  veryEmptydf <- data.frame()
+  
   # create populated dataframe
   fulldf <- iris
   
-  # get error with one empty df
-  expect_error( checkEmpty(emptydf), "empty", fixed = TRUE )
+  # no error with cols
+  expect_silent( checkEmpty(emptydf))
   
   # get no error with no empty df
   expect_silent(checkEmpty(fulldf))
+  
+  # get error with empty df
+  expect_error(checkEmpty(veryEmptydf))
+  
   })
