@@ -18,17 +18,21 @@ context("checks large data warning in rCompare")
 
 test_that("Silent for small data", {
   
-  expect_silent(warnLargeData(iris,iris))
-  expect_silent(warnLargeData(iris,pressure))
-  expect_silent(warnLargeData(pressure,pressure))
+  expect_silent(warnLargeData(nrow(iris),ncol(iris),nrow(iris),ncol(iris)))
+  expect_silent(warnLargeData(nrow(iris),ncol(iris),nrow(pressure),ncol(pressure)))
+  expect_silent(warnLargeData(nrow(pressure),ncol(pressure), nrow(pressure),ncol(pressure)))
+  
+  # Large (~E6) test case
+  expect_silent(warnLargeData(2E2,1E3,1E3,5E3))
+  
 })
-
+  
 
 test_that("Warns for large data", {
   
-  #a <- data.frame(col1 = rep(x=1,times=1E9))
-  #expect_message(warnLargeData(a,a))
-  expect_true(1==1)
+  expect_message(warnLargeData(1E9,1E9,1E9,1E9))
+  expect_message(warnLargeData(5E6,5E6,5E6,6E6))
+  
 })
 
 

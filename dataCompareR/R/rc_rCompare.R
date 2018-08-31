@@ -78,7 +78,10 @@ rCompare <- function(dfA,dfB,keys=NA, roundDigits = NA, mismatches = NA,trimChar
   coercedData <- coerceData(doa = dfA, dob = dfB)
   
   # Warn if data is large
-  warnLargeData(coercedData[[1]], coercedData[[2]])
+  warnLargeData(as.double(nrow(coercedData[[1]])),
+                as.double(ncol(coercedData[[1]])),
+                as.double(nrow(coercedData[[2]])), 
+                as.double(ncol(coercedData[[2]])))
   
   # Round data if needed 
   if(!is.na(roundDigits)) {
@@ -97,14 +100,16 @@ rCompare <- function(dfA,dfB,keys=NA, roundDigits = NA, mismatches = NA,trimChar
 #' @description Checks if there are more than 20E6 elements for comparison. If there are, spits out a warning 
 #' message that the calculation may run slowly
 #' 
-#' @param dfa data.frame A
-#' @param dfb data.frame b
+#' @param nrow_dfa number of rows in first data frame
+#' @param ncol_dfa number of columns in first data frame
+#' @param nrow_dfb number of rows in second data frame
+#' @param ncol_db number of columns in second data frame
 #' 
 #' @return Nothing
-warnLargeData <- function(dfa, dfb) {
+warnLargeData <- function(nrow_dfa, ncol_dfa, nrow_dfb, ncol_dfb) {
   
   # Check for total number of cells
-  totalSize <- as.double(nrow(dfa))*as.double(ncol(dfa)) +  as.double(nrow(dfb))*as.double(ncol(dfb))
+  totalSize <- as.double(nrow_dfa)*as.double(ncol_dfa) + as.double(nrow_dfb)*as.double(ncol_dfb)
   
   # If this is too large, warn the user...
   if(totalSize > 20E6) {
