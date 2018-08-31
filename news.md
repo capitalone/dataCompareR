@@ -11,5 +11,6 @@ Mainly fixes compatibility with new versions of dplyr by using `mutate_all` rath
 Mainly bug fixes, as follows:
 
 - Allow data frames with zero rows to be compared successfully, rather than erroring
-- Fix bug that prevented very large data frame comparisons because of an integer overflow calculating the number of cells
+- Fix bug that prevented very large data frame comparisons because of an integer overflow when calculating the number of cells
 - Allow user to set number of comparisons to show when creating a report
+

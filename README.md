@@ -11,10 +11,9 @@ dataCompareR aims to make it easy to compare two tabular data objects in R. Itâ€
 
 - `rCompare()` does the comparison and creates a dataCompareR object containing all the differences between the two inputted datasets.
 - `generateMismatchData()` generates a list of two data frames, each having the missing rows from the comparison.
-- `saveReport()` creates a summary of the comparison that is saved onto a file.
+- `saveReport()` creates a summary of the comparison that is saved into a file.
 
 Itâ€™s expected that dataCompareR will be used to compare data frames, but it can be used to compare any objects that can be coerced to data frames, such as data tables, tibbles or matrices. dataCompareR cannot compare data that is not tabular in format (nested JSON, irregular lists etc) but does handle tabular data that needs to be matched (or joined) on one or more keys (or ID columns).
-
 
 ## Getting started
 
