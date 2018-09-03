@@ -9,7 +9,7 @@ dataCompareR is an R package that allows users to compare two datasets and view 
 
 dataCompareR aims to make it easy to compare two tabular data objects in R. It’s specifically designed to show differences between two sets of data in a useful way that should make it easier to understand the differences, and if necessary, help you work out how to remedy them. In this regard, it aims to offer a more useful output than *all.equal* when your two datasets do not match, but isn’t intended to replace *all.equal* if you just want a binary test for equality.
 
-- `rCompare()` does the comparison and creates a dataCompareR object containing all the differences between the two inputted datasets.
+- `rCompare()` does the comparison and creates a dataCompareR object containing all the differences between the two inputted datasets. The object can be used with `print` and `summary`.
 - `generateMismatchData()` generates a list of two data frames, each having the missing rows from the comparison.
 - `saveReport()` creates a summary of the comparison that is saved into a file.
 
