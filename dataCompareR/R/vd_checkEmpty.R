@@ -54,7 +54,7 @@ checkNA <- function(df) {
 #' 
 #' @param x literally anything
 #' 
-#' @returns boolean
+#' @return boolean
 isSingleNA <- function(x) {
   if(is.vector(x) && length(x) == 1 && is.na(x)) {
     TRUE
