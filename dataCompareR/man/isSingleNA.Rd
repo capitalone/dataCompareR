@@ -9,6 +9,9 @@ isSingleNA(x)
 \arguments{
 \item{x}{literally anything}
 }
+\value{
+boolean
+}
 \description{
 Boolean function - T if x is a single NA. False otherwise.
 }
