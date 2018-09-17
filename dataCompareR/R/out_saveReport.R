@@ -128,3 +128,5 @@ saveReport <- function(compareObject, reportName, reportLocation = '.', HTMLRepo
   
 
 }
+
+# add a random comment
