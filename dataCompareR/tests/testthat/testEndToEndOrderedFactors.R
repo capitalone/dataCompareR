@@ -33,11 +33,11 @@ test_that("ComparisonOfOrderedFactor", {
   
   ABcomparison <- rCompare(dfTableA, dfTableB, keys = c("color"))
   
-  expect_that(ABcomparison$matches[1] == "COLOR2", is_true())
+  expect_true(ABcomparison$matches[1] == "COLOR2")
   
-  expect_that(names(ABcomparison$mismatches)[1] == "COLOR3", is_true())
-  expect_that(nrow(ABcomparison$mismatches[[1]]) == 4, is_true())
-  expect_that(all(ABcomparison$mismatches$COLOR3$diffAB == ""), is_true())
+  expect_true(names(ABcomparison$mismatches)[1] == "COLOR3")
+  expect_true(nrow(ABcomparison$mismatches[[1]]) == 4)
+  expect_true(all(ABcomparison$mismatches$COLOR3$diffAB == ""))
   
 })
 
