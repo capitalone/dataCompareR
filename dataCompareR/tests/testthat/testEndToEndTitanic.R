@@ -112,8 +112,8 @@ test_that("ComparisonOfUnequals", {
     b1a <- rCompare(titanic,titanic2,trimChars = TRUE, keys = 'PassengerId')
     b1b <- rCompare(titanic,titanic2,trimChars = TRUE)
     
-    b2 <- rCompare(titanic,titanic2, keys = 'PassengerId',,trimChars = FALSE)
-    b3 <- rCompare(titanic, titanic2shuffle, , keys = 'PassengerId',trimChars = FALSE)
+    b2 <- rCompare(titanic,titanic2, keys = 'PassengerId',trimChars = FALSE)
+    b3 <- rCompare(titanic, titanic2shuffle, keys = 'PassengerId',trimChars = FALSE)
     b4 <- rCompare(titanic,titanic2DataTable, keys = 'PassengerId',trimChars = FALSE)
     b5 <- rCompare(titanic,titanic2Matrix, keys = 'PassengerId',trimChars = FALSE)
     b6 <- rCompare(titanic,titanic2Tibble, keys = 'PassengerId',trimChars = FALSE)
@@ -148,59 +148,59 @@ test_that("ComparisonOfUnequals", {
     expect_that(b1$rowMatching$inB[[1]], equals(logical(0)) )
     
     # Check that b1 has mismatches - not trimming chars so expect 6 issues
-    expect_that(length(b1$mismatches) >0 , is_true() )
+    expect_true(length(b1$mismatches) >0)
     # 3 fields mismatch
-    expect_that(length(b1$mismatches) == 3 , is_true() )
+    expect_true(length(b1$mismatches) == 3)
     expect_that(names(b1$mismatches)[1], equals("EMBARKED"))
     expect_that(names(b1$mismatches)[2], equals("HASSURVIVED"))
     expect_that(names(b1$mismatches)[3], equals("NAME"))
     
     # EMBARKED should mismatch
     # Should have 6 columns
-    expect_that(length(b1$mismatches$EMBARKED) == 7 , is_true() )
+    expect_true(length(b1$mismatches$EMBARKED) == 7)
     # I am not working this out - assume that 170 is correct and make sure it holds later
-    expect_that(length(b1$mismatches$EMBARKED[[1]]) == 170 , is_true() )
+    expect_true(length(b1$mismatches$EMBARKED[[1]]) == 170)
     
     # CABIN should not have mismatches
     expect_that(which(names(b1$mismatches) == 'CABIN'),equals(integer(0)) )
     
     # HasSurvived should have 1 mismatch
     # but first, it should have 6 columns
-    expect_that(length(b1$mismatches$HASSURVIVED) == 7 , is_true() )
+    expect_true(length(b1$mismatches$HASSURVIVED) == 7)
     # and 1 row
-    expect_that(length(b1$mismatches$HASSURVIVED[[1]]) == 1 , is_true() )
+    expect_true(length(b1$mismatches$HASSURVIVED[[1]]) == 1)
     # And they're NAN and NA
-    expect_that(is.na(b1$mismatches$HASSURVIVED$valueA[1]) , is_true() )
-    expect_that(as.character(b1$mismatches$HASSURVIVED$valueB[1]) == "NaN", is_true() )
+    expect_true(is.na(b1$mismatches$HASSURVIVED$valueA[1]))
+    expect_true(as.character(b1$mismatches$HASSURVIVED$valueB[1]) == "NaN")
     
     # NAME should have 9 rows of mismatches
     # And of course, 6 cols
-    expect_that(length(b1$mismatches$NAME) == 7 , is_true() )
-    expect_that(length(b1$mismatches$NAME[[1]]) == 9 , is_true() )
+    expect_true(length(b1$mismatches$NAME) == 7)
+    expect_true(length(b1$mismatches$NAME[[1]]) == 9)
     
     # b1a should be the same, apart from the mismatches, which should only reveal 6 in total
-    expect_that(all.equal(b1$matches,b1a$matches),is_true())
-    expect_that(all.equal(b1$rowMatching,b1a$rowMatching),is_true())
-    expect_that(all.equal(b1$colMatching,b1a$colMatching),is_true())
-    expect_that(all.equal(b1$cleaninginfo,b1a$cleaninginfo),is_true())
+    expect_true(all.equal(b1$matches,b1a$matches))
+    expect_true(all.equal(b1$rowMatching,b1a$rowMatching))
+    expect_true(all.equal(b1$colMatching,b1a$colMatching))
+    expect_true(all.equal(b1$cleaninginfo,b1a$cleaninginfo))
     
-    expect_that(all.equal(b1$mismatches$EMBARKED,b1a$mismatches$EMBARKED),is_true())
-    expect_that(all.equal(b1$mismatches$HASSURVIVED,b1a$mismatches$HASSURVIVED),is_true())
-    expect_that(all.equal(b1$mismatches$CABIN,b1a$mismatches$CABIN),is_true())
-    expect_that(length(b1$mismatches$NAME[[1]]) == length(b1a$mismatches$NAME[[1]]),is_false())
-    expect_that(length(b1a$mismatches$NAME[[1]]) == 6,is_true())
+    expect_true(all.equal(b1$mismatches$EMBARKED,b1a$mismatches$EMBARKED))
+    expect_true(all.equal(b1$mismatches$HASSURVIVED,b1a$mismatches$HASSURVIVED))
+    expect_true(all.equal(b1$mismatches$CABIN,b1a$mismatches$CABIN))
+    expect_false(length(b1$mismatches$NAME[[1]]) == length(b1a$mismatches$NAME[[1]]))
+    expect_true(length(b1a$mismatches$NAME[[1]]) == 6)
     
     
     # b1b should match b1a in terms of content, but differs in format, so check it finds same number of name changes
-    expect_that(all.equal(b1b$colMatching,b1a$colMatching),is_true())
-    expect_that(all.equal(b1b$cleaninginfo,b1a$cleaninginfo),is_true())
-    expect_that(length(b1b$mismatches$NAME[[1]]) == 6,is_true())
+    expect_true(all.equal(b1b$colMatching,b1a$colMatching))
+    expect_true(all.equal(b1b$cleaninginfo,b1a$cleaninginfo))
+    expect_true(length(b1b$mismatches$NAME[[1]]) == 6)
     
     
     # 1 diff, due to lack of a match key
-    expect_that(length(b1b$matches)- length(b1a$matches) == 1, is_true())
-    expect_that(length(b1b$rowMatching$inboth) == length(b1a$rowMatching$inboth$PASSENGERID),is_true())
-    expect_that(length(b1b$mismatches) == length(b1a$mismatches),is_true())
+    expect_true(length(b1b$matches)- length(b1a$matches) == 1)
+    expect_true(length(b1b$rowMatching$inboth) == length(b1a$rowMatching$inboth$PASSENGERID))
+    expect_true(length(b1b$mismatches) == length(b1a$mismatches))
     
       # Part 2 - determine that b2-b6 match b1 as far as expected
   
@@ -270,17 +270,17 @@ test_that("ComparisonWithMissingRows", {
     
     
     # Row matching - expect to miss out on 91 rows
-    expect_that(length(c1$rowMatching$inboth$PASSENGERID) == 800, is_true())
-    expect_that(length(c1$rowMatching$inA$PASSENGERID) == 91, is_true())
-    expect_that(length(c1$rowMatching$inB$PASSENGERID) == 0, is_true())
+    expect_true(length(c1$rowMatching$inboth$PASSENGERID) == 800)
+    expect_true(length(c1$rowMatching$inA$PASSENGERID) == 91)
+    expect_true(length(c1$rowMatching$inB$PASSENGERID) == 0)
     
-    expect_that(length(c2$rowMatching$inboth$PASSENGERID) == 800, is_true())
-    expect_that(length(c2$rowMatching$inA$PASSENGERID) == 91, is_true())
-    expect_that(length(c2$rowMatching$inB$PASSENGERID) == 0, is_true())
+    expect_true(length(c2$rowMatching$inboth$PASSENGERID) == 800)
+    expect_true(length(c2$rowMatching$inA$PASSENGERID) == 91)
+    expect_true(length(c2$rowMatching$inB$PASSENGERID) == 0)
     
-    expect_that(length(c3$rowMatching$inboth$PASSENGERID) == 800, is_true())
-    expect_that(length(c3$rowMatching$inA$PASSENGERID) == 0, is_true())
-    expect_that(length(c3$rowMatching$inB$PASSENGERID) == 91, is_true())
+    expect_true(length(c3$rowMatching$inboth$PASSENGERID) == 800)
+    expect_true(length(c3$rowMatching$inA$PASSENGERID) == 0)
+    expect_true(length(c3$rowMatching$inB$PASSENGERID) == 91)
     
     # Can't do much about if the mismatches work, but, we can check equality where we can
     # Col matching should be the same
