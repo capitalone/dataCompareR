@@ -131,18 +131,18 @@ test_that("print rcomp object", {
   # For now we won't hard code each - instead, we will just check a few points...
   
   # We should look for the all match label
-  expect_that(any(textSame == "All compared variables match "),is_true())
-  expect_that(any(textSame == " Number of rows compared: 150 "),is_true())
-  expect_that(any(textSame == " Number of columns compared: 5"),is_true())
+  expect_true(any(textSame == "All compared variables match "),is_true())
+  expect_true(any(textSame == " Number of rows compared: 150 "),is_true())
+  expect_true(any(textSame == " Number of columns compared: 5"),is_true())
   
   # Expect they differ
-  expect_that(textSame[[1]] == textDiff[[1]], is_false())
-  expect_that(textSame[[2]] == textDiff[[2]], is_false())
-  expect_that(textSame[[3]] == textDiff[[3]], is_false())
-  expect_that(textSame[[4]] == textDiff[[4]], is_false())
+  expect_false(textSame[[1]] == textDiff[[1]], is_false())
+  expect_false(textSame[[2]] == textDiff[[2]], is_false())
+  expect_false(textSame[[3]] == textDiff[[3]], is_false())
+  expect_false(textSame[[4]] == textDiff[[4]], is_false())
   
   # Check that the textDiff has more cols
-  expect_that(length(textDiff) > 2,is_true())
+  expect_true(length(textDiff) > 2,is_true())
   
   
 })
@@ -175,10 +175,10 @@ test_that("test print rcompobj rows columns dropped messages", {
   text4 <- capture.output(print(comp4))
   
   # Check we see what we  expect
-  expect_that(any(grepl("All columns were compared, all rows were compared", text1, fixed = TRUE)), is_true())
-  expect_that(any(grepl("All columns were compared, 4 row(s) were dropped from comparison", text2, fixed = TRUE)), is_true())
-  expect_that(any(grepl("1 column(s) were dropped, all rows were compared", text3, fixed = TRUE)), is_true())
-  expect_that(any(grepl("2 column(s) were dropped, 4 row(s) were dropped from comparison", text4, fixed = TRUE)), is_true())
+  expect_true(any(grepl("All columns were compared, all rows were compared", text1, fixed = TRUE)))
+  expect_true(any(grepl("All columns were compared, 4 row(s) were dropped from comparison", text2, fixed = TRUE)))
+  expect_true(any(grepl("1 column(s) were dropped, all rows were compared", text3, fixed = TRUE)))
+  expect_true(any(grepl("2 column(s) were dropped, 4 row(s) were dropped from comparison", text4, fixed = TRUE)))
   
 })
 
@@ -221,20 +221,20 @@ test_that("test print with two empty data frames", {
   text4 <- capture.output(print(comp4))
   
   expect_true(length(text1)==2)
-  expect_that(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text1, fixed = TRUE)), is_true())
-  expect_that(any(grepl("No variables match", text1, fixed = TRUE)), is_true())
+  expect_true(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text1, fixed = TRUE)))
+  expect_true(any(grepl("No variables match", text1, fixed = TRUE)))
   
   expect_true(length(text2)==2)
-  expect_that(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text2, fixed = TRUE)), is_true())
-  expect_that(any(grepl("No variables match", text2, fixed = TRUE)), is_true())
+  expect_true(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text2, fixed = TRUE)))
+  expect_true(any(grepl("No variables match", text2, fixed = TRUE)))
   
   expect_true(length(text3)==2)
-  expect_that(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text3, fixed = TRUE)), is_true())
-  expect_that(any(grepl("No variables match", text3, fixed = TRUE)), is_true())
+  expect_true(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text3, fixed = TRUE)))
+  expect_true(any(grepl("No variables match", text3, fixed = TRUE)))
   
   expect_true(length(text4)==2)
-  expect_that(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text4, fixed = TRUE)), is_true())
-  expect_that(any(grepl("No variables match", text4, fixed = TRUE)), is_true())
+  expect_true(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text4, fixed = TRUE)))
+  expect_true(any(grepl("No variables match", text4, fixed = TRUE)))
   
 })
 
@@ -280,35 +280,35 @@ test_that("test print with one empty data frames", {
   text8 <- capture.output(print(comp8))
   
   expect_true(length(text1)==2)
-  expect_that(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text1, fixed = TRUE)), is_true())
-  expect_that(any(grepl("No variables match", text1, fixed = TRUE)), is_true())
+  expect_true(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text1, fixed = TRUE)))
+  expect_true(any(grepl("No variables match", text1, fixed = TRUE)))
   
   expect_true(length(text2)==2)
-  expect_that(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text2, fixed = TRUE)), is_true())
-  expect_that(any(grepl("No variables match", text2, fixed = TRUE)), is_true())
+  expect_true(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text2, fixed = TRUE)))
+  expect_true(any(grepl("No variables match", text2, fixed = TRUE)))
   
   expect_true(length(text3)==2)
-  expect_that(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text3, fixed = TRUE)), is_true())
-  expect_that(any(grepl("No variables match", text3, fixed = TRUE)), is_true())
+  expect_true(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text3, fixed = TRUE)))
+  expect_true(any(grepl("No variables match", text3, fixed = TRUE)))
   
   expect_true(length(text4)==2)
-  expect_that(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text4, fixed = TRUE)), is_true())
-  expect_that(any(grepl("No variables match", text4, fixed = TRUE)), is_true())
+  expect_true(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text4, fixed = TRUE)))
+  expect_true(any(grepl("No variables match", text4, fixed = TRUE)))
   
   expect_true(length(text5)==2)
-  expect_that(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text5, fixed = TRUE)), is_true())
-  expect_that(any(grepl("No variables match", text5, fixed = TRUE)), is_true())
+  expect_true(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text5, fixed = TRUE)))
+  expect_true(any(grepl("No variables match", text5, fixed = TRUE)))
   
   expect_true(length(text6)==2)
-  expect_that(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text6, fixed = TRUE)), is_true())
-  expect_that(any(grepl("No variables match", text6, fixed = TRUE)), is_true())
+  expect_true(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text6, fixed = TRUE)))
+  expect_true(any(grepl("No variables match", text6, fixed = TRUE)))
   
   expect_true(length(text7)==2)
-  expect_that(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text7, fixed = TRUE)), is_true())
-  expect_that(any(grepl("No variables match", text7, fixed = TRUE)), is_true())
+  expect_true(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text7, fixed = TRUE)))
+  expect_true(any(grepl("No variables match", text7, fixed = TRUE)))
   
   expect_true(length(text8)==2)
-  expect_that(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text8, fixed = TRUE)), is_true())
-  expect_that(any(grepl("No variables match", text8, fixed = TRUE)), is_true())
+  expect_true(any(grepl("All columns were compared,  no rows compared because at least one table has no rows", text8, fixed = TRUE)))
+  expect_true(any(grepl("No variables match", text8, fixed = TRUE)))
   
   })

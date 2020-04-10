@@ -34,12 +34,12 @@ test_that("ComparisonOfEqualDates", {
   
   ABcomparison <- rCompare(dfTableA, dfTableB, keys = c("color"))
   
-  expect_that(ABcomparison$matches[1] == "DATEA", is_true())
+  expect_true(ABcomparison$matches[1] == "DATEA")
   
-  expect_that(names(ABcomparison$mismatches)[1] == "DATEB", is_true())
-  expect_that(nrow(ABcomparison$mismatches[[1]]) == 5, is_true())
-  expect_that(all(ABcomparison$mismatches$DATEB$diffAB < 0), is_true())
-  expect_that(all(ABcomparison$mismatches$DATEB$diffAB > -21), is_true())
+  expect_true(names(ABcomparison$mismatches)[1] == "DATEB")
+  expect_true(nrow(ABcomparison$mismatches[[1]]) == 5)
+  expect_true(all(ABcomparison$mismatches$DATEB$diffAB < 0))
+  expect_true(all(ABcomparison$mismatches$DATEB$diffAB > -21))
   
 })
 

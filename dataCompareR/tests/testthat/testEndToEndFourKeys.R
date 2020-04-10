@@ -54,7 +54,7 @@ test_that("ComparisonOfEquals", {
   expect_equal(ABcomparison$rowMatching$matchKeys, toupper(c("color", "number", "color2", "number2")))
   
   # Matches should just be 1 field
-  expect_that(ABcomparison$matches == "VALUEA", is_true())
+  expect_true(ABcomparison$matches == "VALUEA")
   
   # Mismatches should be empty
   expect_equal(length(ABcomparison$mismatches), 0)
@@ -138,7 +138,7 @@ test_that("ComparisonOfMissRows", {
   expect_equal(ABcomparison$rowMatching$matchKeys, toupper(c("color", "number", "color2", "number2")))
   
   # Matches should just be 1 field
-  expect_that(ABcomparison$matches == "VALUEA", is_true())
+  expect_true(ABcomparison$matches == "VALUEA")
   
   # Mismatches should be empty
   expect_equal(length(ABcomparison$mismatches), 0)
@@ -179,7 +179,7 @@ test_that("ComparisonOfMissCols", {
   expect_equal(ABcomparison$rowMatching$matchKeys, toupper(c("color", "number", "color2", "number2")))
   
   # Matches should just be 1 field
-  expect_that(ABcomparison$matches == "VALUEA", is_true())
+  expect_true(ABcomparison$matches == "VALUEA")
   
   # Mismatches should be empty
   expect_equal(length(ABcomparison$mismatches), 0)
