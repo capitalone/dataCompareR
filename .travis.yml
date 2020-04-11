@@ -4,5 +4,3 @@ before_install:
   - cd dataCompareR
 os: linux
 dist: bionic
-services:
-  - xvfb
