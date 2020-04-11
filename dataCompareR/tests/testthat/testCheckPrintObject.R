@@ -200,6 +200,7 @@ test_that("test print argument validation", {
 
 test_that("test print with two empty data frames", {
   
+  skip_on_ci()
   # We'll use the pressure dataset for comparison
   
   # Make a copy of pressure with missing rows
