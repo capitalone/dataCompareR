@@ -2,6 +2,6 @@ language: r
 cache: packages
 before_install:
   - cd dataCompareR
-dist: xenial
+dist: bionic
 services:
   - xvfb
