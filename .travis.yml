@@ -2,5 +2,7 @@ language: r
 cache: packages
 before_install:
   - cd dataCompareR
-os: linux
-dist: bionic
+os:
+  - linux
+  - osx
+  - windows
