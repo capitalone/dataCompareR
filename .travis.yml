@@ -1,5 +1,5 @@
 language: r
-cache: packages
+cache: $R_LIBS_USER
 before_install:
   - cd dataCompareR
 dist: bionic
