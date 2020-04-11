@@ -3,5 +3,3 @@ cache: packages
 before_install:
   - cd dataCompareR
 dist: bionic
-services:
-  - xvfb
