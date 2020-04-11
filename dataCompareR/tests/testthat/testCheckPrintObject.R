@@ -26,6 +26,8 @@ library(testthat)
 
 context("OutputComparisons : Print")
 
+skip_on_ci()
+
 if(require(titanic)) {
   
   source('createTitanicDatasets.R')
