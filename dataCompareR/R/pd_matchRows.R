@@ -24,7 +24,7 @@
 matchRows <- function(df_a, df_b, indices = NA)
 {
   
-  if (length(indices == 1)) {
+  if (length(indices) == 1) {
     if (is.na(indices)) {
       return(matchNoIndex(df_a, df_b))
     } else {
