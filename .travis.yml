@@ -1,4 +1,7 @@
 language: r
+r:
+  - oldrel
+  - release
 cache: packages
 before_install:
   - cd dataCompareR
