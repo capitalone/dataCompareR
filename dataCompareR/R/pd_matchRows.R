@@ -24,12 +24,12 @@
 matchRows <- function(df_a, df_b, indices = NA)
 {
   
-  if (length(indices ==1) && is.na(indices)) {
-    return(matchNoIndex(df_a, df_b))
-  }
-  
-  if(length(indices) == 1){
-    return(matchSingleIndex(df_a, df_b, indices))
+  if (length(indices) == 1) {
+    if (is.na(indices)) {
+      return(matchNoIndex(df_a, df_b))
+    } else {
+      return(matchSingleIndex(df_a, df_b, indices))
+    }
   }
 
   if(length(indices) > 1){
