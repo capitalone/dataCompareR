@@ -8,3 +8,4 @@ before_install:
 os:
   - linux
   - osx
+dist: bionic
