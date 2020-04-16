@@ -37,6 +37,7 @@
 #* Row 8: name in uppercase
 #* Row 9: special characters included
 
+if (!require(titanic)) install.packages("titanic")
 
 #titanicKK <- read.csv('./tests/testthat/titanic_train.csv')
 titanic <- titanic_train
