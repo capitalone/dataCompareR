@@ -199,7 +199,7 @@ test_that("test print argument validation", {
 
 
 test_that("test print with two empty data frames", {
-  
+
   # We'll use the pressure dataset for comparison
   
   # Make a copy of pressure with missing rows
