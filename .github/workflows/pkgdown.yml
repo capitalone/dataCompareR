@@ -3,6 +3,9 @@
 on: push
 
 name: pkgdown
+defaults:
+  run:
+    working-directory: dataCompareR
 
 jobs:
   pkgdown:
