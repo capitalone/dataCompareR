@@ -41,7 +41,7 @@ jobs:
         run: R CMD INSTALL .
       
       - name: Copy README
-        run: mkdir _pkgdown && cp ../README.md _pkgdown/index.md
+        run:  ../README.md index.md
 
       - name: Deploy package
         run: pkgdown::deploy_to_branch(new_process = FALSE)
