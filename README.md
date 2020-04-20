@@ -33,14 +33,14 @@ Package was built with the following dependencies, but we anticipate it will wor
 
 You can install from the CRAN via: 
 
-```{r}
+```r
 install.packages("dataCompareR")
 ```
 
 You can also install the latest version directly from GitHub via
 
 
-```{r}
+```r
 library(devtools)
 install_git('https://github.com/capitalone/dataCompareR.git', branch = 'master',
             subdir = 'dataCompareR', type = 'source', repos = NULL,
