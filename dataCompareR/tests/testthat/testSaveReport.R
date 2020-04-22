@@ -54,13 +54,13 @@ test_that("checks save report works", {
   expect_true(!file.exists(file.path(tmpDir, "testing3.html")))
   
   # Check no errors
-  expect_error(saveReport(aaa, 'testing',reportLocation = '.', HTMLReport = TRUE), NA)
-  expect_error(saveReport(aaa, 'testing', reportLocation = '.',HTMLReport = FALSE), NA)
-  expect_error(saveReport(aaa,  'testing',reportLocation = '.', HTMLReport = TRUE, showInViewer = FALSE), NA)
-  expect_error(saveReport(aaa,  'testing',reportLocation = '.', HTMLReport = FALSE, showInViewer = FALSE), NA)
-  expect_error(saveReport(aaa, 'testing',reportLocation = '.', HTMLReport = TRUE, showInViewer = TRUE), NA)
-  expect_error(saveReport(aaa, 'testing',reportLocation = '.', HTMLReport = FALSE, showInViewer = TRUE), NA)
-   
+  expect_message(saveReport(aaa, 'testing',reportLocation = tmpDir, HTMLReport = TRUE))
+  expect_message(saveReport(aaa, 'testing', reportLocation = tmpDir,HTMLReport = FALSE))
+  expect_message(saveReport(aaa,  'testing',reportLocation = tmpDir, HTMLReport = TRUE, showInViewer = FALSE))
+  expect_message(saveReport(aaa,  'testing',reportLocation = tmpDir, HTMLReport = FALSE, showInViewer = FALSE))
+  expect_message(saveReport(aaa, 'testing',reportLocation = tmpDir, HTMLReport = TRUE, showInViewer = TRUE))
+  expect_message(saveReport(aaa, 'testing',reportLocation = tmpDir, HTMLReport = FALSE, showInViewer = TRUE))
+
 })
 
 

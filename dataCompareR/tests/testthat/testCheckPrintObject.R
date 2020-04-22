@@ -30,7 +30,7 @@ if(require(titanic)) {
   
   source('createTitanicDatasets.R')
 
-  test_that("comparePrintEqual", {
+  test_that("print only generates message when data sets match", {
     
     
     # The object has already pre-determined structure
@@ -39,11 +39,11 @@ if(require(titanic)) {
     
     # Check the print output with different parameters
     
-    p0 <- print(compareObject)
-    p1 <- print(compareObject,nObs = 1)
-    p2 <- print(compareObject,nObs = 2, nVars = 1)
-    p3 <- print(compareObject,verbose = TRUE)
-    p4 <- print(compareObject,nObs = 2, nVars = 1,verbose = TRUE)
+    expect_output(p0 <- print(compareObject))
+    expect_output(p1 <- print(compareObject,nObs = 1))
+    expect_output(p2 <- print(compareObject,nObs = 2, nVars = 1))
+    expect_output(p3 <- print(compareObject,verbose = TRUE))
+    expect_output(p4 <- print(compareObject,nObs = 2, nVars = 1,verbose = TRUE))
     
     
     expect_null(p0, info = "Expect a NULL object to be created and a message sent to the console 'All variables match'")
@@ -54,7 +54,7 @@ if(require(titanic)) {
     
   })
   
-  test_that("comparePrintUnEqual", {
+  test_that("print returns message and data when mismatches occur", {
     
     
     # The object has already pre-determined structure
@@ -63,11 +63,11 @@ if(require(titanic)) {
    
     #Generate print output objects
     
-    p0 <- print(b1)
-    p1 <- print(b1,nObs = 1)
-    p2 <- print(b1,nObs = 2, nVars = 1)
-    p3 <- print(b1,verbose = TRUE)
-    p4 <- print(b1,nObs = 2, nVars = 1,verbose = TRUE)
+    expect_output(p0 <- print(b1))
+    expect_output(p1 <- print(b1,nObs = 1))
+    expect_output(p2 <- print(b1,nObs = 2, nVars = 1))
+    expect_output(p3 <- print(b1,verbose = TRUE))
+    expect_output(p4 <- print(b1,nObs = 2, nVars = 1,verbose = TRUE))
     
     #Test output is as expected:
     
@@ -131,18 +131,18 @@ test_that("print rcomp object", {
   # For now we won't hard code each - instead, we will just check a few points...
   
   # We should look for the all match label
-  expect_true(any(textSame == "All compared variables match "),is_true())
-  expect_true(any(textSame == " Number of rows compared: 150 "),is_true())
-  expect_true(any(textSame == " Number of columns compared: 5"),is_true())
+  expect_true(any(textSame == "All compared variables match "))
+  expect_true(any(textSame == " Number of rows compared: 150 "))
+  expect_true(any(textSame == " Number of columns compared: 5"))
   
   # Expect they differ
-  expect_false(textSame[[1]] == textDiff[[1]], is_false())
-  expect_false(textSame[[2]] == textDiff[[2]], is_false())
-  expect_false(textSame[[3]] == textDiff[[3]], is_false())
-  expect_false(textSame[[4]] == textDiff[[4]], is_false())
+  expect_false(textSame[[1]] == textDiff[[1]])
+  expect_false(textSame[[2]] == textDiff[[2]])
+  expect_false(textSame[[3]] == textDiff[[3]])
+  expect_false(textSame[[4]] == textDiff[[4]])
   
   # Check that the textDiff has more cols
-  expect_true(length(textDiff) > 2,is_true())
+  expect_true(length(textDiff) > 2)
   
   
 })
