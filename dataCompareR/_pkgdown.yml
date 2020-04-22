@@ -1,0 +1,10 @@
+destination: docs
+
+reference:
+- contents:
+  - matches("rCompare")
+  - matches("generateMismatchData")
+  - matches("saveReport")
+  - print.dataCompareRobject
+  - summary.dataCompareRobject
+  - print.summary.dataCompareRobject

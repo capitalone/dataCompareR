@@ -1,8 +1,9 @@
 Package: dataCompareR
 Title: Compare Two Data Frames and Summarise the Difference
 Version: 0.1.2
-Authors@R: c(person("Rob", "Noble-Eddy", email = "opensource@capitalone.com", role = c("aut", "cre")),
-           person("Sarah", "Johnston", role = c("aut")),
+Authors@R: c(
+           person("Sarah", "Johnston",  email = "opensource@capitalone.com",  role = c("aut", "cre")),
+           person("Rob", "Noble-Eddy", role = c("aut")),
            person("Sarah", "Pollicott", role = c("aut")),
            person("Merlijn", "van Horssen", role = c("aut")),
            person("Lukas", "Drapal", role = c("ctb")),
