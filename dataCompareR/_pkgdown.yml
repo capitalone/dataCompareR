@@ -5,6 +5,6 @@ reference:
   - matches("rCompare")
   - matches("generateMismatchData")
   - matches("saveReport")
-  - matches("print.dataCompareRobject")
-  - matches("summary.dataCompareRobject")
-  - matches("print.summary.dataCompareRobject")
+  - print.dataCompareRobject
+  - summary.dataCompareRobject
+  - print.summary.dataCompareRobject
