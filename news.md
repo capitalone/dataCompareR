@@ -14,3 +14,11 @@ Mainly bug fixes, as follows:
 - Fix bug that prevented very large data frame comparisons because of an integer overflow when calculating the number of cells
 - Allow user to set number of comparisons to show when creating a report
 
+# dataCompareR 0.1.3
+
+Mainly bug fixes and test changes:
+
+- Allows single-column data frames to be compared, rather than erroring
+- No longer produces deprecated code warnings when running tests
+- Changed an if condition to meet guidelines around not using && operator with logical vectors
+- Fixed issue with Travis CI tests not passing

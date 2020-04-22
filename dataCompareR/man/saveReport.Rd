@@ -4,9 +4,16 @@
 \alias{saveReport}
 \title{Save a report based on a dataCompareR object}
 \usage{
-saveReport(compareObject, reportName, reportLocation = ".",
-  HTMLReport = TRUE, showInViewer = TRUE, stylesheet = NA,
-  printAll = FALSE, ...)
+saveReport(
+  compareObject,
+  reportName,
+  reportLocation = ".",
+  HTMLReport = TRUE,
+  showInViewer = TRUE,
+  stylesheet = NA,
+  printAll = FALSE,
+  ...
+)
 }
 \arguments{
 \item{compareObject}{a dataCompareR object.}
@@ -40,9 +47,10 @@ By default the \code{table.css} style sheet is used for format the html output.
 \dontrun{saveReport(rcObj, reportName = 'testReport')}
 }
 \seealso{
-Other dataCompareR.functions: \code{\link{generateMismatchData}},
-  \code{\link{print.dataCompareRobject}},
-  \code{\link{rCompare}},
-  \code{\link{summary.dataCompareRobject}}
+Other dataCompareR.functions: 
+\code{\link{generateMismatchData}()},
+\code{\link{print.dataCompareRobject}()},
+\code{\link{rCompare}()},
+\code{\link{summary.dataCompareRobject}()}
 }
 \concept{dataCompareR.functions}

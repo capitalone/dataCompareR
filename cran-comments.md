@@ -1,5 +1,5 @@
 ## Test environments
-* local Windows 10 install, R 3.4.0
+* local Windows 10 install, R 3.6.3
 * RHEL 6 server, R 3.2.3
 * win-builder (devel, release, oldrelease)
 
