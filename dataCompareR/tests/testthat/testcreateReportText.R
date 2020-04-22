@@ -99,7 +99,7 @@ test_that("check a key based match with 1 matching keys", {
   textKeys<- capture.output(createReportText(summary.dataCompareRobject(testKeys)))
   
   
-  expect_true(length(textKeys) != length(textNoKeys), is_true())
+  expect_true(length(textKeys) != length(textNoKeys))
   expect_true(any(grepl("No rows were compared, so no summary can be provided",textKeys)))
   
   # Expect that the match keys are present in the output

@@ -22,8 +22,7 @@
 #' @return A list containing the two dataframes, subsetted by shared indices, and a list which itself 
 #'        contains dataframes for the dropped rows
 matchRows <- function(df_a, df_b, indices = NA)
-{
-  
+{ 
   if (length(indices) == 1) {
     if (is.na(indices)) {
       return(matchNoIndex(df_a, df_b))

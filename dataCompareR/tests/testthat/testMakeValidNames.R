@@ -97,9 +97,6 @@ test_that("makeValidNames function in end to end context", {
   names(iris2) <- c("`__a horrible name`", "`and   another`", "`___so so bad`", "and111", "a_good_one")
   names(iris3) <- c("A", "A", "A", "A", "A")
   
-  print(summary(iris))
-  print(summary(iris2))
-  
   expect_message(a <- rCompare(iris, iris2), "Fixing syntactically invalid names")
   expect_message(b <- rCompare(iris2, iris2), "Fixing syntactically invalid names")
   
