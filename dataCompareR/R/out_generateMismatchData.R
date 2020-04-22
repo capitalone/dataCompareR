@@ -18,7 +18,7 @@
 #' Note that this function requires the user to pass in the two data frames used in the inital comparison. If this data
 #' does not match that used for the generation of the dataCompareR object the results produced will not be accurate.
 #' @family dataCompareR.functions
-#' @param x A dataCompareRobject.
+#' @param x A \code{dataCompareRobject}.
 #' @param dfA Data frame (or object coercable to a data frame). One of the two data frames used in the initial rCompare call.
 #' @param dfB Data frame (or object coercable to a data frame). One of the two data frames used in the initial rCompare call.
 #' @param ... Unused currently, may be used in future
