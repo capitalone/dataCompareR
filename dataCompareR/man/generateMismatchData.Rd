@@ -7,7 +7,7 @@
 generateMismatchData(x, dfA, dfB, ...)
 }
 \arguments{
-\item{x}{A dataCompareRobject.}
+\item{x}{A \code{dataCompareRobject}.}
 
 \item{dfA}{Data frame (or object coercable to a data frame). One of the two data frames used in the initial rCompare call.}
 

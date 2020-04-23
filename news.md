@@ -16,9 +16,11 @@ Mainly bug fixes, as follows:
 
 # dataCompareR 0.1.3
 
-Mainly bug fixes and test changes:
+Mainly bug fixes and test changes, including some to address CRAN check issues:
 
 - Allows single-column data frames to be compared, rather than erroring
 - No longer produces deprecated code warnings when running tests
+- Removed unnecessary console output during tests
 - Changed an if condition to meet guidelines around not using && operator with logical vectors
 - Fixed issue with Travis CI tests not passing
+- Added pkgdown documentation
