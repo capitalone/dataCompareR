@@ -1,4 +1,7 @@
 language: r
+r:
+  - release
+  - devel
 cache: packages
 before_install:
   - cd dataCompareR
