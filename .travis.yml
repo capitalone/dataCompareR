@@ -9,3 +9,5 @@ os:
   - linux
   - osx
 dist: bionic
+services:
+  - xvfb
