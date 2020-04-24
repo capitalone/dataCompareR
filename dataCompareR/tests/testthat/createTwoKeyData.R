@@ -16,7 +16,7 @@
 #
 
 
-createMatchoingTwoIndiceData <- function(sampleSize) {
+createMatchingTwoIndiceData <- function(sampleSize) {
 
   # Create Datasets to be joined
   colorSample <- c('red', 'green', 'blue', 'yellow', 'orange', 'purple')
@@ -24,7 +24,7 @@ createMatchoingTwoIndiceData <- function(sampleSize) {
   color <- sample(colorSample, sampleSize, replace = TRUE)
   number <- sample(1:ceiling(`^`(sampleSize, 0.8)), sampleSize, replace = TRUE)
   valueA <- runif(sampleSize, 0, 1)
-  dfA = data.frame(color, number, valueA)
+  dfA = data.frame(color, number, valueA, stringsAsFactors = TRUE)
   colnames(dfA) = c('color', 'number', 'valueA')
   
   # dfB is just a shuffled version of dfA
@@ -43,7 +43,7 @@ createMatchingFourIndiceData <- function(sampleSize) {
   number <- sample(1:ceiling(`^`(sampleSize, 0.8)), sampleSize, replace = TRUE)
   number2 <- sample(1:ceiling(`^`(sampleSize, 0.8)), sampleSize, replace = TRUE)
   valueA <- runif(sampleSize, 0, 1)
-  dfA = data.frame(color, number,color2,number2, valueA)
+  dfA = data.frame(color, number,color2,number2, valueA, stringsAsFactors = TRUE)
   colnames(dfA) = c('color', 'number','color2','number2', 'valueA')
   
   # dfB is just a shuffled version of dfA
@@ -62,7 +62,7 @@ createDateDataset <- function() {
   dateA <- Sys.Date() + sort(sample(1:10, 5))
   dateB <- Sys.Date() + sort(sample(1:10, 5))
   
-  dfA = data.frame(color, dateA,dateB)
+  dfA = data.frame(color, dateA,dateB, stringsAsFactors = TRUE)
   colnames(dfA) = c('color', 'dateA','dateB')
   
   # dfB is just a shuffled version of dfA
@@ -84,7 +84,7 @@ createTimestampDataset <- function() {
   dateA <- Sys.time() + sort(sample(1:10, 5))
   dateB <- Sys.time() + sort(sample(1:10, 5))
   
-  dfA = data.frame(color, dateA,dateB)
+  dfA = data.frame(color, dateA,dateB, stringsAsFactors = TRUE)
   colnames(dfA) = c('color', 'dateA','dateB')
   
   # dfB is just a shuffled version of dfA
@@ -105,7 +105,7 @@ createBit64Dataset <- function() {
   color <- sample(colorSample, 5, replace = FALSE)
   bigNumber <- as.integer64(sample(1E3:1E4,5))
   
-  dfA = data.frame(color, bigNumber)
+  dfA = data.frame(color, bigNumber, stringsAsFactors = TRUE)
   colnames(dfA) = c('color', 'bigNumber')
   
   # dfB is just a shuffled version of dfA
@@ -122,7 +122,7 @@ createOrderedFactor <- function() {
   color <- sample(colorSample, 5, replace = FALSE)
   color2 <- sample(colorSample, 5, replace = FALSE)
   
-  dfA = data.frame(color, color2)
+  dfA = data.frame(color, color2, stringsAsFactors = TRUE)
   colnames(dfA) = c('color', 'color2')
   dfA$color2 <- factor(dfA$color2, levels=c('red', 'green', 'blue', 'yellow', 'orange', 'purple'), ordered=TRUE)
   dfA$color3 <- dfA$color2

@@ -27,7 +27,7 @@ context("Two Match Key Comparisons")
 test_that("ComparisonOfEquals", {
 
   # Create and compare two matching datasets
-  dts <- createMatchoingTwoIndiceData(5)
+  dts <- createMatchingTwoIndiceData(5)
   
   dfTableA <- dts[[1]]
   dfTableB <- dts[[2]]
@@ -63,7 +63,7 @@ test_that("ComparisonOfEquals", {
 test_that("ComparisonOfUnEquals", {
   
   # Create and compare two matching datasets
-  dts <- createMatchoingTwoIndiceData(5)
+  dts <- createMatchingTwoIndiceData(5)
   
   dfTableA <- dts[[1]]
   dfTableB <- dts[[2]]
@@ -103,7 +103,7 @@ test_that("ComparisonOfUnEquals", {
 test_that("ComparisonOfMissRows", {
   
   # Create and compare two matching datasets
-  dts <- createMatchoingTwoIndiceData(5)
+  dts <- createMatchingTwoIndiceData(5)
   
   dfTableA <- dts[[1]]
   dfTableB <- dts[[2]][1:4,]
@@ -139,7 +139,7 @@ test_that("ComparisonOfMissRows", {
 test_that("ComparisonOfMissCols", {
   
   # Create and compare two matching datasets
-  dts <- createMatchoingTwoIndiceData(5)
+  dts <- createMatchingTwoIndiceData(5)
   
   dfTableA <- dts[[1]]
   dfTableB <- dts[[2]]
