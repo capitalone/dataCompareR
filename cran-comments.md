@@ -1,5 +1,6 @@
 ## Test environments
 * local Windows 10 install, R 3.6.3
+* local Windows 10 install, R 4.0.0
 * Ubuntu 16.04.6 (on travis-ci), R 3.6.2
 * macOS High Sierra 10.13.6 (on travis-ci), R 3.6.2
 * win-builder (release, oldrelease)
