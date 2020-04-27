@@ -7,7 +7,6 @@ before_install:
   - cd dataCompareR
 os:
   - linux
-  - osx
 dist: xenial
 services:
   - xvfb
