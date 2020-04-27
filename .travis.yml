@@ -1,6 +1,6 @@
 language: r
 r:
-  - release
+  - 4.0.0
   - devel
 cache: packages
 before_install:
