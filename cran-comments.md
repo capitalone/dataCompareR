@@ -1,7 +1,6 @@
 ## Test environments
 * local Windows 10 install, R 4.0.0
-* Ubuntu 16.04.6 (on travis-ci), R 3.6.2
-* macOS High Sierra 10.13.6 (on travis-ci), R 3.6.2
+* Ubuntu 16.04.6 (on travis-ci), R 3.6.2, devel R 4.1.0
 * win-builder (release, oldrelease)
 
 ## R CMD check results
