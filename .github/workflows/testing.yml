@@ -9,6 +9,10 @@ on:
       - dev
 
 name: R-CMD-check
+defaults:
+  run:
+    working-directory: dataCompareR
+
 
 jobs:
   R-CMD-check:
