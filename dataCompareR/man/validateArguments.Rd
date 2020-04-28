@@ -4,8 +4,12 @@
 \alias{validateArguments}
 \title{validateArguments}
 \usage{
-validateArguments(matchKey = NA, roundDigits = NA, coerceCols = TRUE,
-  maxMismatch = NA)
+validateArguments(
+  matchKey = NA,
+  roundDigits = NA,
+  coerceCols = TRUE,
+  maxMismatch = NA
+)
 }
 \arguments{
 \item{matchKey}{A character or character vector of column names to match on}

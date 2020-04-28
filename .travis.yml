@@ -1,8 +1,12 @@
 language: r
+r:
+  - 4.0.0
+  - devel
 cache: packages
 before_install:
   - cd dataCompareR
 os:
   - linux
-  - osx
-dist: bionic
+dist: xenial
+services:
+  - xvfb

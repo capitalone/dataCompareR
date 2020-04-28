@@ -4,8 +4,14 @@
 \alias{rCompare}
 \title{Compare two data frames}
 \usage{
-rCompare(dfA, dfB, keys = NA, roundDigits = NA, mismatches = NA,
-  trimChars = FALSE)
+rCompare(
+  dfA,
+  dfB,
+  keys = NA,
+  roundDigits = NA,
+  mismatches = NA,
+  trimChars = FALSE
+)
 }
 \arguments{
 \item{dfA}{data frame. The first data object. dataCompareR will attempt to coerce all data objects to data frames.}
@@ -48,9 +54,10 @@ rCompare(pressure2,pressure2,key='temperature')
 rCompare(pressure2,pressure2,key='temperature', mismatches = 10)
 }
 \seealso{
-Other dataCompareR.functions: \code{\link{generateMismatchData}},
-  \code{\link{print.dataCompareRobject}},
-  \code{\link{saveReport}},
-  \code{\link{summary.dataCompareRobject}}
+Other dataCompareR.functions: 
+\code{\link{generateMismatchData}()},
+\code{\link{print.dataCompareRobject}()},
+\code{\link{saveReport}()},
+\code{\link{summary.dataCompareRobject}()}
 }
 \concept{dataCompareR.functions}
