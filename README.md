@@ -19,7 +19,7 @@ It’s expected that dataCompareR will be used to compare data frames, but it ca
 
 ### Requirements
 
-Confirmed as working on R v3.2.3 and later on Linux/Windows, both via RStudio and through the command line.
+Confirmed as working on R v3.6.3 and v4.0.0 for Windows, as well as v3.6.2, v4.0.0 and the `devel` release for Linux. 
 Package was built with the following dependencies, but we anticipate it will work with later versions of these packages.
 
 | Package|Version|Source code URL|
