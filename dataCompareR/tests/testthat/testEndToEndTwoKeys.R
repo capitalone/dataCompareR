@@ -27,7 +27,7 @@ context("Two Match Key Comparisons")
 test_that("ComparisonOfEquals", {
 
   # Create and compare two matching datasets
-  dts <- createMatchoingTwoIndiceData(5)
+  dts <- createMatchingTwoIndiceData(5)
   
   dfTableA <- dts[[1]]
   dfTableB <- dts[[2]]
@@ -50,7 +50,7 @@ test_that("ComparisonOfEquals", {
   expect_equal(ABcomparison$rowMatching$matchKeys, c("COLOR","NUMBER"))
   
   # Matches should just be 1 field
-  expect_that(ABcomparison$matches == "VALUEA", is_true())
+  expect_true(ABcomparison$matches == "VALUEA")
   
   # Mismatches should be empty
   expect_equal(length(ABcomparison$mismatches), 0)
@@ -63,7 +63,7 @@ test_that("ComparisonOfEquals", {
 test_that("ComparisonOfUnEquals", {
   
   # Create and compare two matching datasets
-  dts <- createMatchoingTwoIndiceData(5)
+  dts <- createMatchingTwoIndiceData(5)
   
   dfTableA <- dts[[1]]
   dfTableB <- dts[[2]]
@@ -103,7 +103,7 @@ test_that("ComparisonOfUnEquals", {
 test_that("ComparisonOfMissRows", {
   
   # Create and compare two matching datasets
-  dts <- createMatchoingTwoIndiceData(5)
+  dts <- createMatchingTwoIndiceData(5)
   
   dfTableA <- dts[[1]]
   dfTableB <- dts[[2]][1:4,]
@@ -126,7 +126,7 @@ test_that("ComparisonOfMissRows", {
   expect_equal(ABcomparison$rowMatching$inB$NUMBER, logical(0))
   
   # Matches should just be 1 field
-  expect_that(ABcomparison$matches == "VALUEA", is_true())
+  expect_true(ABcomparison$matches == "VALUEA")
   
   # Mismatches should be empty
   expect_equal(length(ABcomparison$mismatches), 0)
@@ -139,7 +139,7 @@ test_that("ComparisonOfMissRows", {
 test_that("ComparisonOfMissCols", {
   
   # Create and compare two matching datasets
-  dts <- createMatchoingTwoIndiceData(5)
+  dts <- createMatchingTwoIndiceData(5)
   
   dfTableA <- dts[[1]]
   dfTableB <- dts[[2]]
@@ -163,7 +163,7 @@ test_that("ComparisonOfMissCols", {
   expect_equal(ABcomparison$rowMatching$matchKeys, c("COLOR","NUMBER"))
   
   # Matches should just be 1 field
-  expect_that(ABcomparison$matches == "VALUEA", is_true())
+  expect_true(ABcomparison$matches == "VALUEA")
   
   # Mismatches should be empty
   expect_equal(length(ABcomparison$mismatches), 0)

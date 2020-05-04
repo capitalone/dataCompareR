@@ -1,7 +1,12 @@
 language: r
+r:
+  - 4.0.0
+  - devel
 cache: packages
 before_install:
   - cd dataCompareR
-before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
+os:
+  - linux
+dist: xenial
+services:
+  - xvfb

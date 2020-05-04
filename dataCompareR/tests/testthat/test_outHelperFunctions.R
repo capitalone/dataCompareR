@@ -26,8 +26,8 @@ context('out_helperFunctions.R')
 
 test_that("isNotNull", {
 
-  expect_that(isNotNull(NULL), is_false())
-  expect_that(isNotNull(1), is_true())
+  expect_false(isNotNull(NULL))
+  expect_true(isNotNull(1))
   
 })
 

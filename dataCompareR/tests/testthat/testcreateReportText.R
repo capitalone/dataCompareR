@@ -39,49 +39,49 @@ test_that("check a non comprehensive set of properties about createReportText", 
   # For now we won't hard code each - instead, we will just check a few points...
   
   # We should look for the names of the data
-  expect_that(any(grepl("iris",textSame)),is_true())
-  expect_that(any(grepl("iris",textDiff)),is_true())
-  expect_that(any(grepl("iris2",textSame)),is_false())
-  expect_that(any(grepl("iris2",textDiff)),is_true())
+  expect_true(any(grepl("iris",textSame)))
+  expect_true(any(grepl("iris",textDiff)))
+  expect_false(any(grepl("iris2",textSame)))
+  expect_true(any(grepl("iris2",textDiff)))
   
   # Check that the column equal report is working
-  expect_that(any(grepl("Columns with all rows equal : PETAL.LENGTH, PETAL.WIDTH, SEPAL.LENGTH, SEPAL.WIDTH, SPECIES",textSame)),is_true())
-  expect_that(any(grepl("Columns with all rows equal : PETAL.LENGTH, PETAL.WIDTH, SEPAL.LENGTH, SEPAL.WIDTH, SPECIES",textDiff)),is_true())
+  expect_true(any(grepl("Columns with all rows equal : PETAL.LENGTH, PETAL.WIDTH, SEPAL.LENGTH, SEPAL.WIDTH, SPECIES",textSame)))
+  expect_true(any(grepl("Columns with all rows equal : PETAL.LENGTH, PETAL.WIDTH, SEPAL.LENGTH, SEPAL.WIDTH, SPECIES",textDiff)))
   
   # Expect the diff report to contain 140 (10 rows are missing) and 10
-  expect_that(any(grepl("140",textDiff)),is_true())
-  expect_that(any(grepl("10",textDiff)),is_true())
+  expect_true(any(grepl("140",textDiff)))
+  expect_true(any(grepl("10",textDiff)))
   
   # And both contain 150
-  expect_that(any(grepl("150",textSame)),is_true())
-  expect_that(any(grepl("150",textDiff)),is_true())
+  expect_true(any(grepl("150",textSame)))
+  expect_true(any(grepl("150",textDiff)))
   
   # Both contain some data, say more than 40 lines
-  expect_that(length(textSame) > 40,is_true())
-  expect_that(length(textDiff) > 40,is_true())
+  expect_true(length(textSame) > 40)
+  expect_true(length(textDiff) > 40)
   
   # Expect a bunch of words will always be there
-  expect_that(any(grepl("columns",textDiff)),is_true())
-  expect_that(any(grepl("columns",textSame)),is_true())
+  expect_true(any(grepl("columns",textDiff)))
+  expect_true(any(grepl("columns",textSame)))
   
-  expect_that(any(grepl("rows",textDiff)),is_true())
-  expect_that(any(grepl("rows",textSame)),is_true())
+  expect_true(any(grepl("rows",textDiff)))
+  expect_true(any(grepl("rows",textSame)))
   
-  expect_that(any(grepl("Variable",textDiff)),is_true())
-  expect_that(any(grepl("Variable",textSame)),is_true())
+  expect_true(any(grepl("Variable",textDiff)))
+  expect_true(any(grepl("Variable",textSame)))
   
-  expect_that(any(grepl("equal",textDiff)),is_true())
-  expect_that(any(grepl("equal",textSame)),is_true())
+  expect_true(any(grepl("equal",textDiff)))
+  expect_true(any(grepl("equal",textSame)))
   
-  expect_that(any(grepl("unequal",textDiff)),is_true())
-  expect_that(any(grepl("unequal",textSame)),is_true())
+  expect_true(any(grepl("unequal",textDiff)))
+  expect_true(any(grepl("unequal",textSame)))
   
   # Expect they differ
-  expect_that(all(textDiff==textSame),is_false())
+  expect_false(all(textDiff==textSame))
 
   # Expect that both contain the line "No match key used, comparison is by row"
-  expect_that(any(grepl("No match key used, comparison is by row",textDiff)),is_true())
-  expect_that(any(grepl("No match key used, comparison is by row",textSame)),is_true())
+  expect_true(any(grepl("No match key used, comparison is by row",textDiff)))
+  expect_true(any(grepl("No match key used, comparison is by row",textSame)))
   
 })
 
@@ -99,12 +99,12 @@ test_that("check a key based match with 1 matching keys", {
   textKeys<- capture.output(createReportText(summary.dataCompareRobject(testKeys)))
   
   
-  expect_that(length(textKeys) != length(textNoKeys), is_true())
-  expect_that(any(grepl("No rows were compared, so no summary can be provided",textKeys)),is_true())
+  expect_true(length(textKeys) != length(textNoKeys))
+  expect_true(any(grepl("No rows were compared, so no summary can be provided",textKeys)))
   
   # Expect that the match keys are present in the output
-  expect_that(any(grepl("No match key used, comparison is by row",textNoKeys)),is_true())
-  expect_that(any(grepl("Match keys : 1   - TEMPERATURE",textKeys, fixed = TRUE)),is_true())
+  expect_true(any(grepl("No match key used, comparison is by row",textNoKeys)))
+  expect_true(any(grepl("Match keys : 1   - TEMPERATURE",textKeys, fixed = TRUE)))
   
 })
 

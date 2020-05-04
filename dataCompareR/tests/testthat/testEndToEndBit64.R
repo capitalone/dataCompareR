@@ -39,12 +39,12 @@ test_that("ComparisonOfBit64Fields", {
     ABcomparison <- rCompare(dfTableA, dfTableB, keys = c("color"))
     ACcomparison <- rCompare(dfTableA, dfTableC, keys = c("color"))
     
-    expect_that(ABcomparison$matches[1] == "BIGNUMBER", is_true() )
-    expect_that(is.na(ACcomparison$matches[1]), is_true() )
+    expect_true(ABcomparison$matches[1] == "BIGNUMBER")
+    expect_true(is.na(ACcomparison$matches[1]))
     
-    expect_that(length(ABcomparison$mismatches) == 0, is_true() )
-    expect_that(nrow(ACcomparison$mismatches$BIGNUMBER) == 5, is_true() )
-    expect_that(all(ACcomparison$mismatches$BIGNUMBER$diffAB == 1), is_true() )
+    expect_true(length(ABcomparison$mismatches) == 0)
+    expect_true(nrow(ACcomparison$mismatches$BIGNUMBER) == 5)
+    expect_true(all(ACcomparison$mismatches$BIGNUMBER$diffAB == 1))
   }
   
  })

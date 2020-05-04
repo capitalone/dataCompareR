@@ -35,8 +35,8 @@ context("Coercion wrapper function")
 test_that("Coercion wrapper function", {
   
   DF <- data.frame(numeric = c(1, 2, 3, 4), character = c("a", "b", "c", "d"), stringsAsFactors = FALSE)
-  Fac <- data.frame(numeric = c("1", "2", "3", "4"), character = c("a", "b", "c", "d"))
-  WSF <- data.frame(numeric = c(1.0, 2, 3.0, 4), character = c(" a ", "  b", "c ", "d"))
+  Fac <- data.frame(numeric = c("1", "2", "3", "4"), character = c("a", "b", "c", "d"), stringsAsFactors = TRUE)
+  WSF <- data.frame(numeric = c(1.0, 2, 3.0, 4), character = c(" a ", "  b", "c ", "d"), stringsAsFactors = TRUE)
   WS <- data.frame(numeric = c(1.0, 2, 3.0, 4), character = c(" a ", "  b", "c ", "d"), stringsAsFactors = FALSE)
   
   FacAfter <- data.frame(numeric = c("1", "2", "3", "4"), character = c("a", "b", "c", "d"), stringsAsFactors = FALSE)

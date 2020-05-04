@@ -22,14 +22,13 @@
 #' @return A list containing the two dataframes, subsetted by shared indices, and a list which itself 
 #'        contains dataframes for the dropped rows
 matchRows <- function(df_a, df_b, indices = NA)
-{
-  
-  if (length(indices ==1) && is.na(indices)) {
-    return(matchNoIndex(df_a, df_b))
-  }
-  
-  if(length(indices) == 1){
-    return(matchSingleIndex(df_a, df_b, indices))
+{ 
+  if (length(indices) == 1) {
+    if (is.na(indices)) {
+      return(matchNoIndex(df_a, df_b))
+    } else {
+      return(matchSingleIndex(df_a, df_b, indices))
+    }
   }
 
   if(length(indices) > 1){
@@ -164,9 +163,9 @@ matchNoIndex <- function(df_a, df_b)
   if(nrow(df_a)>nrow(df_b)) {
     
     if(nrow(df_b)==0) {
-      df_a_subset <- df_a[0,]
+      df_a_subset <- df_a[0, , drop=FALSE]
     } else {
-      df_a_subset <- df_a[1:nrow(df_b),]
+      df_a_subset <- df_a[1:nrow(df_b), , drop=FALSE]
     }
     
     df_b_subset <- df_b
@@ -177,9 +176,9 @@ matchNoIndex <- function(df_a, df_b)
     df_a_subset <- df_a
     
     if(nrow(df_a)==0) {
-      df_b_subset <-df_b[0,]
+      df_b_subset <-df_b[0, , drop=FALSE]
     } else {
-      df_b_subset <-df_b[1:nrow(df_a),]
+      df_b_subset <-df_b[1:nrow(df_a), , drop=FALSE]
     }
     
     rows_dropped_from_a <- data.frame(indices_removed=integer())

@@ -4,8 +4,7 @@
 \alias{print.dataCompareRobject}
 \title{Printing RCompare Output}
 \usage{
-\method{print}{dataCompareRobject}(x, nVars = 5, nObs = 5,
-  verbose = FALSE, ...)
+\method{print}{dataCompareRobject}(x, nVars = 5, nObs = 5, verbose = FALSE, ...)
 }
 \arguments{
 \item{x}{an object of class "dataCompareR", usually a result of a call to \code{\link{rCompare}}.}
@@ -26,8 +25,10 @@ rc1 <- rCompare(iris,iris)
 print(rc1)  
 }
 \seealso{
-Other dataCompareR.functions: \code{\link{generateMismatchData}},
-  \code{\link{rCompare}}, \code{\link{saveReport}},
-  \code{\link{summary.dataCompareRobject}}
+Other dataCompareR.functions: 
+\code{\link{generateMismatchData}()},
+\code{\link{rCompare}()},
+\code{\link{saveReport}()},
+\code{\link{summary.dataCompareRobject}()}
 }
 \concept{dataCompareR.functions}

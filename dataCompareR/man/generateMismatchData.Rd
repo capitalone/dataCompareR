@@ -7,7 +7,7 @@
 generateMismatchData(x, dfA, dfB, ...)
 }
 \arguments{
-\item{x}{A dataCompareRobject.}
+\item{x}{A \code{dataCompareRobject}.}
 
 \item{dfA}{Data frame (or object coercable to a data frame). One of the two data frames used in the initial rCompare call.}
 
@@ -26,8 +26,10 @@ Note that this function requires the user to pass in the two data frames used in
 does not match that used for the generation of the dataCompareR object the results produced will not be accurate.
 }
 \seealso{
-Other dataCompareR.functions: \code{\link{print.dataCompareRobject}},
-  \code{\link{rCompare}}, \code{\link{saveReport}},
-  \code{\link{summary.dataCompareRobject}}
+Other dataCompareR.functions: 
+\code{\link{print.dataCompareRobject}()},
+\code{\link{rCompare}()},
+\code{\link{saveReport}()},
+\code{\link{summary.dataCompareRobject}()}
 }
 \concept{dataCompareR.functions}

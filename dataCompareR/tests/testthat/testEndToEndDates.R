@@ -34,12 +34,12 @@ test_that("ComparisonOfEqualDates", {
   
   ABcomparison <- rCompare(dfTableA, dfTableB, keys = c("color"))
   
-  expect_that(ABcomparison$matches[1] == "DATEA", is_true())
+  expect_true(ABcomparison$matches[1] == "DATEA")
   
-  expect_that(names(ABcomparison$mismatches)[1] == "DATEB", is_true())
-  expect_that(nrow(ABcomparison$mismatches[[1]]) == 5, is_true())
-  expect_that(all(ABcomparison$mismatches$DATEB$diffAB < 0), is_true())
-  expect_that(all(ABcomparison$mismatches$DATEB$diffAB > -21), is_true())
+  expect_true(names(ABcomparison$mismatches)[1] == "DATEB")
+  expect_true(nrow(ABcomparison$mismatches[[1]]) == 5)
+  expect_true(all(ABcomparison$mismatches$DATEB$diffAB < 0))
+  expect_true(all(ABcomparison$mismatches$DATEB$diffAB > -21))
 
 })
 
@@ -57,12 +57,12 @@ test_that("ComparisonOfPOSIXDates", {
   
   ABcomparison <- rCompare(dfTableA, dfTableB, keys = c("color"))
   
-  expect_that(ABcomparison$matches[1] == "DATEA", is_true())
+  expect_true(ABcomparison$matches[1] == "DATEA")
   
-  expect_that(names(ABcomparison$mismatches)[1] == "DATEB", is_true())
-  expect_that(nrow(ABcomparison$mismatches[[1]]) == 5, is_true())
-  expect_that(all(ABcomparison$mismatches$DATEB$diffAB < 0), is_true())
-  expect_that(all(ABcomparison$mismatches$DATEB$diffAB > -21), is_true())
+  expect_true(names(ABcomparison$mismatches)[1] == "DATEB")
+  expect_true(nrow(ABcomparison$mismatches[[1]]) == 5)
+  expect_true(all(ABcomparison$mismatches$DATEB$diffAB < 0))
+  expect_true(all(ABcomparison$mismatches$DATEB$diffAB > -21))
   
 })
 
@@ -77,25 +77,25 @@ test_that("ComparisonOfMixedDates", {
   dfTableA$dateA <- as.POSIXct.Date(dfTableA$dateA)
   dfTableA$dateB <- as.POSIXct.Date(dfTableA$dateB)
   ABcomparison <- rCompare(dfTableA, dfTableB, keys = c("color"))
-  expect_that(length(ABcomparison$matches) == 0, is_true())
-  expect_that(names(ABcomparison$mismatches)[1] == "DATEA", is_true())
-  expect_that(names(ABcomparison$mismatches)[2] == "DATEB", is_true())
-  expect_that(all(ABcomparison$mismatches$DATEA$diffAB == ""), is_true())
-  expect_that(all(ABcomparison$mismatches$DATEB$diffAB == ""), is_true())
+  expect_true(length(ABcomparison$matches) == 0)
+  expect_true(names(ABcomparison$mismatches)[1] == "DATEA")
+  expect_true(names(ABcomparison$mismatches)[2] == "DATEB")
+  expect_true(all(ABcomparison$mismatches$DATEA$diffAB == ""))
+  expect_true(all(ABcomparison$mismatches$DATEB$diffAB == ""))
   
   # Set the matching column in B to Posix - now A/A should match
   dfTableB$dateA <- as.POSIXct.Date(dfTableB$dateA)
   ABcomparison <- rCompare(dfTableA, dfTableB, keys = c("color"))
-  expect_that(ABcomparison$matches[1] == "DATEA", is_true())
-  expect_that(names(ABcomparison$mismatches)[1] == "DATEB", is_true())
-  expect_that(all(ABcomparison$mismatches$DATEB$diffAB == ""), is_true())
+  expect_true(ABcomparison$matches[1] == "DATEA")
+  expect_true(names(ABcomparison$mismatches)[1] == "DATEB")
+  expect_true(all(ABcomparison$mismatches$DATEB$diffAB == ""))
   
   
   # Change last column - now it musmatches due to differences
   dfTableB$dateB <- as.POSIXct.Date(dfTableB$dateB)
   ABcomparison <- rCompare(dfTableA, dfTableB, keys = c("color"))
-  expect_that(ABcomparison$matches[1] == "DATEA", is_true())
-  expect_that(names(ABcomparison$mismatches)[1] == "DATEB", is_true())
-  expect_that(all(ABcomparison$mismatches$DATEB$diffAB < 0), is_true())
-  expect_that(all(ABcomparison$mismatches$DATEB$diffAB > -21), is_true())
+  expect_true(ABcomparison$matches[1] == "DATEA")
+  expect_true(names(ABcomparison$mismatches)[1] == "DATEB")
+  expect_true(all(ABcomparison$mismatches$DATEB$diffAB < 0))
+  expect_true(all(ABcomparison$mismatches$DATEB$diffAB > -21))
 })
