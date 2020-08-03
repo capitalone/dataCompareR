@@ -177,16 +177,12 @@ test_that("Merged indices remain unique in multi-index cases", {
   ky1 <- c("a1", "a")
   ky2 <- c("b", "1b")
   df1 <- data.frame(ky1, ky2, ky, stringsAsFactors = FALSE)
-  
-  ky <- c(1, 2)
-  ky1 <- c("a1", "a")
-  ky2 <- c("b", "1b")
-  df2 <- data.frame(ky1, ky2, ky, stringsAsFactors = FALSE)
-  
-  ky <- c(1, 2)
-  ky1 <- c("a1", "a")
-  ky2 <- c("b", "1b")
-  dfMtch <- data.frame(ky1, ky2, ky, stringsAsFactors = FALSE)
+
+  # Second data frame. Same as first
+  df2 <- df1
+
+  # Matching data fame will be the same as well
+  dfMtch <- df1
   
   # Do the actual matching. If the indices weren't unique, an error would be raised
   # This shouldn't produce any errors because they are separate indices
