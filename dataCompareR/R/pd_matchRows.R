@@ -140,8 +140,8 @@ matchSingleIndex <- function(df_a, df_b, index_key, original_keys)
 #'        contains the vectors for the dropped rows
 matchMultiIndex <- function(df_a, df_b, indices)
 {
-  df_a$dataCompareR_merged_indices <- do.call(paste,c(df_a[indices],sep = ""))
-  df_b$dataCompareR_merged_indices <- do.call(paste,c(df_b[indices],sep = ""))
+  df_a$dataCompareR_merged_indices <- do.call(paste,c(df_a[indices],sep = "_"))
+  df_b$dataCompareR_merged_indices <- do.call(paste,c(df_b[indices],sep = "_"))
   
   mtchedData <- matchSingleIndex(df_a, df_b, 'dataCompareR_merged_indices', indices)
   
