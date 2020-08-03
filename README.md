@@ -19,7 +19,7 @@ It’s expected that dataCompareR will be used to compare data frames, but it ca
 
 ### Requirements
 
-Confirmed as working on R v3.2.3 and later on Linux/Windows, both via RStudio and through the command line.
+Confirmed as working on R v3.6.3 and v4.0.0 for Windows, as well as v3.6.2, v4.0.0 and the `devel` release for Linux. 
 Package was built with the following dependencies, but we anticipate it will work with later versions of these packages.
 
 | Package|Version|Source code URL|
@@ -108,6 +108,8 @@ https://cran.r-project.org/package=dataCompareR
 
 - Version 0.1.0 released on 2017-07-17
 - Version 0.1.1 released on 2017-11-14
+- Version 0.1.2 released on 2019-09-07
+- Version 0.1.3 released on 2020-05-01
 
 ## External Contributors
 
