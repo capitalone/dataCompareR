@@ -93,3 +93,37 @@ test_that("matchMultiIndex doesn't produce any warnings when creating output" , 
   expect_message(summary(a),"dataCompareR is generating the summary...")
   
 })
+
+test_that("Merged indices remain unique in multi-index cases", {
+  
+  # Create data frames with values that if merged without a separator, would
+  # produce the same merged index. 
+  
+  # No differences
+  ky <- c(1, 2)
+  ky1 <- c("a1", "a")
+  ky2 <- c("b", "1b")
+  df1 <- data.frame(ky1, ky2, ky, stringsAsFactors = FALSE)
+  
+  # Second data frame. Same as first
+  df2 <- df1
+  
+  # Matching data fame will be the same as well
+  dfMtch <- df1
+  
+  # Do the actual matching. If the indices weren't unique, an error would be raised
+  # This shouldn't produce any errors because they are separate indices
+  expect_silent(mtch <- matchMultiIndex(df1, df2, c("ky1", "ky2"))) # Expected matched subset
+  
+  # Check that the output is still as expected
+  mtchSorted <- arrange(mtch[[1]], ky1, ky2)
+  dfMtchSorted <- arrange(dfMtch, ky1, ky2)
+  
+  expect_equal(mtchSorted[,1], dfMtchSorted[,1])
+  expect_equal(mtchSorted[,2], dfMtchSorted[,2]) 
+  
+  mtch2Sorted <- arrange(mtch[[2]], ky1, ky2)
+  
+  expect_equal(mtch2Sorted[,1], dfMtchSorted[,1]) 
+  expect_equal(mtch2Sorted[,2], dfMtchSorted[,2]) 
+})
