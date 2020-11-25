@@ -47,8 +47,6 @@ install_git('https://github.com/capitalone/dataCompareR.git', branch = 'master',
             build_vignettes = TRUE)
 ```
 
-Note: For OS X users: installing through install_git is broken. More information can be found [here](https://github.com/ropensci/git2r/issues/331). 
-
 ### Using dataCompareR
 
 Please run `vignette('dataCompareR')` after installation to see an example of the dataCompareR workflow.
