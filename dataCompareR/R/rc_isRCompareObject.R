@@ -15,6 +15,7 @@
 #' 
 #' @param x An object
 #' @return A boolean: TRUE if object is class dataCompareRobject and FALSE if not 
+#' @noRd
 
 is.dataCompareRobject <- function(x) inherits(x, "dataCompareRobject")
 

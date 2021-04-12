@@ -16,6 +16,7 @@
 #' @param df a data frame
 #' @param keys a list of expected columns
 #' @return None. Stops if keys are not present as column names in df.
+#' @noRd
 #' @examples
 #' \dontrun{checkKeysExist(iris, 'columnName')}
 checkKeysExist <- function(df,keys) {

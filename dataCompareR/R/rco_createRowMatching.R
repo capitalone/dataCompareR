@@ -18,6 +18,7 @@
 #' @param compObj dataCompareRobject to be updated 
 #' @param matchKey the list of keys based on which the row matching was performed 
 #' @return compObj Updated dataCompareRobject 
+#' @noRd
 createRowMatching <- function(compObj, x, matchKey)
 {
   #the input x is a list of lists. In x, the first

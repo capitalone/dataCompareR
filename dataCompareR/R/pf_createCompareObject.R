@@ -14,6 +14,7 @@
 #' Generates an empty list of the correct class to store results
 #' 
 #' @return A list of class dataCompareRObject
+#' @noRd
 #'  
 
 createCompareObject <- function() {

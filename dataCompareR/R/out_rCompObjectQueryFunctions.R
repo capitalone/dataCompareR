@@ -16,6 +16,7 @@
 #' 
 #' @param x an object
 #' @return length, numeric
+#' @noRd
 rcompObjItemLength <- function(x){
   if (isNotNull(x)) {
     if(is.data.frame(x)) {
@@ -35,6 +36,7 @@ rcompObjItemLength <- function(x){
 #' @param x the column to be considered
 #' @param mismatches - a mismatches object from an dataCompareR object
 #' @return data frame with a summary of the mismatching column
+#' @noRd
 colsWithUnequalValues <- function(x, mismatches){
   if (isNotNull(x)) {
     

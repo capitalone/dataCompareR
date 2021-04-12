@@ -17,6 +17,7 @@
 #'
 #' @param df a data frame
 #' @return None. Stops if empty.
+#' @noRd
 #' @examples
 #' \dontrun{checkEmpty(iris)}
 
@@ -40,6 +41,7 @@ checkEmpty <- function(df) {
 #' @param df A (probable) dataframe
 #' 
 #' @return Nothing. Errors is df is NA
+#' @noRd
 
 checkNA <- function(df) {
   if(isSingleNA(df)) {
@@ -55,6 +57,7 @@ checkNA <- function(df) {
 #' @param x literally anything
 #' 
 #' @return boolean
+#' @noRd
 isSingleNA <- function(x) {
   if(is.vector(x) && length(x) == 1 && is.na(x)) {
     TRUE

@@ -20,6 +20,7 @@
 #' single character, or a vector of characters
 #' @import stringi
 #' @return A list containing the two dataframes, subsetted by shared indices, and a list which itself 
+#' @noRd
 #'        contains dataframes for the dropped rows
 matchRows <- function(df_a, df_b, indices = NA)
 { 
@@ -41,6 +42,7 @@ matchRows <- function(df_a, df_b, indices = NA)
 #' 
 #' @param df_indices A vector of values
 #' @return Boolean - true if all values in vector are unique, false if not
+#' @noRd
 #' @examples
 #' \dontrun{checkUniqueness(c('car','van','van'))}
 #' \dontrun{checkUniqueness(c('car','van','bus'))}
@@ -59,6 +61,7 @@ checkUniqueness <- function(df_indices)
 #' @param index_key A character array
 #' @param df A data frame
 #' @return A dataframe containing the dropped rows
+#' @noRd
 createAntiSubset <- function(index_antisubset,original_keys,index_key, df)
 {
   if(length(index_antisubset)==0){
@@ -83,6 +86,7 @@ createAntiSubset <- function(index_antisubset,original_keys,index_key, df)
 #' @param index_key A character vector
 #' @param original_keys A character vector
 #' @return A list containing the two dataframes, subsetted by shared indices, and a list which itself 
+#' @noRd
 #'        contains the vectors for the dropped rows
 #'        
 matchSingleIndex <- function(df_a, df_b, index_key, original_keys)
@@ -137,6 +141,7 @@ matchSingleIndex <- function(df_a, df_b, index_key, original_keys)
 #' @param df_b A dataframe
 #' @param indices A char vector
 #' @return A list containing the two dataframes, subsetted by shared indices, and a list which itself 
+#' @noRd
 #'        contains the vectors for the dropped rows
 matchMultiIndex <- function(df_a, df_b, indices)
 {
@@ -157,6 +162,7 @@ matchMultiIndex <- function(df_a, df_b, indices)
 #' @param df_a A dataframe
 #' @param df_b A dataframe
 #' @return A list containing the two dataframes, subsetted to the size of the smaller one, and
+#' @noRd
 #'          a list containing vectors of the rows dropped.
 matchNoIndex <- function(df_a, df_b)
 {

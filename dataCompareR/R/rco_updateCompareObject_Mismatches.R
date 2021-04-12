@@ -16,6 +16,7 @@
 #' @param x List of class 'mismatches' with column matching info
 #' @param compObj dataCompareRobject instance to be updated
 #' @return \code{compObj} Updated dataCompareRobject
+#' @noRd
 updateCompareObject.mismatches <- function(x, compObj){
   compObj$mismatches <- x
   return(compObj)

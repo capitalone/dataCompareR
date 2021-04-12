@@ -18,9 +18,13 @@
 #' @param DFB Input dataframe B
 #' @param WhitespaceTrim User defined boolean for whether leading/trailing white space is trimmed in strings (TRUE / FALSE)
 #' @return \code{out} list containing 3 data frames DFA, DFB and DataTypes
+#' @noRd
 #' @return \code{DFA} Dataframe with factor fields converted to character type and white space trimming (if option is selected by the user)
+#' @noRd
 #' @return \code{DFB} Dataframe with factor fields converted to character type and white space trimming (if option is selected by the user)
+#' @noRd
 #' @return \code{DataTypes} Dataframe with field types before and after cleaning for both DFA and DFB
+#' @noRd
 #' @examples 
 #' \dontrun{executeCoercions(DFA=iris,DFB=iris,WhitespaceTrim= TRUE)}
 
