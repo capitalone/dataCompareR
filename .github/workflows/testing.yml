@@ -3,10 +3,12 @@ on:
     branches:
       - master
       - dev
+      - feature/gh-actions-ci
   pull_request:
     branches:
       - master
       - dev
+      - feature/gh-actions-ci
 
 name: R-CMD-check
 defaults:
