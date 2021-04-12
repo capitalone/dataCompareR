@@ -19,7 +19,7 @@ It’s expected that dataCompareR will be used to compare data frames, but it ca
 
 ### Requirements
 
-Confirmed as working on R v3.2.3 and later on Linux/Windows, both via RStudio and through the command line.
+Confirmed as working on R v3.6.3 and v4.0.0 for Windows, as well as v3.6.2, v4.0.0 and the `devel` release for Linux. 
 Package was built with the following dependencies, but we anticipate it will work with later versions of these packages.
 
 | Package|Version|Source code URL|
@@ -46,8 +46,6 @@ install_git('https://github.com/capitalone/dataCompareR.git', branch = 'master',
             subdir = 'dataCompareR', type = 'source', repos = NULL,
             build_vignettes = TRUE)
 ```
-
-Note: For OS X users: installing through install_git is broken. More information can be found [here](https://github.com/ropensci/git2r/issues/331). 
 
 ### Using dataCompareR
 
@@ -108,15 +106,11 @@ https://cran.r-project.org/package=dataCompareR
 
 - Version 0.1.0 released on 2017-07-17
 - Version 0.1.1 released on 2017-11-14
+- Version 0.1.2 released on 2019-09-07
+- Version 0.1.3 released on 2020-05-01
 
 ## External Contributors
 
-Contributors: We welcome your interest in Capital One’s Open Source Projects (the “Project”). 
+We welcome and appreciate your contributions! Before we can accept any contributions, we ask that you please be sure to sign the [Contributor License Agreement (CLA)](https://cla-assistant.io/capitalone/dataCompareR).
 
-Any Contributor to the project must accept and sign a CLA indicating agreement to the license terms. Except for the license granted in this CLA to Capital One and to recipients of software distributed by Capital One, you reserve all right, title, and interest in and to your contributions; this CLA does not impact your rights to use your own contributions for any other purpose. 
-
-[Link to Individual CLA](https://docs.google.com/forms/d/19LpBBjykHPox18vrZvBbZUcK6gQTj7qv1O5hCduAZFU/viewform)
-
-[Link to Corporate CLA ](https://docs.google.com/forms/d/e/1FAIpQLSeAbobIPLCVZD_ccgtMWBDAcN68oqbAJBQyDTSAQ1AkYuCp_g/viewform)
-
-This project adheres to the [Open Source Code of Conduct](https://developer.capitalone.com/single/code-of-conduct/). By participating, you are expected to honor this code. 
+This project adheres to the [Open Source Code of Conduct](https://developer.capitalone.com/resources/code-of-conduct/). By participating, you are expected to honor this code. 

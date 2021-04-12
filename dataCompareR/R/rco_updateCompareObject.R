@@ -18,6 +18,7 @@
 #' @param x Object of information with classes related to the relevant section of the dataCompareRobject
 #' @param compObj dataCompareRobject to be updated
 #' @return compObj Updated dataCompareRobject
+#' @noRd
 updateCompareObject <- function(x, compObj){
   UseMethod("updateCompareObject", x)
 }

@@ -16,6 +16,7 @@
 #' @param compObj dataCompareRobject to be updated
 #' @param cleaningInfo list of cleaning information
 #' @return \code{compObj} updated dataCompareRobject
+#' @noRd
 #' 
 createCleaningInfo <- function(compObj, cleaningInfo){
   cleanInfoObj <- as.list(getCoercions(cleaningInfo$DataTypes))
@@ -27,6 +28,7 @@ createCleaningInfo <- function(compObj, cleaningInfo){
 #' 
 #' @param typesDf Dataframe of type information from the executeCoercion function
 #' @return \code{coercedT} Subset version of typesDf where a coercion occurred
+#' @noRd
 getCoercions <- function(typesDf){
   typesDfT <- as.data.frame(t(typesDf), row.names=names(typesDf))
   typesDfT <- cbind(names(typesDf),typesDfT, stringsAsFactors = FALSE)

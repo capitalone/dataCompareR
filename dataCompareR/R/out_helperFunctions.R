@@ -15,6 +15,7 @@
 #' 
 #' @param x an object
 #' @return \code{boolean} is object null T/F 
+#' @noRd
 #' @examples 
 #'\dontrun{isNotNull(NULL)}
 #'\dontrun{isNotNull(5)}
@@ -24,6 +25,7 @@ isNotNull <- function(x)  !is.null(x)
 #' 
 #' @param headerName a header name
 #' @return \code{character} a character based section headers
+#' @noRd
 outputSectionHeader <- function(headerName) {
   newLine <- "\n"
   decoration <- paste(rep("=", nchar(headerName)), collapse="")

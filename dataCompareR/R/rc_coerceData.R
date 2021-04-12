@@ -16,6 +16,7 @@
 #' @param doa Data object A (any object that can be coerced to a data frame)
 #' @param dob Data object B (any object that can be coerced to a data frame)
 #' @return A list of 2 data frames, which is DOA and DOB coerced as data.frames
+#' @noRd
 #' @examples
 #' \dontrun{irisMatrix <- as.matrix(iris)}
 #' \dontrun{coerceData(irisMatrix,iris)}
