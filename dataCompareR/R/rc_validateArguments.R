@@ -18,7 +18,7 @@
 #' @param maxMismatch Cap for number of mismatches 
 #' @inheritParams rCompare
 #' @return Nothing. Errors if any parameters are invalid.
-#' @noRd
+#' @keywords internal
 #' @examples
 #' \dontrun{validateArguments('plantName',1E-8,T,1000)}
 #' \dontrun{validateArguments('colorName',1E-9,F,10)}
@@ -71,7 +71,7 @@ validateArguments <- function(matchKey = NA, roundDigits = NA, coerceCols = TRUE
 #' Correct syntactically invalid names in a data frame
 #' @param df A data frame
 #' @return A data frame with syntactically valid names 
-#' @noRd
+#' @keywords internal
 #' @examples
 #' \dontrun{makeValidNames(iris)}
 makeValidNames <- function(df) {
@@ -98,7 +98,7 @@ makeValidNames <- function(df) {
 #' Correct syntactically invalid Keys
 #' @param keys A character vector
 #' @return A character vector with syntactically valid names 
-#' @noRd
+#' @keywords internal
 #' @examples
 #' \dontrun{makeValidKeys(c(" hello", "__BAD NAME___")}
 makeValidKeys <- function(keys) {

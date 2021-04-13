@@ -16,7 +16,7 @@
 #' @param compObj dataCompareRobject instance to be updated
 #' @param colMatchInfo List output from the column matching logic
 #' @return \code{compObj} updated with colMatching block
-#' @noRd
+#' @keywords internal
 #' 
 createColMatching <- function(compObj, colMatchInfo){
   # Keeping the explicit references to the implementation of col matching logic here
@@ -41,7 +41,7 @@ createColMatching <- function(compObj, colMatchInfo){
 #' @param colNameCol Name of the column with the column names
 #' @param matchFlagCol Name of the column with the match flag
 #' @return Vector of column names that do not match 
-#' @noRd
+#' @keywords internal
 #' 
 getMismatchColNames <- function(colMatchInfo, colNameCol, matchFlagCol){
   mismatchColNames <- dplyr::filter(colMatchInfo, colMatchInfo[,matchFlagCol]==FALSE)[[colNameCol]]

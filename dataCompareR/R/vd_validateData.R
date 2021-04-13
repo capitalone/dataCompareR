@@ -18,7 +18,7 @@
 #' @param df2 a data frame
 #' @param keys Keys used
 #' @return None. Stops if error.
-#' @noRd
+#' @keywords internal
 #' @examples
 #' \dontrun{validateData(iris,iris)}
 validateData <- function(df1,df2,keys=NA) {

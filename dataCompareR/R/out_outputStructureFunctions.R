@@ -20,7 +20,7 @@
 #' @param uniquevarlist A list of the variables in the compare
 #' @param nObs How many obervations to return
 #' @return A list of mismatching observations from start/end of mismatches
-#' @noRd
+#' @keywords internal
 listObsNotVerbose <- function(i, x, uniquevarlist, nObs) {
   mismatchesHead <- head(x$mismatches[[uniquevarlist[i]]], nObs)
   mismatchesTail <- tail(x$mismatches[[uniquevarlist[i]]], nObs)
@@ -49,7 +49,7 @@ listObsNotVerbose <- function(i, x, uniquevarlist, nObs) {
 #' @param i The position of the element we want to compare
 #' @param x An dataCompareR object
 #' @return A list of mismatching observations
-#' @noRd
+#' @keywords internal
 listObsVerbose <- function(i, x) {
   mismatches <- x$mismatches[[i]]
   mismatches$rowNo <- as.numeric(rownames(mismatches))
@@ -66,7 +66,7 @@ listObsVerbose <- function(i, x) {
 #' 
 #' @param x An dataCompareR object
 #' @return A string containing the required message
-#' @noRd
+#' @keywords internal
 allVarMatchMessage <- function(x){
   newLine <-"\n"
   cat("All compared variables match", newLine,

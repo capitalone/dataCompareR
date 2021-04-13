@@ -18,7 +18,7 @@
 #' @param mismatchCount Integer. How many mismatches to include in tables
 #' @param ... Passes any additional arguments (not used in current version)
 #' @return The function summary.dataCompareR computes and returns a list of summary details from the dataCompareR output given in \code{object} containing
-#' @noRd
+#' @keywords internal
 #' \item{datanameA}{name of the first dataframe in the compare call}
 #' \item{datanameB}{name of the second dataframe in the compare call}
 #' \item{nrowA}{the number of rows in \code{datanameA}}

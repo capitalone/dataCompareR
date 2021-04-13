@@ -15,7 +15,7 @@
 #'
 #' @param x any object
 #' @return a string listing the classes of x, seperated by commas
-#' @noRd
+#' @keywords internal
 #'
 #' @examples 
 #'\dontrun{collapseClasses(iris)}
@@ -29,7 +29,7 @@ collapseClasses <- function(x) {
 #' @param trueFalseMatrix a matrix of true/false
 #' @param maxMismatches number of mismatches at which the routine stopes
 #' @return Nothing. Stops if threshold exceeded
-#' @noRd
+#' @keywords internal
 
 mismatchHighStop <- function(trueFalseMatrix, maxMismatches) {
   # If we already have too many mismatches, stop
@@ -53,7 +53,7 @@ mismatchHighStop <- function(trueFalseMatrix, maxMismatches) {
 #' @importFrom dplyr mutate_all
 #' 
 #' @return data frame containing keys and boolean logic of match/no match for each element
-#' @noRd
+#' @keywords internal
 #'         If data types are not equal returns FALSE. Treats NA and NaN as unequal.
 locateMismatches <- function(DFA, DFB, keys=NULL, maxMismatches=NA){
 

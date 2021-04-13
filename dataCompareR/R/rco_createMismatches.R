@@ -19,7 +19,7 @@
 #'              introudced by the compare process
 #'
 #' @return The mismatch object
-#' @noRd
+#' @keywords internal
 #'
 createMismatches <- function(compObj, misObj, keys) {
   mismatches <- misObj[!is.na(misObj)]

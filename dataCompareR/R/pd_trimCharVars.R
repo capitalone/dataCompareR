@@ -15,7 +15,7 @@
 #'
 #' @param DF Input dataframe
 #' @return \code{DF} with preceding and trailing white spaces removed from character fields
-#' @noRd
+#' @keywords internal
 #' @examples
 #' \dontrun{trimCharVars(iris)}
 

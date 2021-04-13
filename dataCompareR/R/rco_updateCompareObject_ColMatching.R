@@ -16,7 +16,7 @@
 #' @param x List of class colmatching with column matching info
 #' @param compObj dataCompareRobject instance to be updated
 #' @return \code{compObj} Updated dataCompareRobject
-#' @noRd
+#' @keywords internal
 updateCompareObject.colmatching <- function(x, compObj){
   # This seems redundant at the moment, but is meant for potential 
   # flexibility in the future

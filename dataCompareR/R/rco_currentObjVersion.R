@@ -14,7 +14,7 @@
 #' Place to store and access the current object version. 
 #' 
 #' @return \code{currentVersion} int of the version number 
-#' @noRd
+#' @keywords internal
 currentObjVersion <- function(){
   currentVersion <- 1
   return(currentVersion)

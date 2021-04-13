@@ -20,7 +20,7 @@
 #' @param str_index, vector of index variables (could have length 1)
 #'
 #' @return An dataCompareR mismatch object
-#' @noRd
+#' @keywords internal
 #'
 #' @examples
 #'\dontrun{createMismatchObject(dataA, dataB, mism, idx)}
@@ -71,7 +71,7 @@ createMismatchObject <- function(dat_a, dat_b, dat_eq, str_index) {
 #' @param vector_eq, a list of columns which are equal
 #'
 #' @return Mismatch table
-#' @noRd
+#' @keywords internal
 #'
 variableMismatches <- function(varname, vals_a, vals_b, vector_eq) {
   d <- vals_a[!vector_eq, ]
@@ -90,7 +90,7 @@ variableMismatches <- function(varname, vals_a, vals_b, vector_eq) {
 #' @param dat The mismatch data
 #'
 #' @return mismatch details
-#' @noRd
+#' @keywords internal
 variableDetails <- function(dat) {
   
 

@@ -15,7 +15,7 @@
 #' @param DFA input data frame
 #' @param DFB input data frame
 #' @return matchColOut named list of data frames. subsetA,subsetB contain only columns common to both data frames. colInfoA,colInfoB contain mapping of column names from original to treated and boolean indicator of common columns.
-#' @noRd
+#' @keywords internal
 #' 
 matchColumns <- function(DFA, DFB){
 
@@ -39,7 +39,7 @@ matchColumns <- function(DFA, DFB){
 #' cleanColNames : get colnames, remove leading and trailing whitespace and push to upper case
 #' @param DF Input dataframe
 #' @return colInfo dataframe containing original and treated column names of DF
-#' @noRd
+#' @keywords internal
 
 cleanColNames <- function(DF) {
 
@@ -55,7 +55,7 @@ cleanColNames <- function(DF) {
 #' orderColumns: order columns by treated column names
 #' @param colInfo dataframe containing original and treated column names of DF
 #' @return ordered colInfo dataframe containing original and treated column names of DF
-#' @noRd
+#' @keywords internal
 #'
 orderColumns <- function(colInfo) {
 
@@ -87,7 +87,7 @@ compareNames <- function(colInfoA, colInfoB){
 #' @param DFB input data frame
 #' @param colInfoList named list containing the column mapping data frames and the list of common column names
 #' @return matchColOut named list of data frames. subsetA,subsetB contain only columns common to both data frames. colInfoA,colInfoB contain mapping of column names from original to treated and boolean indicator of common columns.
-#' @noRd
+#' @keywords internal
 
 subsetDataColumns <- function(DFA, DFB, colInfoList){
 

@@ -16,7 +16,7 @@
 #' @param x list of type cleaninginfo with data types
 #' @param compObj dataCompareRobject to be updated
 #' @return \code{compObj} updated dataCompareRobject
-#' @noRd
+#' @keywords internal
 updateCompareObject.cleaninginfo <- function(x, compObj){
   compObj$cleaninginfo <- x
   return(compObj)

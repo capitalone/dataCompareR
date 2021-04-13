@@ -17,7 +17,7 @@
 #'  
 #' @param x input object which summary comparison information
 #' @return text in R markdown format
-#' @noRd
+#' @keywords internal
 #' @examples  
 #'\dontrun{createReportText(x=MysummaryCompareObject)}
 createReportText <- function(x){

@@ -16,7 +16,7 @@
 #' @param df A data frame to round
 #' @param roundDigits Number of digits to round to
 #' @return A rounded data frame
-#' @noRd
+#' @keywords internal
 
 rounddf <- function(df, roundDigits) {
   

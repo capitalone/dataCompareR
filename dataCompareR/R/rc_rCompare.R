@@ -25,7 +25,7 @@
 #'                   object). Designed to improve performance for large data sets.
 #' @param trimChars Boolean. If true, strings and factors have whitespace trimmed before comparison.
 #' @return An dataCompareR object. 
-#' @noRd
+#' @keywords internal
 #'          An S3 object containing details of the comparison between the two data objects. Can be used with \link{summary}, 
 #'          \link{print}, \link{saveReport} and \link{generateMismatchData}
 #' @importFrom dplyr filter
@@ -110,7 +110,7 @@ rCompare <- function(dfA,dfB,keys=NA, roundDigits = NA, mismatches = NA,trimChar
 #' @param ncol_dfb number of columns in second data frame
 #' 
 #' @return Nothing
-#' @noRd
+#' @keywords internal
 warnLargeData <- function(nrow_dfa, ncol_dfa, nrow_dfb, ncol_dfb) {
   
   # Check for total number of cells

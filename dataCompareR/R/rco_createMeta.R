@@ -22,7 +22,7 @@
 #' @param timestamp Timestamp 
 #' @param roundDigits The number of digits to round to, using \link[base]{round}
 #' @return \code{dataCompareRobject}
-#' @noRd
+#' @keywords internal
 #' 
 createMeta <- function(dataCompareRobject, DFA, DFB, arguments, timestamp, roundDigits){
   

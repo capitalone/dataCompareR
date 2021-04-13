@@ -21,10 +21,8 @@
 #' @param keys vector of chars - names of index variables
 #' @param maxMismatches Integer. The max number of mismatches to assess, after which dataCompareR will stop 
 #' (without producing a dataCompareR object). Designed to improve performance for large datasets.
-#' @return mismatchObject containing mismatch data for each of the variables in
-#' @noRd
-#' @noRd
-#'         the dataframes
+#' @return mismatchObject containing mismatch data for each of the variables in the dataframes
+#' @keywords internal
 #'
 #' @examples 
 #'\dontrun{compareData(iris, iris)}

@@ -18,7 +18,7 @@
 #' 
 #' @inheritParams rCompare
 #' @return \code{dataCompareRObject} containing details of the comparison
-#' @noRd
+#' @keywords internal
 #' @examples 
 #' \dontrun{dfA <- iris}
 #' \dontrun{dfB <- iris}

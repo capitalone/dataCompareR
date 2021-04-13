@@ -23,7 +23,7 @@
 #' @param roundDigits Integer. If NA, numerics are not rounded before comparison. If /code{roundDigits} is specified, numerics are 
 #'                    rounded to /code{roundDigits} decimal places using \link[base]{round}.
 #' @return \code{dataCompareRObject} containing details of the comparison
-#' @noRd
+#' @keywords internal
 
 processFlow <- function(dfa, dfb, roundDigits, keys,mismatches, trimChars,argsIn) {
   

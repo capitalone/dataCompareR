@@ -45,7 +45,7 @@ updateCompareObject.meta <- function(x, compObj){
 #' @param name The variable name of the df from the dataCompareR function call
 #' @param df A data frame
 #' @return \code{dfInfo} A list of info about the data frame
-#' @noRd
+#' @keywords internal
 metaDataInfo <- function(name, df){
   
   dfInfo <- list()

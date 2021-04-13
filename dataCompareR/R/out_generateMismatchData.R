@@ -24,7 +24,7 @@
 #' @param ... Unused currently, may be used in future
 #' @export
 #' @return \code{mismatchData} A list containing two objects: mismatched rows in first data object and mismatched rows in 
-#' @noRd
+#' @keywords internal
 #' second data object
 #' 
 generateMismatchData <- function(x, dfA, dfB, ...){

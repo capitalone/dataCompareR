@@ -16,7 +16,7 @@
 #' @param x an dataCompareR object
 #' @param ... Arguments passed on to other functions
 #' @return cat's lines to the screen (or to be captured)
-#' @noRd
+#' @keywords internal
 createTextSummary <- function(x,...) {
   
   dataCompHeader <- 'Data Comparison'
