@@ -35,7 +35,6 @@
 #' @importFrom dplyr select_
 #' @importFrom dplyr arrange
 #' @importFrom dplyr arrange_
-#' @importFrom dplyr funs
 #' @importFrom dplyr sample_n
 #' @importFrom dplyr inner_join
 #' @importFrom dplyr distinct

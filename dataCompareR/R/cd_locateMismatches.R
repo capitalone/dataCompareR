@@ -96,15 +96,15 @@ locateMismatches <- function(DFA, DFB, keys=NULL, maxMismatches=NA){
       subsetB <- select_(DFB,.dots = cols2Diff)
       
       # Look for NA's
-      isNA_A <- mutate_all(subsetA, funs(is.na))
-      isNA_B <- mutate_all(subsetB, funs(is.na))
+      isNA_A <- mutate_all(subsetA, list(~is.na))
+      isNA_B <- mutate_all(subsetB, list(~is.na))
       
       # Find any cells impacted by NA's
       anyNA <- isNA_A | isNA_B
       
       # and repeat the above for NAN's
-      isNaN_A <- mutate_all(subsetA, funs(is.nan))
-      isNaN_B <- mutate_all(subsetB, funs(is.nan))
+      isNaN_A <- mutate_all(subsetA, list(~is.nan))
+      isNaN_B <- mutate_all(subsetB, list(~is.nan))
       anyNaN <- isNaN_A | isNaN_B
       
       # find matching NA or NaNs
