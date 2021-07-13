@@ -152,7 +152,7 @@
 ## Data Comparison
 ## ===============
 ## 
-## Date comparison run: 2021-07-13 12:59:07  
+## Date comparison run: 2021-07-13 15:35:24  
 ## Comparison run on R version 4.1.0 (2021-05-18)  
 ## With dataCompareR version 0.1.3  
 ## 
@@ -221,11 +221,11 @@
 ## 
 ## |   | SEPAL.LENGTH (iris)| SEPAL.LENGTH (iris2)|Type (iris) |Type (iris2) | Difference|
 ## |:--|-------------------:|--------------------:|:-----------|:------------|----------:|
-## |1  |                 5.0|                  6.0|double      |double       |         -1|
-## |2  |                 5.4|                  6.4|double      |double       |         -1|
-## |3  |                 5.1|                  6.1|double      |double       |         -1|
-## |4  |                 4.6|                  5.6|double      |double       |         -1|
-## |5  |                 4.9|                  5.9|double      |double       |         -1|</code></pre>
+## |1  |                 5.1|                  6.1|double      |double       |         -1|
+## |2  |                 4.9|                  5.9|double      |double       |         -1|
+## |3  |                 5.4|                  6.4|double      |double       |         -1|
+## |4  |                 5.0|                  6.0|double      |double       |         -1|
+## |5  |                 4.4|                  5.4|double      |double       |         -1|</code></pre>
 <p>Or you save a copy of the report using <code>saveReport</code></p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Write the summary to a file</span>
@@ -252,7 +252,7 @@
 <span class="va">pressure2</span> <span class="op">&lt;-</span> <span class="va">pressure2</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">pressure2</span><span class="op">)</span><span class="op">)</span>,<span class="op">]</span>
 <span class="co"># then changing just one element, so for temperature of</span>
 <span class="va">pressure2</span><span class="op">[</span><span class="fl">5</span>,<span class="fl">1</span><span class="op">]</span></code></pre></div>
-<pre><code>## [1] 80</code></pre>
+<pre><code>## [1] 20</code></pre>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># We modify pressure to be twice as large</span>
 <span class="va">pressure2</span><span class="op">[</span><span class="fl">5</span>,<span class="fl">2</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">pressure2</span><span class="op">[</span><span class="fl">5</span>,<span class="fl">2</span><span class="op">]</span> <span class="op">*</span> <span class="fl">2</span></code></pre></div>
@@ -271,8 +271,8 @@
 <pre><code>## All columns were compared, all rows were compared 
 ## There are  1 mismatched variables:
 ## First and last 5 observations for the  1 mismatched variables
-##   TEMPERATURE valueA valueB variable  typeA  typeB diffAB
-## 1          80   0.09   0.18 PRESSURE double double  -0.09</code></pre>
+##   TEMPERATURE valueA valueB variable  typeA  typeB  diffAB
+## 1          20 0.0012 0.0024 PRESSURE double double -0.0012</code></pre>
 <p>We can also extract the mismatching data to explore futher using <code>generateMismatchData</code> which generates a list containing two data frames, each having the missing rows from the comparison.</p>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># use generateMismatchData to pull out the mismatching rows from each table</span>
@@ -281,11 +281,11 @@
 <span class="va">mismatches</span></code></pre></div>
 <pre><code>## $pressure_mm
 ##   TEMPERATURE PRESSURE
-## 1          80     0.09
+## 1          20   0.0012
 ## 
 ## $pressure2_mm
 ##   TEMPERATURE PRESSURE
-## 1          80     0.18</code></pre>
+## 1          20   0.0024</code></pre>
 </div>
 </div>
 <div id="internal-functions" class="section level2">
