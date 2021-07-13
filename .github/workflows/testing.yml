@@ -1,12 +1,10 @@
 on:
   push:
     branches:
-      - feature/gh-actions-ci 
       - master
       - dev
   pull_request:
     branches:
-      - feature/gh-actions-ci 
       - master
       - dev
 
