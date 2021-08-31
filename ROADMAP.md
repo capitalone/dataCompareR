@@ -3,5 +3,5 @@ The `dataCompareR` package is in a stable state, and we will continue to add fea
 We are targeting December 2021 to work through the following backlog of issues:
 * Making the package available on conda (#123)
 * Address dplyr warnings (#87)
-* Summaries fail of tables are pulled out of named lists (#105)
-* Create Summary Percent Agreement (#118)
+* Summaries fail if tables are pulled out of named lists (#105)
+* Create summary percent agreement (#118)
