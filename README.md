@@ -114,3 +114,6 @@ https://cran.r-project.org/package=dataCompareR
 We welcome and appreciate your contributions! Before we can accept any contributions, we ask that you please be sure to sign the [Contributor License Agreement (CLA)](https://cla-assistant.io/capitalone/dataCompareR).
 
 This project adheres to the [Open Source Code of Conduct](https://developer.capitalone.com/resources/code-of-conduct/). By participating, you are expected to honor this code. 
+
+## Project Roadmap
+The project roadmap can be found in [ROADMAP.md](ROADMAP.md).
