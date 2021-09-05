@@ -64,7 +64,7 @@ test_that("Mismatches work", {
   numberOfColumnsWithMismatch <- sum(unlist(
     dat_eq %>%
       dplyr::select(which(!(colnames(dat_eq) %in% str_index))) %>%
-      summarize_each(funs(anyNegative))
+      summarize_each(anyNegative)
   )) 
   
   # Same sub-functions as used by createMismatchObject
