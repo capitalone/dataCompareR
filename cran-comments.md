@@ -1,6 +1,8 @@
 ## Test environments
 * local Windows 10 install, R 4.0.0
-* Ubuntu 16.04.6 (on travis-ci), R 3.6.2, R 4.0.0, devel R 4.1.0
+* Microsoft Windows Server 2019 10.0.17763 (on travis-ci), R 4.1.1 
+* Mac OS X 10.15.7 (on travis-ci), R 4.1.1
+* Ubuntu 20.04 (on travis-ci), R 4.0.5, R 4.1.1, devel
 * win-builder (release, oldrelease)
 
 ## R CMD check results
