@@ -24,3 +24,10 @@ Mainly bug fixes and test changes, including some to address CRAN check issues:
 - Changed an if condition to meet guidelines around not using && operator with logical vectors
 - Fixed issue with Travis CI tests not passing
 - Added pkgdown documentation
+
+# dataCompareR 0.1.4
+
+Bug fix and minor improvement:
+
+- Removed references to deprecated `dplyr::funs` function
+- Added a separator when creating a single index from multiple columns to prevent a loss of uniqueness
