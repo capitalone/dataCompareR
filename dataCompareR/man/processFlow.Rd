@@ -19,7 +19,7 @@ rounded to /code{roundDigits} decimal places using \link[base]{round}.}
 \item{mismatches}{Integer. The max number of mismatches to assess, after which dataCompareR will stop 
 (without producing a dataCompareR object). Designed to improve performance for large datasets.}
 
-\item{trimChars}{Boolean. Do we trim characers before comparing?}
+\item{trimChars}{Boolean. Do we trim characters before comparing?}
 
 \item{argsIn}{The arguments that were passed to the main dataCompareR function}
 }

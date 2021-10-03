@@ -12,7 +12,7 @@ createMismatches(compObj, misObj, keys)
 \item{misObj}{MismatchObject, output from compareData (processFlow)}
 
 \item{keys}{Character vector, the keys matched on, to allow removal of any extra columns
-introudced by the compare process}
+introduced by the compare process}
 }
 \value{
 The mismatch object

@@ -15,7 +15,7 @@
 #' 
 #' @description Produces a list of two data frames, containing the mismatched rows from the two input tables
 #' 
-#' Note that this function requires the user to pass in the two data frames used in the inital comparison. If this data
+#' Note that this function requires the user to pass in the two data frames used in the initial comparison. If this data
 #' does not match that used for the generation of the dataCompareR object the results produced will not be accurate.
 #' @family dataCompareR.functions
 #' @param x A \code{dataCompareRobject}.

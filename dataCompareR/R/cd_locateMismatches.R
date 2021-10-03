@@ -14,7 +14,7 @@
 #' collapseClasses. Collapse the classes of an object to a single string
 #'
 #' @param x any object
-#' @return a string listing the classes of x, seperated by commas
+#' @return a string listing the classes of x, separated by commas
 #'
 #' @examples 
 #'\dontrun{collapseClasses(iris)}
@@ -26,7 +26,7 @@ collapseClasses <- function(x) {
 #' mismatchHighStop Checks if we've exceeded threshold of mismatches
 #'
 #' @param trueFalseMatrix a matrix of true/false
-#' @param maxMismatches number of mismatches at which the routine stopes
+#' @param maxMismatches number of mismatches at which the routine stops
 #' @return Nothing. Stops if threshold exceeded
 
 mismatchHighStop <- function(trueFalseMatrix, maxMismatches) {

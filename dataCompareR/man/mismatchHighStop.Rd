@@ -9,7 +9,7 @@ mismatchHighStop(trueFalseMatrix, maxMismatches)
 \arguments{
 \item{trueFalseMatrix}{a matrix of true/false}
 
-\item{maxMismatches}{number of mismatches at which the routine stopes}
+\item{maxMismatches}{number of mismatches at which the routine stops}
 }
 \value{
 Nothing. Stops if threshold exceeded

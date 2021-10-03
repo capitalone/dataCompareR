@@ -17,7 +17,7 @@
 #' @param dfb Dataframe. One of the two data frames to be compared
 #' @param argsIn The arguments that were passed to the main dataCompareR function
 #' @param keys The keys used to match rows between \code{dfa} and \code{dfb}
-#' @param trimChars Boolean. Do we trim characers before comparing?
+#' @param trimChars Boolean. Do we trim characters before comparing?
 #' @param mismatches Integer. The max number of mismatches to assess, after which dataCompareR will stop 
 #' (without producing a dataCompareR object). Designed to improve performance for large datasets.
 #' @param roundDigits Integer. If NA, numerics are not rounded before comparison. If /code{roundDigits} is specified, numerics are 

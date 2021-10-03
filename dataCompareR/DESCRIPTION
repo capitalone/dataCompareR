@@ -1,6 +1,6 @@
 Package: dataCompareR
 Title: Compare Two Data Frames and Summarise the Difference
-Version: 0.1.3
+Version: 0.1.4
 Authors@R: c(
            person("Sarah", "Johnston",  email = "Sarah.Johnston@capitalone.com",  role = c("aut", "cre")),
            person("Rob", "Noble-Eddy", role = c("aut")),
@@ -43,8 +43,7 @@ Imports:
 URL: https://github.com/capitalone/dataCompareR
 BugReports: https://github.com/capitalone/dataCompareR/issues
 License: Apache License 2.0 | file LICENSE
-LazyData: true
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.2
 Suggests:
     testthat,
     data.table,

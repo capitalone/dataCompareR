@@ -18,7 +18,7 @@
 #' @param i The position of the element we want to compare
 #' @param x An dataCompareR object
 #' @param uniquevarlist A list of the variables in the compare
-#' @param nObs How many obervations to return
+#' @param nObs How many observations to return
 #' @return A list of mismatching observations from start/end of mismatches
 listObsNotVerbose <- function(i, x, uniquevarlist, nObs) {
   mismatchesHead <- head(x$mismatches[[uniquevarlist[i]]], nObs)

@@ -16,7 +16,7 @@
 #' @param compObj RCompareObject, output from processFlow
 #' @param misObj MismatchObject, output from compareData (processFlow)
 #' @param keys Character vector, the keys matched on, to allow removal of any extra columns
-#'              introudced by the compare process
+#'              introduced by the compare process
 #'
 #' @return The mismatch object
 #'
