@@ -9,7 +9,7 @@ compareData(DFA, DFB, keys = NULL, maxMismatches)
 \arguments{
 \item{DFA}{dataframe as returned from prepareData}
 
-\item{DFB}{dataframe as returend from prepareData}
+\item{DFB}{dataframe as returned from prepareData}
 
 \item{keys}{vector of chars - names of index variables}
 

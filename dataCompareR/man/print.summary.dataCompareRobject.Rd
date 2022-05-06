@@ -10,7 +10,7 @@
 \item{x}{an object of class "summary.dataCompareRobject", usually a result of a call to 
 \code{\link{summary.dataCompareRobject}}.}
 
-\item{...}{Additional arguments passsed on to \code{\link{createTextSummary}}}
+\item{...}{Additional arguments passed on to \code{\link{createTextSummary}}}
 }
 \description{
 Printing summaryRCompare Output

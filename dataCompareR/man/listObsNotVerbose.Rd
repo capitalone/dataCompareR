@@ -13,7 +13,7 @@ listObsNotVerbose(i, x, uniquevarlist, nObs)
 
 \item{uniquevarlist}{A list of the variables in the compare}
 
-\item{nObs}{How many obervations to return}
+\item{nObs}{How many observations to return}
 }
 \value{
 A list of mismatching observations from start/end of mismatches

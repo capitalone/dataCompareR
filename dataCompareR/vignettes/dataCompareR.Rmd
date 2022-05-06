@@ -109,7 +109,7 @@ And this time, we'll choose to get a shorter summary using `print`
 print(compPressure)
 ```
 
-We can also extract the mismatching data to explore futher using `generateMismatchData` which generates a list containing two data frames, each having the missing rows from the comparison.
+We can also extract the mismatching data to explore further using `generateMismatchData` which generates a list containing two data frames, each having the missing rows from the comparison.
 
 ```{r loaddplyr, echo = FALSE, message= FALSE}
 library(dplyr)

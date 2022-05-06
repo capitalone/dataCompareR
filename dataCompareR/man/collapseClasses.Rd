@@ -10,7 +10,7 @@ collapseClasses(x)
 \item{x}{any object}
 }
 \value{
-a string listing the classes of x, seperated by commas
+a string listing the classes of x, separated by commas
 }
 \description{
 collapseClasses. Collapse the classes of an object to a single string

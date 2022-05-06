@@ -15,7 +15,7 @@
 #'
 #' @param x an object of class "summary.dataCompareRobject", usually a result of a call to 
 #' \code{\link{summary.dataCompareRobject}}.
-#' @param ... Additional arguments passsed on to \code{\link{createTextSummary}}
+#' @param ... Additional arguments passed on to \code{\link{createTextSummary}}
 #' @export
 #' @examples
 #' rc1 <- rCompare(iris,iris)

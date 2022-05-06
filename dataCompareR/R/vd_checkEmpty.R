@@ -27,7 +27,7 @@ checkEmpty <- function(df) {
   # step
   
   if(is.null(ncol(df)) || is.na(ncol(df)) || ncol(df)==0) {
-    stop("ERROR : One oe more dataframes have no coumns")
+    stop("ERROR : One or more dataframes have no columns")
   }
 }
 

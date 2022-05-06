@@ -17,7 +17,7 @@
 #' Compare data. Wrapper for comparison functionality.
 #'
 #' @param DFA dataframe as returned from prepareData
-#' @param DFB dataframe as returend from prepareData
+#' @param DFB dataframe as returned from prepareData
 #' @param keys vector of chars - names of index variables
 #' @param maxMismatches Integer. The max number of mismatches to assess, after which dataCompareR will stop 
 #' (without producing a dataCompareR object). Designed to improve performance for large datasets.

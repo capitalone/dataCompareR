@@ -108,6 +108,7 @@ https://cran.r-project.org/package=dataCompareR
 - Version 0.1.1 released on 2017-11-14
 - Version 0.1.2 released on 2019-09-07
 - Version 0.1.3 released on 2020-05-01
+- Version 0.1.4 released on 2021-11-23
 
 ## External Contributors
 
