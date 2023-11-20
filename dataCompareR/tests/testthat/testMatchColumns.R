@@ -68,26 +68,18 @@ test_that("function passes overall functionality", {
 
 
 test_that("function handles possible duplicate column names", {
+  inDfa <- data.frame(daTe = NA_character_,
+                      " car" = "A",
+                      "model " = "B",
+                      " MoDel " = "C",
+                      stringsAsFactors = FALSE,
+                      check.names = FALSE)
 
-  # create sample dataframes
-  # sample input dataframes
-  inDfa <- data.frame(daTe = as.Date(character()),
+  inDfb <- data.frame(model = "A",
+                      daTe = NA_character_,
+                      brand = "B",
                       stringsAsFactors = FALSE)
-  inDfa$' car' = character()
-  inDfa$'model ' = character()
-  inDfa$' MoDel ' = character()
 
-  inDfb <- data.frame(model = character(),
-                      daTe = as.Date(character()),
-                      brand = character(),
-                      stringsAsFactors = FALSE)
-  # Add some data
-  inDfb[1,] <- c("A",NA, "B")
-  inDfa[1,] <- c(NA, "A", "B", "C")
-
-
-
- expect_error(matchColumns(inDfa, inDfb))
-
-
+  expect_error(object = matchColumns(inDfa, inDfb),
+               regexp = "Names must be unique")
 })

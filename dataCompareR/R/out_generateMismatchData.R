@@ -85,15 +85,15 @@ generateMismatchData <- function(x, dfA, dfB, ...){
       # There are keys. Potentially multiple.
 
       # Sort out columns names
-      names(DFA) <- toupper(trimws(names(DFA)))
-      names(DFB) <- toupper(trimws(names(DFB)))
+      DFA <- formatColNames(DFA)
+      DFB <- formatColNames(DFB)
 
       # Get keys - make upper
       keys <- toupper(eval(x$meta$args$keys))
 
       # Get all mismatches from the mismatch list
       allMism <- do.call(rbind,x$mismatches)
-      distRows <- select_(allMism, keys) %>% distinct()
+      distRows <- select(allMism, all_of(keys)) %>% distinct()
 
       # Get diffs by joining
       aMism <- suppressMessages(inner_join(DFA, distRows))

@@ -14,7 +14,7 @@ subsetDataColumns(DFA, DFB, colInfoList)
 \item{colInfoList}{named list containing the column mapping data frames and the list of common column names}
 }
 \value{
-matchColOut named list of data frames. subsetA,subsetB contain only columns common to both data frames. colInfoA,colInfoB contain mapping of column names from original to treated and boolean indicator of common columns.
+matchColOut named list of data frames. subsetA, subsetB contain only columns common to both data frames. colInfoA, colInfoB contain mapping of column names from original to treated and boolean indicator of common columns.
 }
 \description{
 subsetDataColumns : create subset of DFA and DFB to contain matching column names for both data frames

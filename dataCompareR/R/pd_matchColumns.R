@@ -31,7 +31,12 @@ matchColumns <- function(DFA, DFB){
 
 }
 
-
+formatColNames <- function(DF) {
+  # use 'rename_with' (instead of directly trimming the column names)
+  # because this stops in case of duplicated column names
+  DF %>%
+    rename_with(.fn = function(x) {trimws(toupper(x))})
+}
 
 
 
@@ -40,14 +45,15 @@ matchColumns <- function(DFA, DFB){
 #' @return colInfo dataframe containing original and treated column names of DF
 
 cleanColNames <- function(DF) {
-
   colName <- names(DF)
-  mapping <- toupper(trimws(colName))
+
+  DF_trimmed <- formatColNames(DF)
+
+  mapping <- names(DF_trimmed)
 
   colInfo <- data.frame(colName, mapping)
 
   return(colInfo)
-
 }
 
 #' orderColumns: order columns by treated column names
@@ -83,20 +89,18 @@ compareNames <- function(colInfoA, colInfoB){
 #' @param DFA input data frame
 #' @param DFB input data frame
 #' @param colInfoList named list containing the column mapping data frames and the list of common column names
-#' @return matchColOut named list of data frames. subsetA,subsetB contain only columns common to both data frames. colInfoA,colInfoB contain mapping of column names from original to treated and boolean indicator of common columns.
+#' @return matchColOut named list of data frames. subsetA, subsetB contain only columns common to both data frames. colInfoA, colInfoB contain mapping of column names from original to treated and boolean indicator of common columns.
 
 subsetDataColumns <- function(DFA, DFB, colInfoList){
+  DFA <- formatColNames(DFA)
+  subsetDFA <- DFA %>% select(all_of(colInfoList[["commonCols"]]))
 
-  names(DFA) <- c(trimws(toupper(names(DFA))))
-  subsetDFA <- DFA %>% select_(.dots=colInfoList[["commonCols"]])
-
-  names(DFB) <- c(trimws(toupper(names(DFB))))
-  subsetDFB <- DFB %>% select_(.dots=colInfoList[["commonCols"]])
+  DFB <- formatColNames(DFB)
+  subsetDFB <- DFB %>% select(all_of(colInfoList[["commonCols"]]))
 
   matchColOut <- list(subsetDFA,subsetDFB,colInfoList[["colInfoA"]],colInfoList[["colInfoB"]])
   names(matchColOut) <- c("subsetDFA", "subsetDFB", "colInfoA", "colInfoB")
 
   return(matchColOut)
-
 }
 

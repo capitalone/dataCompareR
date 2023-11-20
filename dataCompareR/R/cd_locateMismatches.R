@@ -69,7 +69,7 @@ locateMismatches <- function(DFA, DFB, keys=NULL, maxMismatches=NA){
   #print(dim(DFB))
 
   # find vars where type different excluding keys
-  colTypeDiff <- sapply(select_(DFA,.dots=colCompare), collapseClasses) == sapply(select_(DFB,.dots=colCompare), collapseClasses)
+  colTypeDiff <- sapply(select(DFA, all_of(colCompare)), collapseClasses) == sapply(select(DFB, all_of(colCompare)), collapseClasses)
   cols2Compare <- names(colTypeDiff[colTypeDiff==T])
 
   # select columns to compare
@@ -92,8 +92,8 @@ locateMismatches <- function(DFA, DFB, keys=NULL, maxMismatches=NA){
       # Now handle the cases where we're not equal
 
       # Get these cols once
-      subsetA <- select_(DFA,.dots = cols2Diff)
-      subsetB <- select_(DFB,.dots = cols2Diff)
+      subsetA <- select(DFA, all_of(cols2Diff))
+      subsetB <- select(DFB, all_of(cols2Diff))
 
       # Look for NA's
       isNA_A <- mutate_all(subsetA, .funs = is.na)
@@ -185,7 +185,7 @@ locateMismatches <- function(DFA, DFB, keys=NULL, maxMismatches=NA){
   if(nrow(mismatchOut) == 0) {
     mismatchOut <- data.frame()
   } else {
-    mismatchOut <- mismatchOut %>% select_(.dots=colNames)
+    mismatchOut <- mismatchOut %>% select(all_of(colNames))
   }
 
   return(mismatchOut)

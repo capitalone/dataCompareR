@@ -119,8 +119,8 @@ matchSingleIndex <- function(df_a, df_b, index_key, original_keys)
   } else {
     # And this is better for numbers (and works in general)
 
-    df_a_subset <- df_a[df_a[,index_key] %in% index_subset,] %>% arrange_(index_key)
-    df_b_subset <- df_b[df_b[,index_key] %in% index_subset,] %>% arrange_(index_key)
+    df_a_subset <- df_a[df_a[,index_key] %in% index_subset,] %>% arrange(across(all_of(index_key)))
+    df_b_subset <- df_b[df_b[,index_key] %in% index_subset,] %>% arrange(across(all_of(index_key)))
   }
 
 
