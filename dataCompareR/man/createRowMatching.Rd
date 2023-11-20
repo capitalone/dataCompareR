@@ -2,7 +2,7 @@
 % Please edit documentation in R/rco_createRowMatching.R
 \name{createRowMatching}
 \alias{createRowMatching}
-\title{function for updating a compare object with  
+\title{function for updating a compare object with
 information passed to it from the match rows function}
 \usage{
 createRowMatching(compObj, x, matchKey)
@@ -18,6 +18,6 @@ createRowMatching(compObj, x, matchKey)
 compObj Updated dataCompareRobject
 }
 \description{
-function for updating a compare object with  
+function for updating a compare object with
 information passed to it from the match rows function
 }

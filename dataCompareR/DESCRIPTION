@@ -39,11 +39,13 @@ Imports:
     dplyr (>= 0.5.0),
     knitr,
     stringi,
-    markdown
+    markdown,
+    tidyselect
 URL: https://github.com/capitalone/dataCompareR
 BugReports: https://github.com/capitalone/dataCompareR/issues
 License: Apache License 2.0 | file LICENSE
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3
+Encoding: UTF-8
 Suggests:
     testthat,
     data.table,

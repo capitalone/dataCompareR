@@ -1,3 +1,8 @@
+# dataCompareR 0.1.5
+
+Fix warnings about usage of deprecated `dplyr::arrange_()` and `dplyr::select_()`
+functions (#153).
+
 # dataCompareR 0.1.4
 
 Bug fix and minor improvement:

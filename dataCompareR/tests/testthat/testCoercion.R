@@ -1,13 +1,13 @@
-# SPDX-Copyright: Copyright (c) Capital One Services, LLC 
-# SPDX-License-Identifier: Apache-2.0 
-# Copyright 2017 Capital One Services, LLC 
+# SPDX-Copyright: Copyright (c) Capital One Services, LLC
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2017 Capital One Services, LLC
 #
-# Licensed under the Apache License, Version 2.0 (the "License"); 
-# you may not use this file except in compliance with the License. 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
 #
-# You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 
+# You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
 #
-# Unless required by applicable law or agreed to in writing, software distributed 
+# Unless required by applicable law or agreed to in writing, software distributed
 # under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS
 # OF ANY KIND, either express or implied.
 
@@ -19,10 +19,10 @@
 #
 # * Could be considered integration
 #
-# The function executeCoercions calls other functions for trimming whitespace, 
-# coercing factors to characters. In the future, it may change date formats to 
+# The function executeCoercions calls other functions for trimming whitespace,
+# coercing factors to characters. In the future, it may change date formats to
 # be the same and also coerce numeric types (not currently within scope).
-# 
+#
 # Things to test
 # - Two identical dfs with no coercion needed returns the same
 # - One "perfect" df and one with factors returns the df and the coerced one
@@ -33,47 +33,47 @@
 context("Coercion wrapper function")
 
 test_that("Coercion wrapper function", {
-  
+
   DF <- data.frame(numeric = c(1, 2, 3, 4), character = c("a", "b", "c", "d"), stringsAsFactors = FALSE)
   Fac <- data.frame(numeric = c("1", "2", "3", "4"), character = c("a", "b", "c", "d"), stringsAsFactors = TRUE)
   WSF <- data.frame(numeric = c(1.0, 2, 3.0, 4), character = c(" a ", "  b", "c ", "d"), stringsAsFactors = TRUE)
   WS <- data.frame(numeric = c(1.0, 2, 3.0, 4), character = c(" a ", "  b", "c ", "d"), stringsAsFactors = FALSE)
-  
+
   FacAfter <- data.frame(numeric = c("1", "2", "3", "4"), character = c("a", "b", "c", "d"), stringsAsFactors = FALSE)
   WSFAfter <- data.frame(numeric = c(1.0, 2, 3.0, 4), character = c("a", "b", "c", "d"), stringsAsFactors = FALSE)
   WSFAfterWS <- data.frame(numeric = c(1.0, 2, 3.0, 4), character = c(" a ", "  b", "c ", "d"), stringsAsFactors = FALSE)
   WSAfter <- data.frame(numeric = c(1.0, 2, 3.0, 4), character = c("a", "b", "c", "d"), stringsAsFactors = FALSE)
-  
-  T1 <- data.frame(numeric = c("numeric", "numeric", "numeric", "numeric"), 
-                   character = c("character", "character", "character", "character"), 
-                   stringsAsFactors = FALSE, 
+
+  T1 <- data.frame(numeric = c("numeric", "numeric", "numeric", "numeric"),
+                   character = c("character", "character", "character", "character"),
+                   stringsAsFactors = FALSE,
                    row.names = c("DFATypesOrig", "DFBTypesOrig", "DFATypesNew", "DFBTypesNew"))
-  
-  T2 <- data.frame(numeric = c("numeric", "numeric", "numeric", "numeric"), 
-                   character = c("character", "character", "character", "character"), 
-                   stringsAsFactors = FALSE, 
+
+  T2 <- data.frame(numeric = c("numeric", "numeric", "numeric", "numeric"),
+                   character = c("character", "character", "character", "character"),
+                   stringsAsFactors = FALSE,
                    row.names = c("DFATypesOrig", "DFBTypesOrig", "DFATypesNew", "DFBTypesNew"))
-  
-  T3 <- data.frame(numeric = c("factor", "numeric", "character", "numeric"), 
-                   character = c("factor", "factor", "character", "character"), 
-                   stringsAsFactors = FALSE, 
+
+  T3 <- data.frame(numeric = c("factor", "numeric", "character", "numeric"),
+                   character = c("factor", "factor", "character", "character"),
+                   stringsAsFactors = FALSE,
                    row.names = c("DFATypesOrig", "DFBTypesOrig", "DFATypesNew", "DFBTypesNew"))
-  
-  T4 <- data.frame(numeric = c("factor", "numeric", "character", "numeric"), 
-                   character = c("factor", "factor", "character", "character"), 
-                   stringsAsFactors = FALSE, 
+
+  T4 <- data.frame(numeric = c("factor", "numeric", "character", "numeric"),
+                   character = c("factor", "factor", "character", "character"),
+                   stringsAsFactors = FALSE,
                    row.names = c("DFATypesOrig", "DFBTypesOrig", "DFATypesNew", "DFBTypesNew"))
-  
-  T5 <- data.frame(numeric = c("numeric", "factor", "numeric", "character"), 
-                   character = c("factor", "factor", "character", "character"), 
-                   stringsAsFactors = FALSE, 
+
+  T5 <- data.frame(numeric = c("numeric", "factor", "numeric", "character"),
+                   character = c("factor", "factor", "character", "character"),
+                   stringsAsFactors = FALSE,
                    row.names = c("DFATypesOrig", "DFBTypesOrig", "DFATypesNew", "DFBTypesNew"))
-  
-  T6 <- data.frame(numeric = c("numeric", "numeric", "numeric", "numeric"), 
-                   character = c("character", "factor", "character", "character"), 
-                   stringsAsFactors = FALSE, 
+
+  T6 <- data.frame(numeric = c("numeric", "numeric", "numeric", "numeric"),
+                   character = c("character", "factor", "character", "character"),
+                   stringsAsFactors = FALSE,
                    row.names = c("DFATypesOrig", "DFBTypesOrig", "DFATypesNew", "DFBTypesNew"))
-  
+
   Ret1 <- list(DF, DF, T1)
   names(Ret1) <- c("DFA", "DFB", "DataTypes")
   Ret2 <- list(DF, DF, T2)
@@ -93,5 +93,5 @@ test_that("Coercion wrapper function", {
   expect_equal(executeCoercions(Fac, WSF, F), Ret4)
   expect_equal(executeCoercions(WSF, Fac, F), Ret5)
   expect_equal(executeCoercions(WS, WSF, T), Ret6)
-  
+
 })

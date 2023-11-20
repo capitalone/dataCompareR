@@ -13,7 +13,7 @@ compareData(DFA, DFB, keys = NULL, maxMismatches)
 
 \item{keys}{vector of chars - names of index variables}
 
-\item{maxMismatches}{Integer. The max number of mismatches to assess, after which dataCompareR will stop 
+\item{maxMismatches}{Integer. The max number of mismatches to assess, after which dataCompareR will stop
 (without producing a dataCompareR object). Designed to improve performance for large datasets.}
 }
 \value{

@@ -19,6 +19,6 @@ warnLargeData(nrow_dfa, ncol_dfa, nrow_dfb, ncol_dfb)
 Nothing
 }
 \description{
-Checks if there are more than 20E6 elements for comparison. If there are, spits out a warning 
+Checks if there are more than 20E6 elements for comparison. If there are, spits out a warning
 message that the calculation may run slowly
 }

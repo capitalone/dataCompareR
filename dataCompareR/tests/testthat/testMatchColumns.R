@@ -1,13 +1,13 @@
-# SPDX-Copyright: Copyright (c) Capital One Services, LLC 
-# SPDX-License-Identifier: Apache-2.0 
-# Copyright 2017 Capital One Services, LLC 
+# SPDX-Copyright: Copyright (c) Capital One Services, LLC
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2017 Capital One Services, LLC
 #
-# Licensed under the Apache License, Version 2.0 (the "License"); 
-# you may not use this file except in compliance with the License. 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
 #
-# You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 
+# You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
 #
-# Unless required by applicable law or agreed to in writing, software distributed 
+# Unless required by applicable law or agreed to in writing, software distributed
 # under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS
 # OF ANY KIND, either express or implied.
 
@@ -36,12 +36,12 @@ test_that("function passes overall functionality", {
                       stringsAsFactors = FALSE)
   inDfa$' car' = character()
   inDfa$'model ' = character()
-  
+
   inDfb <- data.frame(model = character(),
                       daTe = as.Date(character()),
                       brand = character(),
                       stringsAsFactors = FALSE)
-  
+
   # expected output dataframes
   outDfa <- data.frame(DATE = as.Date(character()),
                        MODEL = character(),
@@ -49,9 +49,9 @@ test_that("function passes overall functionality", {
   outDfb <- data.frame(DATE = as.Date(character()),
                        MODEL = character(),
                        stringsAsFactors = FALSE)
-  
 
-  
+
+
   # check output
   colName <- c(' car', 'daTe', 'model ')
   mapping <- c('CAR', 'DATE', 'MODEL')
@@ -68,26 +68,18 @@ test_that("function passes overall functionality", {
 
 
 test_that("function handles possible duplicate column names", {
-  
-  # create sample dataframes
-  # sample input dataframes
-  inDfa <- data.frame(daTe = as.Date(character()),
+  inDfa <- data.frame(daTe = NA_character_,
+                      " car" = "A",
+                      "model " = "B",
+                      " MoDel " = "C",
+                      stringsAsFactors = FALSE,
+                      check.names = FALSE)
+
+  inDfb <- data.frame(model = "A",
+                      daTe = NA_character_,
+                      brand = "B",
                       stringsAsFactors = FALSE)
-  inDfa$' car' = character()
-  inDfa$'model ' = character()
-  inDfa$' MoDel ' = character()
-  
-  inDfb <- data.frame(model = character(),
-                      daTe = as.Date(character()),
-                      brand = character(),
-                      stringsAsFactors = FALSE)
-  # Add some data
-  inDfb[1,] <- c("A",NA, "B")
-  inDfa[1,] <- c(NA, "A", "B", "C")
-  
- 
-  
- expect_error(matchColumns(inDfa, inDfb))
- 
- 
+
+  expect_error(object = matchColumns(inDfa, inDfb),
+               regexp = "Names must be unique")
 })

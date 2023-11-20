@@ -45,7 +45,7 @@ Summarizing RCompare Output
 }
 \examples{
 
-rc1 <- rCompare(iris,iris) 
+rc1 <- rCompare(iris,iris)
 summary(rc1)
 }
 \seealso{

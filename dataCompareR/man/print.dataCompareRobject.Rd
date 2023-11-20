@@ -22,7 +22,7 @@ Prints a brief report of an dataCompareR object to the screen.
 }
 \examples{
 rc1 <- rCompare(iris,iris)
-print(rc1)  
+print(rc1)
 }
 \seealso{
 Other dataCompareR.functions: 

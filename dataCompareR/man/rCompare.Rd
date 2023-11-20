@@ -18,24 +18,24 @@ rCompare(
 
 \item{dfB}{data frame. The second data object. dataCompareR will attempt to coerce all data objects to data frames.}
 
-\item{keys}{String. Name of identifier column(s) used to compare dfA and dfB. NA if no identifier (row order will be used instead), 
+\item{keys}{String. Name of identifier column(s) used to compare dfA and dfB. NA if no identifier (row order will be used instead),
 a character for a single column name, or a vector of column names to match of multiple columns}
 
-\item{roundDigits}{Integer. If NA, numerics are not rounded before comparison. If specified, numerics are 
+\item{roundDigits}{Integer. If NA, numerics are not rounded before comparison. If specified, numerics are
 rounded to the specified number of decimal places using \link[base]{round}.}
 
-\item{mismatches}{Integer. The max number of mismatches to assess, after which dataCompareR will stop (without producing an dataCompareR 
+\item{mismatches}{Integer. The max number of mismatches to assess, after which dataCompareR will stop (without producing an dataCompareR
 object). Designed to improve performance for large data sets.}
 
 \item{trimChars}{Boolean. If true, strings and factors have whitespace trimmed before comparison.}
 }
 \value{
-An dataCompareR object. 
-         An S3 object containing details of the comparison between the two data objects. Can be used with \link{summary}, 
+An dataCompareR object.
+         An S3 object containing details of the comparison between the two data objects. Can be used with \link{summary},
          \link{print}, \link{saveReport} and \link{generateMismatchData}
 }
 \description{
-Compare two data frames (or objects coercible to data frames) and produce a dataCompareR object containing 
+Compare two data frames (or objects coercible to data frames) and produce a dataCompareR object containing
 details of the matching and mismatching elements of the data. See \code{vignette("dataCompareR")} for more details.
 }
 \examples{

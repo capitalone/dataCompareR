@@ -14,7 +14,7 @@ prepareData(dfA, dfB, keys = NA, trimChars = TRUE)
 
 \item{dfB}{data frame. The second data object. dataCompareR will attempt to coerce all data objects to data frames.}
 
-\item{keys}{String. Name of identifier column(s) used to compare dfA and dfB. NA if no identifier (row order will be used instead), 
+\item{keys}{String. Name of identifier column(s) used to compare dfA and dfB. NA if no identifier (row order will be used instead),
 a character for a single column name, or a vector of column names to match of multiple columns}
 
 \item{trimChars}{Boolean. If true, strings and factors have whitespace trimmed before comparison.}

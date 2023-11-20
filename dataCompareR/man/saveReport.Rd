@@ -18,10 +18,10 @@ saveReport(
 \arguments{
 \item{compareObject}{a dataCompareR object.}
 
-\item{reportName}{String. The name of the report. Reports will be saved as reportName.Rmd and (optionally) reportName.html in 
+\item{reportName}{String. The name of the report. Reports will be saved as reportName.Rmd and (optionally) reportName.html in
 \code{reportLocation}}
 
-\item{reportLocation}{String. Location to save reports specified by the user. The R markdown and (optionally) HTML reports will 
+\item{reportLocation}{String. Location to save reports specified by the user. The R markdown and (optionally) HTML reports will
 be saved in this area}
 
 \item{HTMLReport}{Boolean. Option to output html report.}
@@ -31,19 +31,18 @@ be saved in this area}
 \item{stylesheet}{String. Optional link to customised css stylesheet}
 
 \item{printAll}{Boolean. If TRUE, all mis-matches in the data are printed to the file. This acts as a shortcut
-to get all mismatches in the report, compared to passing the number in \code{mismatchCount}. When TRUE, overrides the 
+to get all mismatches in the report, compared to passing the number in \code{mismatchCount}. When TRUE, overrides the
 \code{mismatchCount} field passed via ellipses}
 
 \item{...}{Optional arguments which will be passed to \code{summary}, for example \code{mismatchCount}}
 }
 \description{
-Saves R markdown and HTML reports in the area specified by the user. 
+Saves R markdown and HTML reports in the area specified by the user.
 
-Uses knitr and markdown to create reports. Reports have the extensions .Rmd or .html. 
+Uses knitr and markdown to create reports. Reports have the extensions .Rmd or .html.
 By default the \code{table.css} style sheet is used for format the html output.
 }
 \examples{
- 
 \dontrun{saveReport(rcObj, reportName = 'testReport')}
 }
 \seealso{

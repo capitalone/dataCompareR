@@ -7,7 +7,7 @@
 \method{print}{summary.dataCompareRobject}(x, ...)
 }
 \arguments{
-\item{x}{an object of class "summary.dataCompareRobject", usually a result of a call to 
+\item{x}{an object of class "summary.dataCompareRobject", usually a result of a call to
 \code{\link{summary.dataCompareRobject}}.}
 
 \item{...}{Additional arguments passed on to \code{\link{createTextSummary}}}
@@ -17,5 +17,5 @@ Printing summaryRCompare Output
 }
 \examples{
 rc1 <- rCompare(iris,iris)
-summary(rc1)  
+summary(rc1)
 }

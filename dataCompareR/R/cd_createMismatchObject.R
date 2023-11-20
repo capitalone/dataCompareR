@@ -1,16 +1,16 @@
-# SPDX-Copyright: Copyright (c) Capital One Services, LLC 
-# SPDX-License-Identifier: Apache-2.0 
-# Copyright 2017 Capital One Services, LLC 
+# SPDX-Copyright: Copyright (c) Capital One Services, LLC
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2017 Capital One Services, LLC
 #
-# Licensed under the Apache License, Version 2.0 (the "License"); 
-# you may not use this file except in compliance with the License. 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
 #
-# You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 
+# You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
 #
-# Unless required by applicable law or agreed to in writing, software distributed 
+# Unless required by applicable law or agreed to in writing, software distributed
 # under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS
-# OF ANY KIND, either express or implied. 
-# 
+# OF ANY KIND, either express or implied.
+#
 
 #' Create mismatch object
 #'
@@ -24,8 +24,8 @@
 #' @examples
 #'\dontrun{createMismatchObject(dataA, dataB, mism, idx)}
 createMismatchObject <- function(dat_a, dat_b, dat_eq, str_index) {
-  
-  
+
+
   # Initialise output object
   out <- list()
 
@@ -34,8 +34,8 @@ createMismatchObject <- function(dat_a, dat_b, dat_eq, str_index) {
   if(nrow(dat_a)==0) {
     return(out)
   }
-  
-  
+
+
   # Loop over variables to create output, ignoring index variable
   varnames <- names(dat_a)[!(names(dat_a) %in% str_index)]
   for (v in varnames) {
@@ -78,7 +78,7 @@ variableMismatches <- function(varname, vals_a, vals_b, vector_eq) {
   if ("__temprowname__" %in% names(d)) {
     d[, "__temprowname__"] <- NULL
   }
-  
+
   d[,'variable'] <- varname
   return(d)
 }
@@ -89,7 +89,7 @@ variableMismatches <- function(varname, vals_a, vals_b, vector_eq) {
 #'
 #' @return mismatch details
 variableDetails <- function(dat) {
-  
+
 
   class_a <- collapseClasses(dat[, "valueA"])
   class_b <- collapseClasses(dat[, "valueB"])
@@ -106,6 +106,6 @@ variableDetails <- function(dat) {
   } else {
     dat[, "diffAB"] <- ""
   }
-  
+
   return(dat)
 }
