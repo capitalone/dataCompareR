@@ -1,13 +1,13 @@
-# SPDX-Copyright: Copyright (c) Capital One Services, LLC 
-# SPDX-License-Identifier: Apache-2.0 
-# Copyright 2017 Capital One Services, LLC 
+# SPDX-Copyright: Copyright (c) Capital One Services, LLC
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2017 Capital One Services, LLC
 #
-# Licensed under the Apache License, Version 2.0 (the "License"); 
-# you may not use this file except in compliance with the License. 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
 #
-# You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 
+# You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
 #
-# Unless required by applicable law or agreed to in writing, software distributed 
+# Unless required by applicable law or agreed to in writing, software distributed
 # under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS
 # OF ANY KIND, either express or implied.
 
@@ -25,32 +25,32 @@
 #' @export
 #' @examples
 #' rc1 <- rCompare(iris,iris)
-#' print(rc1)  
+#' print(rc1)
 
 print.dataCompareRobject <- function(x, nVars=5, nObs=5, verbose= FALSE, ...) {
   # Arg validation
   if(!is.numeric(nVars) | nVars < 1) {
     stop("nVars must be a positive number")
   }
-  
+
   if(!is.numeric(nObs) | nObs < 1) {
     stop("nObs must be a positive number")
   }
-  
+
   if(!is.logical(verbose)) {
-    stop("verbose must be boolean") 
+    stop("verbose must be boolean")
   }
-  
+
   obslist <- NULL
-  
-  # Determine if we had a match key 
-  
+
+  # Determine if we had a match key
+
   if(length(x$rowMatching$matchKeys) == 1 && is.na(x$rowMatching$matchKeys)) {
     matchKeyUsed <- FALSE
   } else {
     matchKeyUsed <- TRUE
   }
-  
+
   # Some basic warnings about the nature of the comparison - it should be clear if rows and columns
   # were dropped from the comparison
   # Columns
@@ -60,12 +60,12 @@ print.dataCompareRobject <- function(x, nVars=5, nObs=5, verbose= FALSE, ...) {
   } else {
     # Not all columns were compared
     cat(paste0(length(x$colMatching$inA) + length(x$colMatching$inB), " column(s) were dropped, " ))
-    
+
   }
-  
+
   # Catch the case where one or both tables were empty
   # For the case where we use a match key
-  if (!matchKeyUsed && 
+  if (!matchKeyUsed &&
       ((length(x$rowMatching$inboth) ==1 && x$rowMatching$inboth == 0 && length(x$rowMatching$inA[[1]])== 0)  ||
     (length(x$rowMatching$inboth) ==1 && x$rowMatching$inboth == 0 && length(x$rowMatching$inB[[1]]) == 0))) {
     cat(" no rows compared because at least one table has no rows \n")
@@ -81,11 +81,11 @@ print.dataCompareRobject <- function(x, nVars=5, nObs=5, verbose= FALSE, ...) {
     # Not all columns were compared
     cat(paste0(length(x$rowMatching$inA[[1]]) + length(x$rowMatching$inB[[1]]), " row(s) were dropped from comparison\n" ))
   }
-  
+
 
   if (verbose != TRUE) {
     varlist <- names(x$mismatches)
-    
+
     uniquevarlist <- unique(append(head(varlist, nVars), tail(varlist, nVars)))
     if (length(uniquevarlist) == 0) {
       if (nchar(x$matches[1]) != 0) {
@@ -97,9 +97,9 @@ print.dataCompareRobject <- function(x, nVars=5, nObs=5, verbose= FALSE, ...) {
     }
     if (length(uniquevarlist) > 0) {
       noMismatchVars <- length(varlist)
-      
+
       cat('There are ', noMismatchVars, "mismatched variables:\n")
-      
+
       if (noMismatchVars <= nVars) {
         cat(
           'First and last',
@@ -108,7 +108,7 @@ print.dataCompareRobject <- function(x, nVars=5, nObs=5, verbose= FALSE, ...) {
           noMismatchVars,
           'mismatched variables\n'
         )
-        
+
       }
       else
       {
@@ -120,36 +120,36 @@ print.dataCompareRobject <- function(x, nVars=5, nObs=5, verbose= FALSE, ...) {
           'mismatched variables\n'
         )
       }
-      
+
       obslist <- do.call(rbind, lapply(1:length(uniquevarlist),
                                        FUN = listObsNotVerbose, x
                                        , uniquevarlist, nObs))
-      
+
       if(matchKeyUsed) obslist <- select(obslist, -rowNo)
-      
+
       rownames(obslist) <- 1:nrow(obslist)
-      
+
       print(obslist, ...)
     }
   }
-  
+
   if (verbose == TRUE) {
     uniquevarlist <- names(x$mismatches)
-    
+
     if (length(uniquevarlist) == 0) {
       allVarMatchMessage(x)
     }
-    
+
     if (length(uniquevarlist) > 0) {
       obslist <- do.call(rbind, lapply(1:length(uniquevarlist),
                                        FUN = listObsVerbose, x))
-      
+
       if(matchKeyUsed) obslist <- select(obslist, -rowNo)
-      
+
       print(obslist, ...)
     }
   }
-  
+
   invisible(obslist)
 }
 

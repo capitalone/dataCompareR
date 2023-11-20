@@ -15,7 +15,7 @@ matchRows(df_a, df_b, indices = NA)
 single character, or a vector of characters}
 }
 \value{
-A list containing the two dataframes, subsetted by shared indices, and a list which itself 
+A list containing the two dataframes, subsetted by shared indices, and a list which itself
        contains dataframes for the dropped rows
 }
 \description{

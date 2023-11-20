@@ -14,7 +14,7 @@ validateArguments(
 \arguments{
 \item{matchKey}{A character or character vector of column names to match on}
 
-\item{roundDigits}{Integer. If NA, numerics are not rounded before comparison. If specified, numerics are 
+\item{roundDigits}{Integer. If NA, numerics are not rounded before comparison. If specified, numerics are
 rounded to the specified number of decimal places using \link[base]{round}.}
 
 \item{coerceCols}{Boolean - do we coerce columns names?}

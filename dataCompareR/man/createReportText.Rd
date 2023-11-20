@@ -20,6 +20,5 @@ Saves R markdown and HTML reports in the area specified by the user. Reports are
 Uses knitr package to create tables in the markdown (createReportText function) and HTML report.
 }
 \examples{
- 
 \dontrun{createReportText(x=MysummaryCompareObject)}
 }

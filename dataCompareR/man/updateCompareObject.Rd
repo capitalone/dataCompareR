@@ -2,7 +2,7 @@
 % Please edit documentation in R/rco_updateCompareObject.R
 \name{updateCompareObject}
 \alias{updateCompareObject}
-\title{Generic function for updating a compare object with 
+\title{Generic function for updating a compare object with
 information passed to it, that has methods based on the class
 of the info argument.}
 \usage{
@@ -17,7 +17,7 @@ updateCompareObject(x, compObj)
 compObj Updated dataCompareRobject
 }
 \description{
-Generic function for updating a compare object with 
+Generic function for updating a compare object with
 information passed to it, that has methods based on the class
 of the info argument.
 }

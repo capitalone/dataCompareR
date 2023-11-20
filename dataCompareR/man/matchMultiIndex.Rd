@@ -14,7 +14,7 @@ matchMultiIndex(df_a, df_b, indices)
 \item{indices}{A char vector}
 }
 \value{
-A list containing the two dataframes, subsetted by shared indices, and a list which itself 
+A list containing the two dataframes, subsetted by shared indices, and a list which itself
        contains the vectors for the dropped rows
 }
 \description{

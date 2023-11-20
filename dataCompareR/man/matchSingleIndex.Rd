@@ -16,7 +16,7 @@ matchSingleIndex(df_a, df_b, index_key, original_keys)
 \item{original_keys}{A character vector}
 }
 \value{
-A list containing the two dataframes, subsetted by shared indices, and a list which itself 
+A list containing the two dataframes, subsetted by shared indices, and a list which itself
        contains the vectors for the dropped rows
 }
 \description{

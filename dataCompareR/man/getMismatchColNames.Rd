@@ -2,7 +2,7 @@
 % Please edit documentation in R/rco_createColMatching.R
 \name{getMismatchColNames}
 \alias{getMismatchColNames}
-\title{Extracts the column names only in one data frame from a table of 
+\title{Extracts the column names only in one data frame from a table of
 match information}
 \usage{
 getMismatchColNames(colMatchInfo, colNameCol, matchFlagCol)
@@ -18,6 +18,6 @@ getMismatchColNames(colMatchInfo, colNameCol, matchFlagCol)
 Vector of column names that do not match
 }
 \description{
-Extracts the column names only in one data frame from a table of 
+Extracts the column names only in one data frame from a table of
 match information
 }

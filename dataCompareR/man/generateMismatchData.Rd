@@ -16,7 +16,7 @@ generateMismatchData(x, dfA, dfB, ...)
 \item{...}{Unused currently, may be used in future}
 }
 \value{
-\code{mismatchData} A list containing two objects: mismatched rows in first data object and mismatched rows in 
+\code{mismatchData} A list containing two objects: mismatched rows in first data object and mismatched rows in
 second data object
 }
 \description{

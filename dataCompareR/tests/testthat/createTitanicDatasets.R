@@ -1,13 +1,13 @@
-# SPDX-Copyright: Copyright (c) Capital One Services, LLC 
-# SPDX-License-Identifier: Apache-2.0 
-# Copyright 2017 Capital One Services, LLC 
+# SPDX-Copyright: Copyright (c) Capital One Services, LLC
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2017 Capital One Services, LLC
 #
-# Licensed under the Apache License, Version 2.0 (the "License"); 
-# you may not use this file except in compliance with the License. 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
 #
-# You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 
+# You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
 #
-# Unless required by applicable law or agreed to in writing, software distributed 
+# Unless required by applicable law or agreed to in writing, software distributed
 # under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS
 # OF ANY KIND, either express or implied.
 
@@ -17,7 +17,7 @@
 # To load all Titanic dataset run load("titanic_datasets.RData").
 # The base dataset (titanic) is a slightly altered of the original titanic dataset.
 # All differences mentioned below compare an altered version of data to the base dataset.
-# The differences are identical for all altered versions 
+# The differences are identical for all altered versions
 # (titanic2, titanic2DataTable, titanic2Tibble, titanic2Matrix)
 #
 #
@@ -26,8 +26,8 @@
 #* `HasSurvived` has additional level: NaN. Line 5 has HasSurvived as NaN, but in the basel dataset it is NA.
 #
 #The rest of the differences are demonstrated on the `Name` column:
-#  
-# * Row 1: very long string, difference at the end 
+#
+# * Row 1: very long string, difference at the end
 #* Row 2: additional spaces at the beginning
 #* Row 3: additional spaces at the end
 #* Row 4: additional spaces at the beginning and at the end
@@ -59,7 +59,7 @@ levels(titanic2$Embarked) <- levels(titanic2$Embarked)[c(2,1,3,4)]
 # Add additional level
 levels(titanic2$Cabin) <- c(levels(titanic2$Cabin), "Jack's secret cabin")
 
-# 
+#
 #table(titanic$Survived)
 titanic$HasSurvived <- ifelse(titanic$Survived == 1, "survived", "died")
 titanic$HasSurvived <- as.factor(titanic$HasSurvived)
