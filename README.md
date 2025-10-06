@@ -1,3 +1,5 @@
+# Due to changes in priorities, this project is currently not being supported. The project is archived as of 10/6/2025 and will be available in a read-only state. Please note, since archival, the project is not maintained or reviewed.
+
 # dataCompareR
 
 |CRAN downloads|`dev` build|`master` build|
